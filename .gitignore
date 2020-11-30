@@ -1,0 +1,16 @@
+.bash_logout
+Documents/
+.gitconfig
+.local/
+.node_repl_history
+.npm/
+.oh-my-zsh/
+.profile
+.shell.pre-oh-my-zsh
+.sqlite_history
+.vim/plugged
+.viminfo
+.wget-hsts
+.zcompdump-DESKTOP-8912TJG-5.7.1
+.zsh_history
+.config/coc/
