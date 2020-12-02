@@ -1,11 +1,19 @@
+" Define el espacio como tecla lider
 let mapleader=" "
-
+" Abre la busqueda de easymotion
 nmap <Leader>s <Plug>(easymotion-s2)
+" Abre el arbol de NerdTree
 nmap <Leader>nt :NERDTreeFind<CR>
-
+" Guarda
 nnoremap <Leader>w :w<CR>
+" Cierra
 nnoremap <Leader>q :q<CR>
+" Guarda y cierra
 nnoremap <Leader>x :x<CR>
+" Abre otra pestaña
+nnoremap <Leader>+ :tabe 
+" Cierra una pestaña
+nnoremap <C-w> :tabclose<CR>
 
 " testing
 nnoremap <Leader>t :TestNearest<CR>
@@ -58,17 +66,6 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nnoremap <Leader>G :G<cr>
 nnoremap <Leader>gp :Gpush<cr>
 nnoremap <Leader>gl :Gpull<cr>
-
-" run current file
-nnoremap <Leader>z :!node %<cr>
-
-" Use <c-space> to trigger completion.
-if &filetype == "javascript" || &filetype == "python"
-  inoremap <c-space> <C-x><C-u>
-else
-  inoremap <silent><expr> <c-space> coc#refresh()
-endif
-
 
 set splitright
 function! OpenTerminal()
