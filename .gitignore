@@ -10,3 +10,4 @@
 !.vim/plugins.vim
 !.config/nvim/init.vim
 !.oh-my-zsh/custom/themes/agnosterProPlus.zsh-theme
+!ChangePathNeoVim.sh

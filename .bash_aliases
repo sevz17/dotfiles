@@ -35,3 +35,5 @@ alias limpiarmemoria="sudo sync && sudo sysctl -w vm.drop_caches=3"
 
 
 #Miscelaneos
+alias lis="ls -lah"
+alias igno="vim .gitignore"
