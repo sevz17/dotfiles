@@ -1,13 +1,13 @@
 #Configuraciones
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias vimconfig="nvim ~/.vimrc"
-alias bashconfig="nvim ~/.bashrc"
-alias configalias="nvim ~/.bash_aliases"
-alias v="nvim"
-alias mapconfig="nvim ~/.vim/maps.vim"
-alias plugins="nvim ~/.vim/plugins.vim"
-alias plugsconfig="nvim ~/.vim/plugin-config.vim"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimconfig="vim ~/.vimrc"
+alias bashconfig="vim ~/.bashrc"
+alias configalias="vim ~/.bash_aliases"
+alias v="vim"
+alias mapconfig="vim ~/.vim/maps.vim"
+alias plugins="vim ~/.vim/plugins.vim"
+alias plugsconfig="vim ~/.vim/plugin-config.vim"
 
 #Servidor
 alias iniciar="~/Documents/scripts/start-server.sh"
@@ -35,4 +35,3 @@ alias limpiarmemoria="sudo sync && sudo sysctl -w vm.drop_caches=3"
 
 
 #Miscelaneos
-alias cls="clear"

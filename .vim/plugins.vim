@@ -2,9 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 " syntax
 Plug 'sheerun/vim-polyglot'
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'yuezk/vim-js'
-" Plug 'flowtype/vim-flow'
 
 " status bar
 Plug 'maximbaz/lightline-ale'
@@ -33,10 +30,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " autocomplete
 Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'Valloric/YouCompleteMe'
 
 " test
-Plug 'tyewang/vimux-jest-test'
 Plug 'janko-m/vim-test'
 
 " IDE
