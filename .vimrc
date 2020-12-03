@@ -15,7 +15,6 @@ set bg=dark
 set relativenumber
 set noshowmode
 
-
 set nobackup
 set autoindent
 set paste

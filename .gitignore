@@ -9,5 +9,5 @@
 !.vim/plugin-config.vim
 !.vim/plugins.vim
 !.config/nvim/init.vim
-!.oh-my-zsh/custom/themes/agnosterProPlus.zsh-theme
+!.oh-my-zsh/custom/themes/*.zsh-theme
 !ChangePathNeoVim.sh
