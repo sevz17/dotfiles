@@ -24,9 +24,8 @@ alias mysqlstatus="service mysql status"
 
 
 #Carpetas
-alias escritorio="/mnt/c/Users/Propietario/desktop"
-alias reposlinux="~/Documents/source/repos/"
-alias reposwindows="/mnt/c/Users/Propietario/source/repos"
+alias desktop="/mnt/c/Users/Propietario/desktop"
+alias repos="/mnt/c/Users/Propietario/source/repos"
 
 
 #Administracion 
@@ -37,3 +36,4 @@ alias limpiarmemoria="sudo sync && sudo sysctl -w vm.drop_caches=3"
 #Miscelaneos
 alias lis="ls -lah"
 alias igno="vim .gitignore"
+alias cls="clear"
