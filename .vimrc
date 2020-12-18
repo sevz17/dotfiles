@@ -5,6 +5,7 @@ set clipboard=unnamed
 syntax enable
 set showcmd
 set ruler
+set foldmethod=syntax
 set cursorline
 set encoding=utf-8
 set showmatch
@@ -18,7 +19,7 @@ set noshowmode
 set nobackup
 set autoindent
 set paste
-set expandtab
+"set expandtab
 setlocal spell spelllang=es
 filetype plugin on
 
@@ -34,8 +35,6 @@ set incsearch     " incremental searching
 set ignorecase    " searches are case insensitive
 set smartcase     " ... unless they contain at least one capital letter
 
-colorscheme gruvbox
-let g:gruvbox_constrast_dark = "hard"
 highlight Normal ctermbg=NONE
 set laststatus=2 
 
@@ -44,4 +43,4 @@ let g:coc_global_extensions = ['coc-phpls', 'coc-git', 'coc-actions', 'coc-clang
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'csv.vim'
 
-" colorscheme blazer
+colorscheme goldenrod

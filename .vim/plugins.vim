@@ -8,12 +8,9 @@ Plug 'maximbaz/lightline-ale'
 Plug 'itchyny/lightline.vim'
 
 " Themes
-Plug 'morhetz/gruvbox'
-Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'flazz/vim-colorschemes'
 
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Tree
 Plug 'scrooloose/nerdtree'
@@ -46,8 +43,6 @@ Plug 'scrooloose/nerdcommenter'
 
 " git
 Plug 'tpope/vim-fugitive'
-
-Plug 'tpope/vim-repeat'
 
 call plug#end()
 
