@@ -19,8 +19,8 @@ alias reiniciarapache="sudo service apache2 restart"
 alias iniciarmysql="sudo /etc/init.d/mysql start"
 alias detenermysql="sudo /etc/init.d/mysql stop"
 alias reiniciarmysql="sudo /etc/init.d/mysql restart"
-alias apachestatus="service apache2 status"
-alias mysqlstatus="service mysql status"
+alias apachestatus="sudo service apache2 status"
+alias mysqlstatus="sudo service mysql status"
 
 
 #Carpetas
@@ -32,9 +32,10 @@ alias repos="/mnt/c/Users/Propietario/source/repos"
 alias actualizar="sudo apt-get update && sudo apt-get upgrade"
 alias limpiarmemoria="sudo sync && sudo sysctl -w vm.drop_caches=3"
 
+#Droidcam
+alias droid="droidcam.cli -v -a adb 5000"
 
 #Miscelaneos
-alias lis="ls -lah"
 alias igno="vim .gitignore"
 alias cls="clear"
 alias server="cd /var/www/sevz/"
