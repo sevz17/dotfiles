@@ -1,5 +1,6 @@
-*
+/*
 
+!.config
 !.vimrc
 !.bash_aliases
 !.bashrc
@@ -8,6 +9,3 @@
 !.vim/maps.vim
 !.vim/plugin-config.vim
 !.vim/plugins.vim
-!.config/nvim/init.vim
-!.oh-my-zsh/custom/themes/*.zsh-theme
-!ChangePathNeoVim.sh
