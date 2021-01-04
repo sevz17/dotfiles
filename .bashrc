@@ -125,3 +125,4 @@ if [ "&TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
 fi
 
 source "$HOME/.cargo/env"
+export PATH="$PATH:$HOME/.local/bin"
