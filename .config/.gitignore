@@ -1,2 +1,8 @@
-coc/
-alacritty/pycritty/
+/*
+
+!alacritty
+!.gitignore
+!nvim
+!openbox
+!qtile
+!ranger
