@@ -1,0 +1,8 @@
+[Default Applications]
+x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_usr_lib_eclipse_.desktop
+
+[Added Associations]
+application/json=Alacritty.desktop;
+inode/symlink=pcmanfm-desktop-pref.desktop;
+text/plain=cups.desktop;
+application/pdf=cups.desktop;

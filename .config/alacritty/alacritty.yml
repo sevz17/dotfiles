@@ -1,0 +1,34 @@
+background_opacity: 0.4
+colors:
+  bright:
+    black: '#767676'
+    blue: '#1a8fff'
+    cyan: '#14ffff'
+    green: '#23fd00'
+    magenta: '#fd28ff'
+    red: '#f2201f'
+    white: '#ffffff'
+    yellow: '#fffd00'
+  normal:
+    black: '#000000'
+    blue: '#0d73cc'
+    cyan: '#0dcdcd'
+    green: '#19cb00'
+    magenta: '#cb1ed1'
+    red: '#cc0403'
+    white: '#dddddd'
+    yellow: '#cecb00'
+  primary:
+    background: '#000000'
+    foreground: '#dddddd'
+font:
+  bold:
+    family: Caskaydia Cove Nerd Font
+  italic:
+    family: Caskaydia Cove Nerd Font
+  normal:
+    family: Caskaydia Cove Nerd Font
+window:
+  padding:
+    x: 0
+    y: 5
