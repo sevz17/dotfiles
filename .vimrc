@@ -12,7 +12,6 @@ set showmatch
 set sw=4
 set ts=4
 set nocompatible
-set bg=dark
 set relativenumber
 set noshowmode
 
@@ -44,3 +43,4 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'csv.vim'
 
 colorscheme goldenrod
+hi Normal guibg=NONE ctermbg=NONE
