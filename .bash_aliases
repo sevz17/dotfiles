@@ -17,3 +17,6 @@ alias igno="nvim .gitignore"
 alias cls="clear"
 alias server="cd /var/www/"
 alias ra="ranger"
+
+#Navegador
+alias edge="microsoft-edge-dev"
