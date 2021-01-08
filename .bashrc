@@ -124,5 +124,7 @@ if [ "&TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-source "$HOME/.cargo/env"
 export PATH="$PATH:$HOME/.local/bin"
+
+
+neofetch
