@@ -4,5 +4,6 @@
 !.gitignore
 !nvim
 !openbox
+!neofetch
 !qtile
 !ranger
