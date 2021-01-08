@@ -20,3 +20,7 @@ alias ra="ranger"
 
 #Navegador
 alias edge="microsoft-edge-dev"
+
+#xclip
+alias clip="xclip -sel clip"
+alias fp="xclip -sel clip -o"
