@@ -2,6 +2,7 @@
 
 !alacritty
 !.gitignore
+!kitty
 !nvim
 !openbox
 !neofetch

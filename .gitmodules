@@ -1,0 +1,6 @@
+[submodule "/home/leonardo/.config/kitty/kitty-themes"]
+	path = /home/leonardo/.config/kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
+[submodule "/home/leonardo/.config/alacritty/pycritty"]
+	path = /home/leonardo/.config/alacritty/pycritty
+	url = https://github.com/Sevz17/pycritty
