@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
-
   <focus>
     <focusNew>yes</focusNew>
     <followMouse>yes</followMouse>
@@ -14,54 +12,47 @@
     <focusDelay>200</focusDelay>
     <raiseOnFocus>no</raiseOnFocus>
   </focus>
-
   <placement>
-    <policy>UnderMouse</policy>
+    <policy>Smart</policy>
     <center>yes</center>
     <monitor>Mouse</monitor>
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
-
   <theme>
-    <name>Arc-Dark</name>
+    <name>KvArcDark</name>
     <titleLayout>NLIMC</titleLayout>
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>UbuntuMono Nerd Font</name>
-      <size>10</size>
+      <size>13</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
-
     <font place="InactiveWindow">
       <name>UbuntuMono Nerd Font</name>
-      <size>11</size>
+      <size>13</size>
       <weight>Bold</weight>
       <slant>Italic</slant>
     </font>
-
     <font place="MenuHeader">
       <name>UbuntuMono Nerd Font</name>
       <size>11</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
-
     <font place="MenuItem">
       <name>UbuntuMono Nerd Font Mono</name>
       <size>11</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
-
     <font place="ActiveOnScreenDisplay">
       <name>sans</name>
       <size>10</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
-
     <font place="InactiveOnScreenDisplay">
       <name>Sans</name>
       <size>10</size>
@@ -69,24 +60,22 @@
       <slant>Italic</slant>
     </font>
   </theme>
-
   <desktops>
     <number>9</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>WWW</name>
-      <name>DEV</name>
-      <name>TERM</name>
-      <name>REF</name>
-      <name>SYS</name>
-      <name>FS</name>
-      <name>IMG</name>
-      <name>VID</name>
-      <name>MISC</name>
+      <name>  </name>
+      <name> ﬏ </name>
+      <name>  </name>
+      <name>  </name>
+      <name>  </name>
+      <name>  </name>
+      <name>  </name>
+      <name>  </name>
+      <name>  </name>
     </names>
     <popupTime>500</popupTime>
   </desktops>
-
   <resize>
     <drawContents>yes</drawContents>
     <popupShow>Nonpixel</popupShow>
@@ -96,14 +85,12 @@
       <y>10</y>
     </popupFixedPosition>
   </resize>
-
   <margins>
     <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
-
   <dock>
     <position>TopLeft</position>
     <floatingX>0</floatingX>
@@ -116,7 +103,6 @@
     <showDelay>300</showDelay>
     <moveButton>Middle</moveButton>
   </dock>
-
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Switch Workspaces -->
@@ -165,7 +151,6 @@
         <to>9</to>
       </action>
     </keybind>
-
     <!-- Send Window to Workspace N -->
     <keybind key="W-S-1">
       <action name="SendToDesktop">
@@ -221,12 +206,10 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-
     <!-- Close Window -->
     <keybind key="W-w">
       <action name="Close"/>
     </keybind>
-
     <!-- Keybindings for window switching -->
     <keybind key="W-j">
       <action name="NextWindow">
@@ -246,7 +229,6 @@
         </finalactions>
       </action>
     </keybind>
-
     <!-- Keybindings for window tiling -->
     <!-- Full Screen -->
     <keybind key="W-Up">
@@ -322,7 +304,6 @@
         <width>50%</width>
       </action>
     </keybind>
-
     <!-- Keybindings for running applications -->
     <!-- Menu  -->
     <keybind key="W-m">
@@ -350,7 +331,7 @@
           <enabled>true</enabled>
           <name>Browser</name>
         </startupnotify>
-        <command>firefox</command>
+        <command>microsoft-edge-dev</command>
       </action>
     </keybind>
     <!-- File Explorer -->
@@ -389,7 +370,7 @@
           <enabled>true</enabled>
           <name>Terminal</name>
         </startupnotify>
-        <command>alacritty</command>
+        <command>kitty</command>
       </action>
     </keybind>
     <!-- Scrot -->
@@ -448,7 +429,6 @@
         <command>brightnessctl set 10%-</command>
       </action>
     </keybind>
-
     <keybind key="W-C-r">
       <action name="Execute">
         <startupnotify>
@@ -458,7 +438,6 @@
         <command>openbox --restart</command>
       </action>
     </keybind>
-
     <keybind key="W-C-q">
       <action name="Execute">
         <startupnotify>
@@ -469,7 +448,6 @@
       </action>
     </keybind>
   </keyboard>
-
   <mouse>
     <dragThreshold>4</dragThreshold>
     <doubleClickTime>500</doubleClickTime>
@@ -750,7 +728,6 @@
       </mousebind>
     </context>
   </mouse>
-
   <menu>
     <file>menu.xml</file>
     <hideDelay>200</hideDelay>
@@ -760,7 +737,4 @@
     <showIcons>yes</showIcons>
     <manageDesktops>yes</manageDesktops>
   </menu>
-
-  <applications>
-  </applications>
 </openbox_config>
