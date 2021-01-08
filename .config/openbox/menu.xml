@@ -12,9 +12,9 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Atom">
+  <item label="NeoVim">
     <action name="Execute">
-      <command>atom</command>
+      <command>nvim</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -26,8 +26,8 @@
   <item label="Alacritty">
     <action name="Execute"><command>alacritty</command></action>
   </item>
-  <item label="Xterm">
-    <action name="Execute"><command>xterm</command></action>
+  <item label="Kitty">
+    <action name="Execute"><command>kitty</command></action>
   </item>
 </menu>
 
@@ -41,6 +41,14 @@
       </startupnotify>
     </action>
   </item>
+  <item label="Edge">
+    <action name="Execute">
+      <command>microsoft-edge-dev</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Edge</wmclass>
+      </startupnotify>
+    </action>
 </menu>
 
 <menu id="apps-multimedia-menu" label="Multimedia">
@@ -60,22 +68,6 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Gnome-Sound-Recorder">
-    <action name="Execute">
-      <command>gnome-sound-recorder</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="OBS">
-    <action name="Execute">
-      <command>obs</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
 </menu>
 
 <menu id="apps-fileman-menu" label="File Managers">
@@ -87,12 +79,9 @@
       </startupnotify>
     </action>
   </item>
-</menu>
-
-<menu id="apps-graphics-menu" label="Graphics">
-  <item label="Gimp">
+  <item label="PCManFM">
     <action name="Execute">
-      <command>gimp</command>
+      <command>pcmanfm</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
