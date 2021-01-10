@@ -57,19 +57,30 @@ primary_widgets = [
 
     separator(),
 
-    powerline('color4', 'dark'),
+    powerline('color3', 'dark'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
-    widget.Pacman(**base(bg='color4'), update_interval=1800),
+    widget.CPU(**base(bg='color3'), format='{freq_current}GHz/{freq_max}GHz'),
 
+    powerline('color4', 'color3'),
+
+    widget.Memory(**base(bg='color4'), visible_on_warn = False ),
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
-    
-    widget.Net(**base(bg='color3'), interface='wlp2s0'),
+    widget.Net(**base(bg='color3'), format='{down}↓↑{up} '),
 
-    powerline('color2', 'color3'),
+    powerline('color4', 'color3'),
+
+    icon(bg="color4", text=' '), # Icon: nf-fa-download
+
+    widget.CheckUpdates(**base(bg='color4'),
+        update_interval=1800,
+        custom_comand='yay -Sup',
+        display_format='{updates} ',
+        no_update_string="0",
+        colour_no_updates='#000000',
+        colour_have_updates='#000000'),
+
+    powerline('color2', 'color4'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
@@ -77,13 +88,11 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
-
-    widget.Clock(**base(bg='color1'), format='%d/%m/%Y %H:%M '),
+    widget.Clock(**base(bg='color1'), format=' %H:%M:%S  %d/%m/%Y'),
 
     powerline('dark', 'color1'),
 
-    widget.Systray(background=colors['dark'], padding=5),
+    widget.Systray(background=colors['dark'], padding=10),
 
 ]
 
