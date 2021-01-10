@@ -1,6 +1,0 @@
-export PATH=/home/leonardo/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/leonardo/.local/bin
-
-setxkbmap latam
-nm-applet &
-picom &
-udiskie -t &

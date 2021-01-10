@@ -1,3 +1,8 @@
 tint2 &
 volumeicon &
 numlockx &
+
+setxkbmap latam
+nm-applet &
+picom &
+udiskie -t &
