@@ -1,0 +1,7 @@
+export PATH=$HOME/.local/bin:$PATH
+
+# systray volume
+setxkbmap latam &
+nm-applet &
+picom &
+udiskie -t &
