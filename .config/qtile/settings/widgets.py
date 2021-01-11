@@ -8,7 +8,7 @@ base = lambda fg='text', bg='dark': {
     'background': colors[bg]
 }
 
-separator = lambda: widget.Sep(**base(), linewidth=0, padding=5)
+separator = lambda: widget.Sep(**base(), linewidth=0, padding=4)
 
 icon = lambda fg='text', bg='dark', fontsize=16, text="?": widget.TextBox(
     **base(fg, bg),
@@ -20,8 +20,8 @@ icon = lambda fg='text', bg='dark', fontsize=16, text="?": widget.TextBox(
 powerline = lambda fg="light", bg="dark": widget.TextBox(
    **base(fg, bg),
     text="", # Icon: nf-oct-triangle_left
-    fontsize=37,
-    padding=-2
+    fontsize=48,
+    padding=-2.3
 )
 
 workspaces = lambda: [
@@ -59,14 +59,14 @@ primary_widgets = [
 
     powerline('color3', 'dark'),
 
-    widget.CPU(**base(bg='color3'), format='{freq_current}GHz/{freq_max}GHz'),
+    widget.CPU(**base(bg='color3'), format='{freq_current}GHz\n{freq_max}GHz'),
 
     powerline('color4', 'color3'),
 
-    widget.Memory(**base(bg='color4'), visible_on_warn = False ),
+    widget.Memory(**base(bg='color4'), visible_on_warn = False , format='{MemUsed}M\n{MemTotal}M'),
     powerline('color3', 'color4'),
 
-    widget.Net(**base(bg='color3'), format='{down}↓↑{up} '),
+    widget.Net(**base(bg='color3'), format='↑{up}\n↓{down}'),
 
     powerline('color4', 'color3'),
 
@@ -88,7 +88,9 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    widget.Clock(**base(bg='color1'), format=' %H:%M:%S  %d/%m/%Y'),
+    icon(bg='color1', text=' \n '),
+
+    widget.Clock(**base(bg='color1'), format='%H:%M:%S\n%d/%m/%Y'),
 
     powerline('dark', 'color1'),
 
