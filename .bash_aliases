@@ -24,3 +24,9 @@ alias edge="microsoft-edge-dev"
 #xclip
 alias clip="xclip -sel clip"
 alias fp="xclip -sel clip -o"
+
+#Xephyr
+alias xep1="Xephyr -br -ac -noreset -screen 1024x768 :1 &"
+alias xep2="Xephyr -br -ac -noreset -screen 1024x768 :2 &"
+alias d1="DISPLAY=:1"
+alias d2="DISPLAY=:2"
