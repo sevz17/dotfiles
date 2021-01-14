@@ -8,7 +8,7 @@ base = lambda fg='text', bg='dark': {
     'background': colors[bg]
 }
 
-separator = lambda: widget.Sep(**base(), linewidth=0, padding=4)
+separator = lambda: widget.Sep(**base(), linewidth=0, padding=5)
 
 icon = lambda fg='text', bg='dark', fontsize=16, text="?": widget.TextBox(
     **base(fg, bg),
@@ -20,8 +20,8 @@ icon = lambda fg='text', bg='dark', fontsize=16, text="?": widget.TextBox(
 powerline = lambda fg="light", bg="dark": widget.TextBox(
    **base(fg, bg),
     text="", # Icon: nf-oct-triangle_left
-    fontsize=48,
-    padding=-2.3
+    fontsize=37,
+    padding=-2
 )
 
 workspaces = lambda: [
@@ -59,22 +59,22 @@ primary_widgets = [
 
     powerline('color3', 'dark'),
 
-    widget.CPU(**base(bg='color3'), format='{freq_current}GHz\n{freq_max}GHz'),
+    widget.CPU(**base(bg='color3'), format='{freq_current}GHz/{freq_max}GHz'),
 
     powerline('color4', 'color3'),
 
-    widget.Memory(**base(bg='color4'), visible_on_warn = False , format='{MemUsed}M\n{MemTotal}M'),
+    widget.Memory(**base(bg='color4'), visible_on_warn = False ),
     powerline('color3', 'color4'),
 
-    widget.Net(**base(bg='color3'), format='↑{up}\n↓{down}'),
+    widget.Net(**base(bg='color3'), format='{down}↓↑{up} '),
 
     powerline('color4', 'color3'),
 
     icon(bg="color4", text=' '), # Icon: nf-fa-download
 
     widget.CheckUpdates(**base(bg='color4'),
-        update_interval=1800,
-        custom_comand='yay -Sup',
+        update_interval=60,
+        custom_comand='checkupdates',
         display_format='{updates} ',
         no_update_string="0",
         colour_no_updates='#000000',
@@ -88,9 +88,7 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    icon(bg='color1', text=' \n '),
-
-    widget.Clock(**base(bg='color1'), format='%H:%M:%S\n%d/%m/%Y'),
+    widget.Clock(**base(bg='color1'), format=' %H:%M:%S  %d/%m/%Y'),
 
     powerline('dark', 'color1'),
 
