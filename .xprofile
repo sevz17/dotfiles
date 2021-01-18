@@ -1,7 +1,8 @@
 export PATH=$HOME/.local/bin:$PATH
 
-# systray volume
-setxkbmap latam &
+layout=`cat ~/.config/layout`
+
+setxkbmap $layout &
 nm-applet &
 picom &
 udiskie -t &
