@@ -4,6 +4,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 layout=`cat ~/.config/layout`
 
 setxkbmap $layout &
+unclutter -idle 1 -jitter 2 -root &
 nm-applet &
 picom &
 udiskie -t &
