@@ -5,6 +5,7 @@ layout=`cat ~/.config/layout`
 
 setxkbmap $layout &
 unclutter -idle 1 -jitter 2 -root &
+change-background
 nm-applet &
 picom &
 udiskie -t &
