@@ -9,3 +9,4 @@ change-background
 nm-applet &
 picom &
 udiskie -t &
+setxkbmap -option keypad:pointerkeys
