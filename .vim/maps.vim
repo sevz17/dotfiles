@@ -37,15 +37,6 @@ map <Leader>nt :NERDTreeFind<CR>
 map <Leader>p :Files<CR>
 map <Leader>ag :Ag<CR>
 
-" Use <c-space> to trigger completion.
-"inoremap <silent><expr> <c-space> coc#refresh()
- 
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 " diagnostics
 nnoremap <leader>kp :let @*=expand("%")<CR>
 
