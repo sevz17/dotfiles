@@ -47,6 +47,7 @@ workspaces = lambda: [
         other_screen_border=colors['dark'],
         disable_drag=True
     ),
+    widget.CurrentLayoutIcon(scale=0.65),
     separator(),
     widget.WindowName(**base(fg='focus'), fontsize=14, padding=5),
     separator(),
@@ -57,55 +58,49 @@ primary_widgets = [
 
     separator(),
 
-    powerline('color3', 'dark'),
 
-    widget.CPU(**base(bg='color3'), format='{freq_current}GHz/{freq_max}GHz'),
 
-    powerline('color4', 'color3'),
-
-    widget.Memory(**base(bg='color4'), visible_on_warn = False ),
-    powerline('color3', 'color4'),
-
-    widget.Net(**base(bg='color3'), format='{down}↓↑{up} '),
-
-    powerline('color4', 'color3'),
+    powerline('color4', 'dark'),
 
     icon(bg="color4", text=' '), # Icon: nf-fa-download
 
-    widget.CheckUpdates(**base(bg='color4'),
-        update_interval=60,
-        custom_comand='checkupdates',
-        display_format='{updates} ',
-        no_update_string="0",
-        colour_no_updates='#000000',
-        colour_have_updates='#000000'),
+    widget.CheckUpdates(**base(bg='color4'), update_interval=60, distro='Arch_checkupdates'),
 
     powerline('color2', 'color4'),
 
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
-
-    widget.CurrentLayout(**base(bg='color2'), padding=5),
+    widget.Volume(**base(bg='color2'), volume_app="pamixer"),
 
     powerline('color1', 'color2'),
 
-    widget.Clock(**base(bg='color1'), format=' %H:%M:%S  %d/%m/%Y'),
+    widget.Pomodoro(**base(bg='color1')),
+
+
+    powerline('color1', 'color2'),
+
+    widget.Clock(**base(bg='color1'), format=' %H:%M:%S'),
+
+    widget.Clock(**base(bg='color1'), format=' %d/%m/%Y'),
 
     powerline('dark', 'color1'),
+
+    widget.KeyboardLayout(**base(fg='color3', bg='dark'), configured_keyboards=['us', 'latam'], display_map={'us':'US', 'latam':'ES'}),
+
 
     widget.Systray(background=colors['dark'], padding=10),
 
 ]
 
+bottom_widgets = [
+    widget.Mpris2(**base(bg='color2'), objname='org.mpris.MediaPlayer2.Spotify'),
+    widget.Memory(**base(bg='color1'), visible_on_warn = False ),
+    widget.CPU(**base(bg='color3'), format='{load_percent}%'),
+    widget.Net(**base(bg='color2'))
+
+]
 secondary_widgets = [
-    *workspaces(),
 
-    separator(),
+    widget.Spacer(),
 
-    powerline('color1', 'dark'),
-
-    widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
-
-    widget.CurrentLayout(**base(bg='color1'), padding=5),
 ]
 
 widget_defaults = {

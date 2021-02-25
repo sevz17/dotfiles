@@ -1,17 +1,18 @@
-# Antonio Sarosi
-# https://youtube.com/c/antoniosarosi
-# https://github.com/antoniosarosi/dotfiles
-
 # Qtile keybindings
 
 from libqtile.config import Key
 from libqtile.command import lazy
-
+from libqtile import extension
 
 mod = "mod4"
 
+alt = "mod1"
+
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
+
+    ([alt], "Return", lazy.run_extension(extension.DmenuRun(font=None))),
+    ([alt, "shift"], "Return", lazy.run_extension(extension.Dmenu())),
 
     # Switch between windows in current stack pane
     ([mod], "j", lazy.layout.down()),
@@ -24,7 +25,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "h", lazy.layout.shrink()),
 
     # Toggle floating
-    ([mod, "shift"], "f", lazy.window.toggle_floating()),
+    ([mod, "control"], "f", lazy.window.toggle_floating()),
 
     # Move windows up or down in current stack
     ([mod, "shift"], "j", lazy.layout.shuffle_down()),
@@ -60,7 +61,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "e", lazy.spawn("pcmanfm")),
 
     # Terminal
-    ([mod], "Return", lazy.spawn("kitty")),
+    ([mod], "Return", lazy.spawn("alacritty")),
 
     # Redshift
     ([mod], "r", lazy.spawn("redshift -O 2400")),

@@ -1,18 +1,19 @@
-# Antonio Sarosi
-# https://youtube.com/c/antoniosarosi
-# https://github.com/antoniosarosi/dotfiles
-
 # Multimonitor support
 
 from libqtile.config import Screen
 from libqtile import bar
-from settings.widgets import primary_widgets, secondary_widgets
+from settings.widgets import primary_widgets, secondary_widgets, bottom_widgets
 import subprocess
 
 
-status_bar = lambda widgets: bar.Bar(widgets, 24, opacity=0.95)
+status_bar = lambda widgets: bar.Bar(widgets, 24, opacity=0.90)
 
-screens = [Screen(top=status_bar(primary_widgets))]
+screens = [
+    Screen(
+        top = status_bar(primary_widgets),
+        bottom=status_bar(bottom_widgets),
+    ),
+]
 
 connected_monitors = subprocess.run(
     "xrandr | grep 'connected' | cut -d ' ' -f 2",

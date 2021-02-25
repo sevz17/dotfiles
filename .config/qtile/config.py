@@ -1,11 +1,6 @@
 # Qtile Config File
 # http://www.qtile.org/
 
-# Antonio Sarosi
-# https://youtube.com/c/antoniosarosi
-# https://github.com/antoniosarosi/dotfiles
-
-
 from libqtile import hook
 
 from settings.keys import mod, keys
@@ -33,4 +28,5 @@ bring_front_click = False
 cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = 'urgent'
-wmname = 'Qtile'
+wmname = 'LG3D'
+

@@ -1,7 +1,3 @@
-# Antonio Sarosi
-# https://youtube.com/c/antoniosarosi
-# https://github.com/antoniosarosi/dotfiles
-
 # Theming for Qtile
 
 from os import path
@@ -9,7 +5,6 @@ import subprocess
 import json
 
 from settings.path import qtile_path
-
 
 def load_theme():
     theme = "dark-grey"
