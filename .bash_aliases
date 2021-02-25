@@ -14,6 +14,7 @@ alias droid="droidcam-cli -v -a adb 5000 &"
 
 #Miscelaneos
 alias igno="nvim .gitignore"
+alias conf="nvim config.h"
 alias cls="clear"
 alias server="cd /var/www/"
 alias ra="ranger"
@@ -26,7 +27,7 @@ alias clip="xclip -sel clip"
 alias fp="xclip -sel clip -o"
 
 #Xephyr
-alias xep1="Xephyr -br -ac -noreset -screen 1024x768 :1 &"
-alias xep2="Xephyr -br -ac -noreset -screen 1024x768 :2 &"
+alias xep1="Xephyr -br -ac -noreset -screen 1440x900 :1 &"
+alias xep2="Xephyr -br -ac -noreset -screen 1440x900 :2 &"
 alias d1="DISPLAY=:1"
 alias d2="DISPLAY=:2"
