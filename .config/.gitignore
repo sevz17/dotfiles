@@ -3,6 +3,7 @@
 !alacritty
 !.gitignore
 !kitty
+!wayfire.ini
 !nvim
 !openbox
 !neofetch
