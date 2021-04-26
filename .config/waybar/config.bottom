@@ -1,0 +1,71 @@
+// =============================================================================
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 21,
+
+    "modules-left": [
+        "custom/song",
+        "custom/arrow1"
+    ],
+    
+    "custom/song": {
+      "exec": "getsong",
+
+      //"interval": 1,
+      "format": "{}", // Icon: keyboard
+      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+      //"signal": 1, // SIGHUP
+      "tooltip": false
+     // "onclick":  
+    },
+
+    "custom/arrow1": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    }
+}

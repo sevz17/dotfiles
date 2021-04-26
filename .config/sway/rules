@@ -1,0 +1,25 @@
+#### Opacity
+# The opacity for the views in the current workspace are 0.9
+for_window [workspace="__focused__"] opacity 0.9
+
+### Rules (like dwm)
+
+## No workspace
+
+for_window [app_id="imv"] opacity 1.0
+
+for_window [app_id="Microsoft-edge-dev"] move container to workspace $ws1
+
+#for_window [app_id
+for_window [app_id="Alacritty"] opacity 1.0, move container to workspace $ws3
+for_window [app_id="kitty"] opacity 1.0, move container to workspace $ws3
+for_window [class="st-256color"] opacity 1.0, move container to workspace $ws3
+
+## move container to workspace $ws8
+for_window [class="Spotify"] move container to workspace $ws8
+
+
+
+for_window [title="WhatsApp"] move container to workspace $ws9
+
+

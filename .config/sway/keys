@@ -1,0 +1,191 @@
+## Note: The keys are in codes, the bind in the left is in qwerty
+
+### Windows
+#
+#Move your focus around
+
+# Switch between windows
+bindcode {
+    $mod+43 focus left   ## mod+h
+    $mod+46 focus right  ## mod+l
+
+    $mod+44 focus down   ## mod+j
+    $mod+45 focus up     ## mod+k
+}
+
+## Change window sizes
+# mod+r 
+bindcode $mod+27 mode "resize"
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+    bindcode {
+        # h
+        43 resize shrink width 10 px or 10 ppt
+        # l
+        46 resize grow width 10 px or 10 ppt
+        # j
+        44 resize shrink height 10 px or 10 ppt
+        # k
+        45 resize grow height 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        113 resize shrink width 10 px or 10 ppt
+        116 resize grow height 10 px or 10 ppt
+        111 resize shrink height 10 px or 10 ppt
+        114 resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r or q
+        24 mode "default"
+        36 mode "default"
+        9 mode "default"
+        $mod+27 mode "default"
+    }
+}
+
+bindcode {
+    # mod+f     toggle floating
+    $mod+Control+41 floating toggle
+
+    # mod+h     split in horizontal orientation
+    $mod+Control+43 split horizontal
+
+    # mod+l     split in vertical orientation
+    $mod+Control+46 split vertical
+
+    # mod+f change focus between tiling / floating windows
+    $mod+41 focus mode_toggle
+
+    ## In the future for toggle bars
+    # mod+alt+b
+    #$mod+Control+56 bar 1 
+    # mod+alt+b
+
+    # Move the focused window with the same, but add Shift
+    ## mod+shift+h
+    $mod+Shift+43 move left
+    ## mod+shift+j
+    $mod+Shift+44 move down
+    ## mod+shift+k
+    $mod+Shift+45 move up
+    ## mod+shift+l
+    $mod+Shift+46 move right
+
+    ## Cycle layouts
+    $mod+23 layout toggle split tabbed stacking
+
+	# Change opacity
+	$mod+Shift+86 opacity plus 0.1    ## mod+add
+	$mod+Shift+82 opacity minus 0.1   ## mod+substract
+
+    # Kill focused window
+    $mod+25 kill  ## mod+w
+
+	## shutdown computer
+    $alt+Control+119 exec systemctl poweroff  ## alt+ctrl+supr
+
+    ## Restart computer
+    $alt+Control+118 exec systemctl reboot ## alt+control+insert
+
+    ## Hibernate computer
+    $mod+Control+119 exec systemctl hibernate ## mod+ctrl+supr
+
+    ## Suspend computer
+    $mod+Control+118 exec systemctl suspend ## mod+ctrl+insert
+
+    # Launchers
+    $mod+58 exec $wofi              ## mod+m
+    $mod+135 exec $dmenu            ## mod+menu
+
+
+    # Start a terminal
+    $mod+36 exec $term  ## $mod+return
+    $mod+Shift+36 exec st ## mod+shift+return
+
+    # File explorers
+    $mod+26 exec pcmanfm-qt
+    $mod+Shift+26 exec thunar
+
+    # mod+[shift][ctrl]+b Start a browser
+    $mod+56 exec microsoft-edge-dev
+    $mod+Shift+56 exec firefox
+
+    # mod+[shift]+s Screenshot
+    $mod+Shift+39 exec grim -g "$(slurp)" - | swappy -f -
+    # mod+print Take a screenshot of all screen
+    $mod+107 exec grim - | swappy -f -
+
+
+    ## Music players
+    $mod+33 exec spotify
+
+    # Messengers
+    $mod+28 exec telegram-desktop
+
+    # Miscellaneous
+    $mod+40 exec droidcam
+    $mod+52 exec zoom
+
+
+    ### Hardware
+    ## mod+minus
+    $mod+20 exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+    ## mod+plus
+    $mod+21 exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+    ## mod+backspace
+    $mod+22 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
+    ## mpd
+    $mod+57 exec $term -e ncmpcpp
+    $mod+Shift+57 exec cantata
+
+
+    $mod+$alt+67 exec mpc prev
+    $mod+$alt+68 exec mpc toggle
+    $mod+$alt+69 exec mpc next
+    ## mod+minus
+    $mod+$alt+20 exec mpc volume -$volume_step
+    ## mod+minus
+    $mod+$alt+21 exec mpc volume +$volume_step
+    ## mod+minus
+    $mod+$alt+22 exec mpc toggleoutput 1
+
+
+    ## mod+minus
+    $alt+20 exec vol_spotify -$volume_step%
+    ## mod+plus
+    $alt+21 exec vol_spotify +$volume_step%
+    ## mod+backspace
+    $alt+22 exec vol_spotify toggle-mute
+
+    $mod+67 exec playerctl -p spotify,vlc,%any previous     ## mod+F1
+    $mod+68 exec playerctl -p spotify,vlc,%any play-pause   ## mod+F2
+    $mod+69 exec playerctl -p spotify,vlc,%any next         ## mod+F3
+
+
+
+    # mod+f     Make the current focus fullscreen
+    $mod+Shift+41 fullscreen toggle
+
+    $mod+60 exec clipman pick -t wofi --histpath="~/.cache/clipman.json"
+
+    $mod+Control+25 exec $wallpaper
+}
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    ## mod+ctrl+w
+#	bindcode $mod+Control+25 setwall random ~/Pictures/backgrounds/aether -c sway
+
+
+    # Swap focus between the tiling area and the floating area
+    #bindsym $mod+space focus mode_toggle
+
+#exec wl-paste -n -t text --watch clipman store --histpath="~/.cache/clipman.json" >> /tmp/clipman-log.txt 2>&1 &
+
+
