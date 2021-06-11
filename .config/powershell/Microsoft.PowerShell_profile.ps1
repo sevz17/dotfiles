@@ -38,6 +38,10 @@ Import-Module git-aliases -DisableNameChecking
 Import-Module PSReadLine
 Import-Module posh-git
 
+Set-PSReadLineOption -PredictionSource History
+$env:COMPLETION_SHELL_PREFERENCE = 'zsh'
+Import-UnixCompleters
+
 # PowerShell parameter completion shim for the dotnet CLI
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
     param($commandName, $wordToComplete, $cursorPosition)
