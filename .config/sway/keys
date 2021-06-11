@@ -158,11 +158,22 @@ bindcode {
     ## mod+backspace
     $alt+22 exec vol_spotify toggle-mute
 
-    $mod+67 exec playerctl -p spotify,vlc,%any previous     ## mod+F1
-    $mod+68 exec playerctl -p spotify,vlc,%any play-pause   ## mod+F2
-    $mod+69 exec playerctl -p spotify,vlc,%any next         ## mod+F3
+    #playerctl -p spotify,vlc,%any play-pause
+
+    ## alt+F1
+    $alt+67 exec playerctl --player=spotify previous
+    ## alt+F2
+    $alt+68 exec playerctl --player=spotify play-pause
+    ## alt+F3
+    $alt+69 exec playerctl --player=spotify next
 
 
+    ## mod+F1
+    $mod+67 exec playerctl --ignore-player=spotify previous
+    ## mod+F2
+    $mod+68 exec playerctl --ignore-player=spotify play-pause
+    ## mod+F3
+    $mod+69 exec playerctl --ignore-player=spotify next
 
     # mod+f     Make the current focus fullscreen
     $mod+Shift+41 fullscreen toggle
