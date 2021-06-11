@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/zsh/site-contrib/oh-my-zsh/
 
@@ -8,7 +5,7 @@ ZSH=/usr/share/zsh/site-contrib/oh-my-zsh/
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [[ $TTY == "/dev/tty"? ]]; then
+if [[ $TERM == "linux" || $TTY == "/dev/tty"? ]]; then
   ZSH_THEME="daveverwer"
 else
   ZSH_THEME="agnoster"
@@ -64,7 +61,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="%d/%m/%Y"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -74,19 +71,15 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-machine tmux ufw dotnet zsh_reload sudo systemd gitignore)
+plugins=(git docker docker-machine tmux ufw dotnet zsh_reload sudo zsh-autopair fast-syntax-highlighting)
 
+source /etc/profile
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+
 # User configuration
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 GOPATH=$HOME/go
 function _update_ps1() {
@@ -101,12 +94,19 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
 fi
 
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
+fi
+
+ZSH_TMUX_AUTOSTART_ONCE="false"
+ZSH_TMUX_AUTOSTART="true"
+
+if [[ -z $TMUX && $TTY != "/dev/tty2" ]]; then
+  tmux
 fi
