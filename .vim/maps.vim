@@ -12,8 +12,6 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :x<CR>
 " Abre otra pestaña
 nnoremap <Leader>+ :tabe 
-" Cierra una pestaña
-nnoremap <C-w> :tabclose<CR>
 
 " testing
 nnoremap <Leader>t :TestNearest<CR>
