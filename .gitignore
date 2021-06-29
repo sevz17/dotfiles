@@ -2,14 +2,10 @@
 
 !.config
 !.vimrc
-!.xprofile
 !.aliases
-!.bashrc
 !.gitignore
 !.gitmodules
-!.oh-my-zsh
 !.zshrc
 !.vim/maps.vim
 !.vim/plugin-config.vim
 !.vim/plugins.vim
-!Instalacion.sh
