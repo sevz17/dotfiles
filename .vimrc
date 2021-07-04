@@ -1,11 +1,9 @@
 set number
 set mouse=a
 set numberwidth=1
-set clipboard=unnamed
 syntax enable
 set showcmd
 set ruler
-set foldmethod=syntax
 set cursorline
 set encoding=utf-8
 set showmatch
@@ -13,13 +11,13 @@ set shiftwidth=4
 set tabstop=4
 set autoindent
 set smartindent
+set autoread
+set fsync
 set nocompatible
 set relativenumber
 set noshowmode
 set nobackup
 set autoindent
-set paste
-"set expandtab
 setlocal spell spelllang=es
 filetype plugin on
 
