@@ -9,8 +9,10 @@ set foldmethod=syntax
 set cursorline
 set encoding=utf-8
 set showmatch
-set sw=4
-set ts=4
+set shiftwidth=4
+set tabstop=4
+set autoindent
+set smartindent
 set nocompatible
 set relativenumber
 set noshowmode
