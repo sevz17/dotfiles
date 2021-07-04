@@ -1,27 +1,10 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-$TTY = tty
-
-if ($TTY -like "/dev/tty?")
+if ($(tty) -eq "/dev/tty1")
 {
-    if ($TTY -eq "/dev/tty1" -or $TTY -eq "/dev/tty2")
-    {
-
-        $env:_JAVA_AWT_WM_NONREPARENTING=1
-        $env:QT_STYLE_OVERRIDE="kvantum-dark"
-        if ($TTY -eq "/dev/tty1")
-        {
-            $env:XDG_CURRENT_DESKTOP=dwl
-            dwl -s dwlstart | ~/dwlwrapper.sh
-        }
-        elseif ($TTY -eq "/dev/tty2")
-        {
-            $env:XDG_CURRENT_DESKTOP=sway
-            sway
-        }
-#        [Environment]::Exit(0)
-    }
+    $env:XDG_CURRENT_DESKTOP=dwl
+    startdwl
     Set-PoshPrompt -Theme zash
 }
 else
