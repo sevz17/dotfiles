@@ -21,10 +21,9 @@ set paste
 setlocal spell spelllang=es
 filetype plugin on
 
-so ~/.vim/plugins.vim
-so ~/.vim/maps.vim
-so ~/.vim/plugin-config.vim
-
+source ~/.vim/plugins.vim
+source ~/.vim/maps.vim
+source ~/.vim/plugin-config.vim
 
 "Searching 
 
