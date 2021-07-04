@@ -29,11 +29,6 @@ else
     Set-PoshPrompt -Theme slimfat
 }    
 
-if ((Get-Uptime).TotalMinutes -lt 5)
-{
-    neofetch
-}
-
 Import-Module git-aliases -DisableNameChecking
 Import-Module PSReadLine
 Import-Module posh-git
