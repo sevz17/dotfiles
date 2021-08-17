@@ -75,7 +75,7 @@ plugins=(git docker docker-machine tmux ufw dotnet zsh_reload sudo zsh-autopair 
 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+source /usr/share/zsh/site-contrib/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 zstyle ':completion:*:*:docker:*' option-stacking yes
