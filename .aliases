@@ -12,6 +12,10 @@ alias igno="nvim .gitignore"
 alias cls="clear"
 alias ra="ranger"
 
+alias shutdown="sudo shutdown"
+alias reboot="sudo reboot"
+alias halt="sudo halt"
+
 #Navegador
 alias edge="microsoft-edge-dev"
 
