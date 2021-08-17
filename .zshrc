@@ -92,6 +92,9 @@ if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
 
+function get_resume_offset() {
+  echo $(($(sudo btrfs_map_physical /swapfile | awk '{ if ( NR == 2) { print $9; exit 0 } }')/$(getconf PAGESIZE)))
+}
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [ ! -d "${ZSH_CACHE_DIR}" ]; then
