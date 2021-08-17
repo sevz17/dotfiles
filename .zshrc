@@ -5,7 +5,7 @@ ZSH=/usr/share/zsh/site-contrib/oh-my-zsh/
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [[ $TERM == "linux" || $TTY == "/dev/tty"? ]]; then
+if [ "${TERM}" = "linux" ]; then
   ZSH_THEME="daveverwer"
 else
   ZSH_THEME="agnoster"
@@ -94,13 +94,13 @@ fi
 
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
+if [ ! -d "${ZSH_CACHE_DIR}" ]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
 ZSH_TMUX_AUTOSTART_ONCE="false"
 ZSH_TMUX_AUTOSTART="true"
 
-if [[ -z $TMUX && $TTY != "/dev/tty2" ]]; then
+if [ -z "${TMUX}" ] && [ "$(tty)" != "/dev/tty2" ]; then
   tmux
 fi
