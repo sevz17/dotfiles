@@ -37,4 +37,7 @@ Plug 'scrooloose/nerdcommenter'
 " git
 Plug 'tpope/vim-fugitive'
 
+" if forgot open with permisions
+Plug 'lambdalisue/suda.vim'
+
 call plug#end()
