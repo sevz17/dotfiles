@@ -71,7 +71,7 @@ HIST_STAMPS="%d/%m/%Y"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-machine tmux ufw dotnet zsh_reload sudo zsh-autopair fast-syntax-highlighting)
+plugins=(git docker docker-machine tmux extract ufw dotnet zsh_reload sudo zsh-autopair fast-syntax-highlighting)
 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
