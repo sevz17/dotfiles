@@ -12,6 +12,8 @@ alias igno="nvim .gitignore"
 alias cls="clear"
 alias ra="ranger"
 
+alias _emerge="sudo elogind-inhibit emerge"
+
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 alias halt="sudo halt"
