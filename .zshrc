@@ -80,6 +80,7 @@ source /usr/share/zsh/site-contrib/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':completion:*' rehash true
 
 GOPATH=$HOME/go
 
