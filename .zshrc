@@ -81,6 +81,8 @@ source /usr/share/zsh/site-contrib/zsh-autosuggestions/zsh-autosuggestions.zsh
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 zstyle ':completion:*' rehash true
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
 
 GOPATH=$HOME/go
 
