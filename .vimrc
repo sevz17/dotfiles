@@ -20,6 +20,7 @@ set nobackup
 set autoindent
 setlocal spell spelllang=es
 filetype plugin on
+filetype plugin indent on
 
 source ~/.vim/plugins.vim
 source ~/.vim/maps.vim
