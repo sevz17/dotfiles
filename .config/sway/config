@@ -29,11 +29,8 @@ set $alt Mod1
 
 
 ### Autostart
-exec redshift
-#exec nm-applet --indicator &
-#exec fcitx5 -d -s 2 --replace
-exec udiskie -s &
-#exec mako &
+exec redshift -m wayland
+#exec udiskie -s &
 
 #firefox screen capture indicator
 #for_window [app_id="firefox" title=".Sharing Indicator."] floating enable; sticky enable;
@@ -71,7 +68,7 @@ input "type:pointer" {
     pointer_accel 0.0
 }
 # Hide the cursor after one second
-seat * hide_cursor 1000
+#seat * hide_cursor 1000
 
 
 ### Fonts
