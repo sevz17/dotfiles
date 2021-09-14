@@ -17,7 +17,7 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [ "${TERM}" = "linux" ]; then
+if [ "${TERM}" = "linux" ] || [ "${TERM}" = "tmux" ] || [ "${TERM}" = "screen" ]; then
   ZSH_THEME="daveverwer"
 else
   ZSH_THEME="agnoster"
