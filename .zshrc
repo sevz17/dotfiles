@@ -1,6 +1,18 @@
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/zsh/site-contrib/oh-my-zsh/
 
+autoload -Uz compinit
+compinit
+
+source $ZSH/plugins/tmux/tmux.plugin.zsh
+
+ZSH_TMUX_AUTOSTART_ONCE="false"
+ZSH_TMUX_AUTOSTART="true"
+
+if [ -z "${TMUX}" ] && [ "$(tty)" != "/dev/tty2" ]; then
+  tmux
+fi
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -71,7 +83,7 @@ HIST_STAMPS="%d/%m/%Y"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cargo dotnet fast-syntax-highlighting git sudo tmux zsh-autopair zsh_reload )
+plugins=(cargo dotnet fast-syntax-highlighting git sudo zsh-autopair zsh_reload )
 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
@@ -100,11 +112,4 @@ function get_resume_offset() {
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [ ! -d "${ZSH_CACHE_DIR}" ]; then
   mkdir $ZSH_CACHE_DIR
-fi
-
-ZSH_TMUX_AUTOSTART_ONCE="false"
-ZSH_TMUX_AUTOSTART="true"
-
-if [ -z "${TMUX}" ] && [ "$(tty)" != "/dev/tty2" ]; then
-  tmux
 fi
