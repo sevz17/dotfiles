@@ -71,15 +71,13 @@ HIST_STAMPS="%d/%m/%Y"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cargo rust git docker docker-machine tmux extract ufw dotnet zsh_reload sudo zsh-autopair fast-syntax-highlighting)
+plugins=(cargo dotnet fast-syntax-highlighting git sudo tmux zsh-autopair zsh_reload )
 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/site-contrib/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
 zstyle ':completion:*' rehash true
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
