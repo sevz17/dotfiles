@@ -1,28 +1,8 @@
-#Configuraciones
-alias zshconfig="nvim ~/.zshrc"
-alias vimconfig="nvim ~/.vimrc"
-alias bashconfig="nvim ~/.bashrc"
-alias configalias="nvim ~/.aliases"
-alias mapconfig="nvim ~/.vim/maps.vim"
-alias plugins="nvim ~/.vim/plugins.vim"
-alias plugsconfig="nvim ~/.vim/plugin-config.vim"
-
-#Miscelaneos
-alias igno="nvim .gitignore"
-alias cls="clear"
-alias ra="ranger"
-
-alias _emerge="sudo elogind-inhibit emerge"
+alias eemerge="sudo elogind-inhibit emerge"
 
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
-alias halt="sudo halt"
 
-#Navegador
-alias edge="microsoft-edge-dev"
-
-#Xephyr
-alias xep1="Xephyr -br -ac -noreset -screen 1440x900 :1 &"
-alias xep2="Xephyr -br -ac -noreset -screen 1440x900 :2 &"
-alias d1="DISPLAY=:1"
-alias d2="DISPLAY=:2"
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+alias ip="ip -color=auto"
