@@ -92,3 +92,6 @@ function get_resume_offset() {
   echo $(($(sudo btrfs_map_physical /swapfile | awk '{ if ( NR == 2) { print $9; exit 0 } }')/$(getconf PAGESIZE)))
 }
 
+exit_zsh() { exit }
+zle -N exit_zsh
+bindkey '^D' exit_zsh
