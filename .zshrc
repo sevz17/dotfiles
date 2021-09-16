@@ -13,16 +13,6 @@ if [ -z "${TMUX}" ] && [ "$(tty)" != "/dev/tty2" ]; then
   tmux
 fi
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-if [ "${TERM}" = "linux" ] || [ "${TERM}" = "tmux" ] || [ "${TERM}" = "screen" ]; then
-  ZSH_THEME="daveverwer"
-else
-  ZSH_THEME="agnoster"
-fi
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -88,6 +78,7 @@ plugins=(cargo dotnet fast-syntax-highlighting git sudo zsh-autopair zsh_reload 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/site-contrib/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/site-contrib/zsh-silver/silver.plugin.zsh
 
 # User configuration
 zstyle ':completion:*' rehash true
