@@ -67,7 +67,7 @@ ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cargo dotnet fast-syntax-highlighting git sudo zsh-autopair zsh_reload )
+plugins=(cargo dotnet git sudo zsh-autopair fast-syntax-highlighting zsh_reload )
 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
