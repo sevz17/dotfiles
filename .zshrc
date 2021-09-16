@@ -68,6 +68,8 @@ HIST_STAMPS="%d/%m/%Y"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -100,7 +102,3 @@ function get_resume_offset() {
   echo $(($(sudo btrfs_map_physical /swapfile | awk '{ if ( NR == 2) { print $9; exit 0 } }')/$(getconf PAGESIZE)))
 }
 
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [ ! -d "${ZSH_CACHE_DIR}" ]; then
-  mkdir $ZSH_CACHE_DIR
-fi
