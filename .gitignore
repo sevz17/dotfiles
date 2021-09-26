@@ -6,6 +6,4 @@
 !.gitignore
 !.gitmodules
 !.zshrc
-!.vim/maps.vim
-!.vim/plugin-config.vim
-!.vim/plugins.vim
+!.vim
