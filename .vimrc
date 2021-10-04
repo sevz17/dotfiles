@@ -39,5 +39,4 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'csv.vim'
 
-colorscheme goldenrod
-hi Normal guibg=NONE ctermbg=NONE
+colorscheme Atelier_ForestDark

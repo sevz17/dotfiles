@@ -38,9 +38,6 @@ map <Leader>l :tabnext<cr>
 " buffers
 map <Leader>ob :Buffers<cr>
 
-map <Leader>C :Colors<cr>
-
-
 " faster scrolling
 nnoremap <silent> <C-e> 10<C-e>
 nnoremap <silent> <C-y> 10<C-y>
