@@ -1,5 +1,7 @@
 alias eemerge="sudo elogind-inhibit emerge"
 
+alias src="omz reload"
+
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 
