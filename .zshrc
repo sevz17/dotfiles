@@ -1,18 +1,6 @@
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/zsh/site-contrib/oh-my-zsh/
 
-autoload -Uz compinit
-compinit
-
-source $ZSH/plugins/tmux/tmux.plugin.zsh
-
-ZSH_TMUX_AUTOSTART_ONCE="false"
-ZSH_TMUX_AUTOSTART="true"
-
-if [ -z "${TMUX}" ] && [ "$(tty)" != "/dev/tty2" ]; then
-  tmux
-fi
-
 # Use hyphen-insensitive completion.
 HYPHEN_INSENSITIVE="true"
 
