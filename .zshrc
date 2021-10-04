@@ -90,3 +90,5 @@ if [[ "${TERM}" == (Eterm*|alacritty*|aterm*|gnome*|konsole*|kterm*|putty*|rxvt*
 	add-zsh-hook -Uz precmd xterm_title_precmd
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
