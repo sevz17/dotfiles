@@ -2,8 +2,6 @@
 let mapleader=" "
 " Abre la busqueda de easymotion
 nmap <Leader>s <Plug>(easymotion-s2)
-" Abre el arbol de NerdTree
-nmap <Leader>nt :NERDTreeFind<CR>
 " Guarda
 nnoremap <Leader>w :w<CR>
 " Cierra
@@ -12,11 +10,6 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>x :x<CR>
 " Abre otra pestaña
 nnoremap <Leader>+ :tabe 
-
-" testing
-nnoremap <Leader>t :TestNearest<CR>
-nnoremap <Leader>T :TestFile<CR>
-nnoremap <Leader>TT :TestSuite<CR>
 
 " split resize
 nnoremap <Leader>> 10<C-w>>
@@ -44,6 +37,8 @@ map <Leader>l :tabnext<cr>
 
 " buffers
 map <Leader>ob :Buffers<cr>
+
+map <Leader>C :Colors<cr>
 
 
 " faster scrolling
