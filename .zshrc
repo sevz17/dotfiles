@@ -29,6 +29,17 @@ source /usr/share/zsh/site-contrib/zsh-silver/silver.plugin.zsh
 
 # User configuration
 zstyle ':completion:*' rehash true
+zstyle ':completion::complete:*' use-cache 1
+zstyle -e ':completion:*:hosts' hosts 'reply=(
+  ${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//,/ }
+  ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
+)'
+# Highlight matching part of available completions
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' list-colors  'reply=( "=(#b)(*$PREFIX)(?)*=00=$color[green]=$color[bg-green]" )'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %P Lines: %m
+zstyle ':completion:*:corrections' format $'%{\e[0;31m%}%d (errors: %e)%}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 
@@ -45,3 +56,17 @@ function get_resume_offset() {
 exit_zsh() { exit }
 zle -N exit_zsh
 bindkey '^D' exit_zsh
+
+# complete . and .. special directories
+zstyle ':completion:*' special-dirs true
+
+# don't complete backup files as executables
+zstyle ':completion:*:complete:-command-::commands' ignored-patterns '*\~'
+
+# Prevent CVS files/directories from being completed:
+zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
+zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
+
+# ... unless we really want to.
+zstyle '*' single-ignored show
+
