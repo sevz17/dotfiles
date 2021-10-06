@@ -44,6 +44,7 @@ cmd('filetype plugin indent on')
 require('maps')
 require('plugins')
 require('plugin-config')
+require('lsp-servers')
 
 set.hlsearch   = true  -- Highlight matches
 set.incsearch  = true  -- Incremental searching

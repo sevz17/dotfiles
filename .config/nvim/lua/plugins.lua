@@ -13,8 +13,6 @@ return require('packer').startup(function()
 
 	use 'jiangmiao/auto-pairs' -- Typing
 
-	use { 'neoclide/coc.nvim', branch = 'release' }
-
 	-- IDE
 	use 'easymotion/vim-easymotion'
 	use 'preservim/nerdcommenter'
@@ -26,13 +24,8 @@ return require('packer').startup(function()
 	-- Collection of common configurations for the Nvim LSP client
 	use 'neovim/nvim-lspconfig'
 
-	-- Extensions to built-in LSP, for example, providing type inlay hints
-	use 'nvim-lua/lsp_extensions.nvim'
-
-	-- Autocompletion framework for built-in LSP
-	use 'nvim-lua/completion-nvim'
-
-	use { 'autozimu/LanguageClient-neovim', run = ':UpdateRemotePlugins' }
-
-
+	use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	use 'L3MON4D3/LuaSnip' -- Snippets plugin
 end)
