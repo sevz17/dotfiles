@@ -53,4 +53,12 @@ set.smartcase  = true  -- ... unless they contain at least one capital letter
 
 set.laststatus = 2
 
-cmd('colorscheme Atelier_ForestDark')
+local openPop = assert(io.popen('tput colors', 'r'))
+colors = tonumber(openPop:read('*all'))
+openPop:close()
+
+if (colors == 256) then
+	cmd('colorscheme Atelier_ForestDark')
+else
+	cmd('colorscheme solarized8_dark')
+end
