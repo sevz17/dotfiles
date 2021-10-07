@@ -2,23 +2,13 @@ local set = vim.o
 local gset = vim.g
 local cmd = vim.cmd
 local vexec = vim.fn
-
+local luasnip = require('luasnip')
+local cmp = require('cmp')
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true, silent = true }
 
-gset.NERDTreeShowHidden = true
-gset.NERDTreeQuitOnOpen = true
-gset.NERDTreeAutoDeleteBuffer = true
-gset.NERDTreeMinimalUI = true
-gset.NERDTreeDirArrows = true
-gset.NERDTreeShowLineNumbers = true
-gset.NERDTreeMapOpenInTab = '\t'
-
 cmd('autocmd FileType scss setl iskeyword+=@-@')
 cmd('autocmd BufReadPost *.rs setlocal filetype=rust')
-
-local luasnip = require('luasnip')
-local cmp = require('cmp')
 
 local check_back_space = function()
     local col = vim.fn.col '.' - 1
@@ -68,3 +58,20 @@ cmp.setup {
 		{ name = 'luasnip' },
 	},
 }
+
+require'hop'.setup { keys = 'aoeuidrtnszvwmb-qjk', set_seq_bias = 0.5 }
+
+local actions = require('telescope.actions')
+require('telescope').setup({
+	defaults = {
+		mappings = {
+			i = { ['<ESC>'] = actions.close },
+		},
+		layout_config = {
+			horizontal = {
+				width = 0.9,
+				preview_width = 0.6,
+			}
+		},
+	}
+})

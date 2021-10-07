@@ -3,21 +3,21 @@ return require('packer').startup(function()
 
 	use 'sheerun/vim-polyglot' -- Syntax
 
-	-- Status Bar
-	--use 'maximbaz/lightline-ale'
-	--use 'itchyny/lightline.vim'
-
-	-- Themes
-	use 'flazz/vim-colorschemes'
---	use 'vim-airline/vim-airline'
+	use 'flazz/vim-colorschemes' -- Themes
 
 	use 'jiangmiao/auto-pairs' -- Typing
 
 	-- IDE
-	use 'easymotion/vim-easymotion'
 	use 'preservim/nerdcommenter'
-	use 'scrooloose/nerdtree'
-	use 'junegunn/fzf.vim'
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { 'nvim-lua/plenary.nvim' }
+	}
+
+	use {
+		'phaazon/hop.nvim',
+		as = 'hop'
+	}
 
 	use 'lambdalisue/suda.vim' -- If forgot open with permisions
 
