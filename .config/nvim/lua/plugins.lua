@@ -19,6 +19,11 @@ return require('packer').startup(function()
 		as = 'hop'
 	}
 
+	use {
+		'lewis6991/gitsigns.nvim',
+		requires = { 'nvim-lua/plenary.nvim' }
+	}
+
 	use 'lambdalisue/suda.vim' -- If forgot open with permisions
 
 	-- Collection of common configurations for the Nvim LSP client
