@@ -24,6 +24,8 @@ return require('packer').startup(function()
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
 
+	use 'kyazdani42/nvim-web-devicons'
+
 	use 'lambdalisue/suda.vim' -- If forgot open with permisions
 
 	-- Collection of common configurations for the Nvim LSP client

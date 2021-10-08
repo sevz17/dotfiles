@@ -45,6 +45,7 @@ require('maps')
 require('plugins')
 require('plugin-config')
 require('lsp-servers')
+require('statusline')
 
 set.hlsearch   = true  -- Highlight matches
 set.incsearch  = true  -- Incremental searching
