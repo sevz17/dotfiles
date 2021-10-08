@@ -1,0 +1,42 @@
+[icons]
+# git
+modified= "\u00B1" # ±
+# status
+failed = "\u2717" # ✗
+
+[[left]]
+name = "status"
+color.background = "black"
+color.foreground = "white"
+
+[[left]]
+name = "os"
+color.foreground = "magenta"
+color.background = "black"
+
+[[left]]
+name = "user"
+color.background = "black"
+color.foreground = "white"
+
+[[left]]
+name = "dir"
+color.background = "blue"
+color.foreground = "black"
+[dir.aliases]
+"~" = "~"
+
+[[left]]
+name = "git"
+color.background = "green"
+color.foreground = "black"
+
+[[right]]
+name = "cmdtime"
+color.background = "green"
+color.foreground = "black"
+
+[[right]]
+name = "time"
+color.background = "blue"
+color.foreground = "black"
