@@ -4,35 +4,18 @@ local cmd = vim.cmd
 
 local M = {}
 
--- possible values are 'arrow' | 'rounded' | 'blank'
-local active_sep = 'arrow'
-
--- change them if you want to different separator
-M.separators = {
-	arrow = { '', '' },
-	rounded = { '', '' },
-	blank = { '', '' },
-}
-
 -- highlight groups
 M.colors = {
 	active        = '%#StatusLine#',
 	inactive      = '%#StatuslineNC#',
 	mode          = '%#Mode#',
-	mode_alt      = '%#ModeAlt#',
 	git           = '%#Git#',
-	git_alt       = '%#GitAlt#',
 	file          = '%#File#',
 	lsp           = '%#Lsp#',
-	lsp_alt       = '%#LspAlt#',
 	filetype      = '%#Filetype#',
-	filetype_alt  = '%#FiletypeAlt#',
 	line_col      = '%#LineCol#',
-	line_col_alt  = '%#LineColAlt#',
 	perc          = '%#Percentage#',
-	perc_alt      = '%#PercentageAlt#',
 	char          = '%#Char#',
-	char_alt      = '%#CharAlt#',
 }
 
 M.trunc_width = setmetatable({
@@ -155,38 +138,24 @@ M.set_active = function(self)
 	local colors = self.colors
 
 	cmd('hi Mode ctermfg=Black ctermbg=Yellow')
-	cmd('hi ModeAlt ctermfg=Yellow ctermbg=DarkGray')
 	cmd('hi Git ctermfg=Black ctermbg=DarkGray')
-	cmd('hi GitAlt ctermfg=DarkGray')
 	cmd('hi File ctermfg=DarkGray')
-	cmd('hi LspAlt ctermfg=LightMagenta')
 	cmd('hi Lsp ctermbg=LightMagenta ctermfg=Black')
-	cmd('hi FileTypeAlt ctermbg=LightMagenta ctermfg=LightBlue')
 	cmd('hi FileType ctermbg=LightBlue ctermfg=Black')
-	cmd('hi LineColAlt ctermbg=LightBlue ctermfg=DarkBlue')
 	cmd('hi LineCol ctermbg=DarkBlue ctermfg=Black')
-	cmd('hi PercentageAlt ctermbg=DarkBlue ctermfg=Red')
 	cmd('hi Percentage ctermbg=Red ctermfg=White')
-	cmd('hi CharAlt ctermbg=Red ctermfg=Yellow')
 	cmd('hi Char ctermbg=Yellow ctermfg=Black')
 
 	return table.concat({
 		colors.active,
 		colors.mode .. self:get_current_mode(),
-		colors.mode_alt .. self.separators[active_sep][1],
 		colors.git .. self:get_git_status(),
-		colors.git_alt .. self.separators[active_sep][1],
 		colors.file .. self:get_filename(),
 		'%=',
-		colors.lsp_alt .. self.separators[active_sep][2],
 		colors.lsp .. self:get_lsp_diagnostic(),
-		colors.filetype_alt .. self.separators[active_sep][2],
 		colors.filetype .. self:get_filetype(),
-		colors.line_col_alt .. self.separators[active_sep][2],
 		colors.line_col .. self:get_line_col(),
-		colors.perc_alt .. self.separators[active_sep][2],
 		colors.perc .. ' %p%% ',
-		colors.char_alt .. self.separators[active_sep][2],
 		colors.char .. self:get_character(),
 	})
 end
@@ -197,9 +166,8 @@ end
 
 M.set_explorer = function(self)
 	local title = self.colors.mode .. ' 	'
-	local title_alt = self.colors.mode_alt .. self.separators[active_sep][2]
 
-	return table.concat({ self.colors.active, title, title_alt })
+	return table.concat({ self.colors.active, title })
 end
 
 Statusline = setmetatable(M, {
