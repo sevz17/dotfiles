@@ -80,11 +80,12 @@ client.focused #6000ff #6000ff #ffffff #7e30ff
 ### Keys
 # Note: the comments next to the shortcuts are in qwerty distribution
 
+include ./define-keys
 bindcode {
-    # mod+ctrl+q    reload the configuration file
-    $mod+Control+27 reload
-    # mod+ctrl+r    exit sway (it will not ask you for confirmation
-    $mod+Control+24 exit
+    # Reload the configuration file
+    $mod+Control+$Key_r reload
+    # Exit sway (it will not ask you for confirmation)
+    $mod+Control+$Key_q exit
 }
 include keys
 
