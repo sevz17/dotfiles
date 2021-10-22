@@ -5,11 +5,11 @@
     margin: 0;
     padding: 0;
     font-family: UbuntuMono Nerd Font;
-    font-size: 14pt;
+    font-size: 13pt;
 }
 
 #waybar {
-    background: #222222;
+    background: #111111;
     color: #eeeeee;
 }
 
