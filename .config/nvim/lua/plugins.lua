@@ -7,6 +7,8 @@ return require('packer').startup(function()
 
 	use 'jiangmiao/auto-pairs' -- Typing
 
+	use 'gentoo/gentoo-syntax'
+
 	-- IDE
 	use 'preservim/nerdcommenter'
 	use {
