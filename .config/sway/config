@@ -1,3 +1,5 @@
+# vi: filetype=swayconfig
+
 #### Very important, do not put comments in the same line of a 
 #configuration, or otherwise not work
 ### Variables
@@ -14,14 +16,10 @@ gaps outer -6
 set $volume_step 2
 
 # Terminal emulator
-set $term foot
+set $term foot runtmux
 
 # Launcher
-set $dmenu dmenu_path | dmenu | xargs swaymsg exec --
-#set $wofi wofi --show=drun --lines=5 --prompt="" | xargs swaymsg exec --
-#set $dmenu bemenu-run --prompt="" --list=15 --no-overlap --scrollbar=always --wrap --ignorecase
-set $wofi wofi --show=drun --lines=10 --allow-images #  --prompt=""
-#set $wofi_nav swaymsg -t get tree | jq -r '.nodes[].nodes[] | if .nodes then [recurse(.nodes[])] else [] end + .floating_nodes | .[] | select(.nodes==[]) | ((id | tostring)) + "" + name)' | wofi --show dmenu | { read -r id name swaymsg "[con_id=$id]" focus } 
+set $menu bemenu-run --ignorecase --no-overlap --list=15 --scrollbar=autohide --prompt="->"
 
 # Modifiers
 set $mod Mod4
@@ -30,28 +28,23 @@ set $alt Mod1
 
 ### Autostart
 exec redshift -m wayland
+exec pipewire
 #exec udiskie -s &
-
-#firefox screen capture indicator
-#for_window [app_id="firefox" title=".Sharing Indicator."] floating enable; sticky enable;
-#for_window [floating] floating_maximum_size 800 x 600
 
 ### Output configuration
 # The path of you wallpapers
-#set $wallpaper `find -L /usr/share/backgrounds type f | shuf -n 1`
-
-# Default wallpaper
-#set $wallpaper `chbg --random`
-exec_always chbg --random
-#output * bg $wallpaper fill
-
+set $wallpaper `chbg --print`
+output * bg $wallpaper fill
 
 ### Idle configuration
 exec swayidle -w \
-    timeout 900 'swaymsg "output * dpms off"' \
+    timeout 600 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
-    timeout 1200 'systemctl suspend-then-hibernate'
+    timeout 900 'swaylock --daemonize --image "$(chbg --print)" --scaling fill' \
+	timeout 1200 'loginctl suspend-then-hibernate' \
+        resume 'swaymsg "output * dpms on"'
 
+seat * hide_cursor 60000
 
 ### Input configuration
 input "type:keyboard" {
@@ -67,19 +60,12 @@ input "type:pointer" {
     dwt disabled
     pointer_accel 0.0
 }
-# Hide the cursor after one second
-#seat * hide_cursor 1000
-
 
 ### Fonts
-
 font pango:Caskaydia Cove Nerd Font 14
 client.focused #6000ff #6000ff #ffffff #7e30ff
 
-
 ### Keys
-# Note: the comments next to the shortcuts are in qwerty distribution
-
 include ./define-keys
 bindcode {
     # Reload the configuration file
@@ -87,22 +73,21 @@ bindcode {
     # Exit sway (it will not ask you for confirmation)
     $mod+Control+$Key_q exit
 }
-include keys
+include ./keys
 
 ### Rules (like dwm)
-include rules
+include ./rules
 
 ### Workspaces
-include workspaces
+include ./workspaces
 
 ### Bar
 bar {
+    id 0
     swaybar_command waybar
 }
 
-#bar {
-#    swaybar_command waybar -c $HOME/.config/waybar/config.bottom
-#}
-
-# Others
-include /etc/sway/config.d/*
+bar {
+    id 1
+    swaybar_command waybar-bottom
+}
