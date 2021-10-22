@@ -63,6 +63,7 @@
 
     "pulseaudio": {
         "scroll-step": 2,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "format": "{icon} {volume}%",
         "format-muted": "{volume}% ﱝ",
         "format-icons": {
@@ -76,6 +77,8 @@
     },
 
     "tray": {
-        "icon-size": 20
+        "icon-size": 20,
+        "spacing": 5,
+        "show-passive-items": true
     }
 }

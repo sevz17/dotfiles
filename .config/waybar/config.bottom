@@ -19,6 +19,8 @@
     "custom/song": {
         "tooltip": false,
         "exec": "getsong",
+        "exec-on-event": false,
+        "on-click": "playerctl play-pause",
         "interval": 1
     },
 
@@ -30,7 +32,7 @@
 
     "custom/avg": {
         "tooltip": false,
-        "exec": "cat /proc/loadavg | awk '{ print $1\" \"$2\" \"$3 }'",
+        "exec": "awk '{ print $1\" \"$2\" \"$3 }' /proc/loadavg",
         "format": "Avg: {}",
         "interval": 1
     },
@@ -51,6 +53,6 @@
     "network": {
         "tooltip": false,
         "interval": 1,
-        "format": "Net: {bandwidthDownBits} 🠕🠗 {bandwidthUpBits}"
+        "format": "Net: {bandwidthDownBits} 🠗🠕 {bandwidthUpBits}"
     }
 }
