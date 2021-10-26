@@ -15,7 +15,7 @@ if not nvim_lsp.lua_lsp then
   }
 end
 
-local servers = { 'rls', 'clangd', 'bashls', 'csharp_ls', 'lua_lsp' }
+local servers = { 'rls', 'clangd', 'bashls', 'csharp_ls', 'lua_lsp', 'pylsp' }
 
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
