@@ -20,7 +20,7 @@ ZSH_CACHE_DIR=$HOME/.cache/zsh
 
 # Which plugins would you like to load?
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cargo dotnet git sudo tmux zsh-autopair fast-syntax-highlighting )
+plugins=( autojump cargo dotnet git sudo tmux zsh-autopair fast-syntax-highlighting )
 
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
