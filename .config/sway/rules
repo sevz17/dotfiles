@@ -1,5 +1,7 @@
 # vi: filetype=swayconfig
-### Rules (like dwm)
+
+for_window [class="MEGAsync"] floating enable
+for_window [title="MEGAsync"] floating enable
 
 for_window [title="Firefox — Sharing Indicator"] floating enable, inhibit_idle open
 
@@ -10,7 +12,6 @@ for_window [app_id="Alacritty"] move container to workspace $ws3
 for_window [app_id="foot"] move container to workspace $ws3
 
 for_window [app_id="zathura"] move container to workspace $ws5
-for_window [class="MEGAsync"] floating enable, move container to workspace $ws5
 
 for_window [app_id="zoom"] move container to workspace $ws7, floating enable
 for_window [app_id="zoom" title="Zoom Meeting"] floating disable, inhibit_idle focus
