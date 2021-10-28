@@ -1,3 +1,5 @@
+-- vi: expandtab ts=2 sw=2
+
 local set = vim.o
 local cmd = vim.cmd
 
@@ -59,7 +61,7 @@ colors = tonumber(openPop:read('*all'))
 openPop:close()
 
 if (colors == 256) then
-	cmd('colorscheme Atelier_ForestDark')
+  cmd('colorscheme Atelier_ForestDark')
 else
-	cmd('colorscheme solarized8_dark')
+  cmd('colorscheme solarized8_dark')
 end

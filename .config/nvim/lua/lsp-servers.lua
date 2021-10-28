@@ -1,3 +1,5 @@
+-- vi: expandtab ts=2 sw=2
+
 local nvim_lsp = require('lspconfig')
 local configs = require'lspconfig/configs'
 
@@ -18,7 +20,7 @@ end
 local servers = { 'rls', 'clangd', 'bashls', 'csharp_ls', 'lua_lsp', 'pylsp' }
 
 for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup {
-		on_attach = on_attach,
-	}
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+  }
 end

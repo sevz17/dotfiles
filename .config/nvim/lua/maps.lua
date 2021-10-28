@@ -1,3 +1,5 @@
+-- vi: expandtab ts=2 sw=2
+
 local map = vim.api.nvim_set_keymap
 local cmd = vim.cmd
 
