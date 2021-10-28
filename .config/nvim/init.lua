@@ -2,6 +2,7 @@
 
 local set = vim.o
 local cmd = vim.cmd
+local show_errors = true
 
 set.number = true
 set.hidden = true
@@ -41,13 +42,24 @@ set.completeopt = 'menuone,noinsert,noselect'
 
 cmd('setlocal spell spelllang=en')
 cmd('filetype plugin on')
-cmd('filetype plugin indent on')
+cmd('filetype indent on')
 
-require('maps')
-require('plugins')
-require('plugin-config')
-require('lsp-servers')
-require('statusline')
+local function tryload(module)
+  local has_mod,mod = pcall(require,module)
+  if has_mod then
+    return mod
+  elseif show_errors then
+    print(mod)
+  end
+
+  return nil
+end
+
+plugins = tryload('plugins')
+tryload('maps')
+tryload('plugin-config')
+tryload('lsp-servers')
+tryload('statusline')
 
 set.hlsearch   = true  -- Highlight matches
 set.incsearch  = true  -- Incremental searching
@@ -56,12 +68,16 @@ set.smartcase  = true  -- ... unless they contain at least one capital letter
 
 set.laststatus = 2
 
-local openPop = assert(io.popen('tput colors', 'r'))
-colors = tonumber(openPop:read('*all'))
-openPop:close()
+if plugins then
+  local openPop = assert(io.popen('tput colors', 'r'))
+  colors = tonumber(openPop:read('*all'))
+  openPop:close()
 
-if (colors == 256) then
-  cmd('colorscheme Atelier_ForestDark')
+  if (colors == 256) then
+    cmd('silent! colorscheme Atelier_ForestDark')
+  else
+    cmd('silent! colorscheme solarized8_dark')
+  end
 else
-  cmd('colorscheme solarized8_dark')
+  cmd('colorscheme darkblue')
 end

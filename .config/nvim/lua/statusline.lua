@@ -4,6 +4,13 @@ local fn = vim.fn
 local api = vim.api
 local cmd = vim.cmd
 
+local function tryload(module)
+  has_mod,mod = pcall(require,module)
+  if has_mod then
+    return mod
+  end
+end
+
 local M = {}
 
 -- highlight groups
@@ -94,9 +101,10 @@ M.get_filename = function(self)
 end
 
 M.get_filetype = function()
+  local icons = tryload('nvim-web-devicons')
 
   local file_name, file_ext = fn.expand('%:t'), fn.expand('%:e')
-  local icon = require'nvim-web-devicons'.get_icon(file_name, file_ext, { default = true })
+  local icon = icons and icons.get_icon(file_name, file_ext, { default = true })
   local filetype = vim.bo.filetype
 
   if filetype == '' or filetype == nil then
