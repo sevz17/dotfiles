@@ -5,7 +5,7 @@ local api = vim.api
 local cmd = vim.cmd
 
 local function tryload(module)
-  has_mod,mod = pcall(require,module)
+  local has_mod,mod = pcall(require,module)
   if has_mod then
     return mod
   end
