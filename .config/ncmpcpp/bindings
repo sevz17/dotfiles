@@ -422,4 +422,3 @@ def_key "ctrl-p"
 
 def_key "q"
   quit
-#

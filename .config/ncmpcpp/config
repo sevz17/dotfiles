@@ -1,9 +1,3 @@
-##############################################################
-## This is an example configuration file. Copy it to        ##
-## $XDG_CONFIG_HOME/ncmpcpp/config or $HOME/.ncmpcpp/config ##
-## and set up your preferences.                             ##
-##############################################################
-#
 ##### directories ######
 ##
 ## Directory for storing ncmpcpp related files.  Changing it is useful if you
@@ -11,16 +5,16 @@
 ## alternative location to config file which defines that while launching
 ## ncmpcpp.
 ##
-#
+ 
 ncmpcpp_directory = ~/.config/ncmpcpp
-#
+ 
 ##
 ## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
 ## MPD clients (eg. ncmpc) also use that location.
 ##
-#
-lyrics_directory = /home/leonardo/.config/mpd/lyrics
-#
+ 
+lyrics_directory = ~/.config/mpd/lyrics
+ 
 ##### connection settings #####
 #
 #mpd_host = localhost
@@ -30,9 +24,9 @@ lyrics_directory = /home/leonardo/.config/mpd/lyrics
 #mpd_connection_timeout = 5
 #
 ## Needed for tag editor and file operations to work.
-##
-mpd_music_dir = /home/leonardo/Music
-#
+
+mpd_music_dir = ~/Music
+
 #mpd_crossfade_time = 5
 #
 # Exclude pattern for random song action
@@ -68,22 +62,22 @@ mpd_music_dir = /home/leonardo/Music
 ## will make localhost:5555 available as a source of data for the stereo
 ## visualizer.
 ##
-#
+ 
 visualizer_data_source = /tmp/mpd.fifo
-#
+ 
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
 ## provides data for visualizer and reset it at the beginning of visualization
 ## to synchronize with audio.
 ##
-#
+ 
 visualizer_output_name = Visualizer feed
-#
+ 
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
-##
-#visualizer_in_stereo = yes
-#
+
+visualizer_in_stereo = yes
+ 
 ##
 ## Note: set below to >=10 only if you have synchronization issues with
 ## visualization and audio.
@@ -97,21 +91,19 @@ visualizer_output_name = Visualizer feed
 ##
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
-##
-visualizer_type = ellipse
-#
-visualizer_fps = 60
-#
+
+visualizer_type = spectrum
+ 
+visualizer_fps = 120
+ 
 visualizer_autoscale = yes
-#
-visualizer_look = ●▮
-#
+ 
 #visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 ## Alternative subset of 256 colors for terminals that support it.
-##
+
 visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
-#
+ 
 ##
 ## Note: The next few visualization options apply to the spectrum visualizer.
 ##
@@ -127,7 +119,7 @@ visualizer_spectrum_smooth_look = yes
 ## visualizer look at a larger slice of time, which results in less jumpy
 ## visualizer output.
 #
-visualizer_spectrum_dft_size = 2
+visualizer_spectrum_dft_size = 5
 #
 visualizer_spectrum_gain = 10
 #
