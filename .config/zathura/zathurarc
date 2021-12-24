@@ -1,5 +1,12 @@
 #global
 set recolor
+set window-title-basename
+set statusbar-home-tilde
+set window-title-page
+set guioptions shv
+set continuous-hist-save
+set database sqlite
+set page-cache-size 5
 set selection-clipboard clipboard
 
 set default-bg '#1d2021'
