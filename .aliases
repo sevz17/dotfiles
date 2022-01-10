@@ -5,6 +5,9 @@ alias src="omz reload"
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 
+alias ls="exa"
+alias la="exa -la"
+
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias ip="ip -color=auto"
