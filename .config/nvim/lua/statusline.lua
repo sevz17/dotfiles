@@ -133,16 +133,12 @@ M.get_line_col = function(self)
 end
 
 M.get_lsp_diagnostic = function(self)
-  local result = {}
-  local levels = {
-    errors = 'Error',
-    warnings = 'Warning',
-    info = 'Information',
-    hints = 'Hint'
-  }
+  local diagnostics = vim.diagnostic.get(0)
+  local level = vim.diagnostic.severity
+  local result = { 0, 0, 0, 0 }
 
-  for k, level in pairs(levels) do
-    result[k] = vim.lsp.diagnostic.get_count(0, level)
+  for _, diagnostic in ipairs(diagnostics) do
+    result[diagnostic.severity] = result[diagnostic.severity] + 1
   end
 
   if self:is_truncated(120) then
@@ -150,8 +146,8 @@ M.get_lsp_diagnostic = function(self)
   else
     return string.format(
       ' :%s :%s :%s :%s ',
-      result['errors'] or 0, result['warnings'] or 0,
-      result['info'] or 0, result['hints'] or 0
+      result[level.ERROR] or 0, result[level.WARN] or 0,
+      result[level.INFO] or 0, result[level.HINT] or 0
     )
   end
 end
