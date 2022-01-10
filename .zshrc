@@ -25,7 +25,6 @@ plugins=( autojump dotnet git rust sudo tmux zsh-autopair fast-syntax-highlighti
 source /etc/profile
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
-source /usr/share/zsh/site-contrib/zsh-silver/silver.plugin.zsh
 
 # User configuration
 zstyle ':completion:*' rehash true
@@ -102,3 +101,5 @@ if [[ "${TERM}" == (Eterm*|alacritty*|aterm*|gnome*|konsole*|kterm*|putty*|rxvt*
 fi
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+eval "$(starship init zsh)"
