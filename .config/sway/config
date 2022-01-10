@@ -28,7 +28,7 @@ set $alt Mod1
 
 ### Autostart
 exec redshift -m wayland
-exec pipewire
+exec gentoo-pipewire-launcher
 #exec udiskie -s &
 
 ### Output configuration
