@@ -102,4 +102,5 @@ fi
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
