@@ -1,4 +1,4 @@
-alias eemerge="sudo elogind-inhibit emerge"
+alias eemerge="elogind-inhibit sudo emerge"
 
 alias src="omz reload"
 
