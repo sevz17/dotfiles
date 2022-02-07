@@ -78,8 +78,8 @@ bindcode {
     $mod+Shift+$Key_Return exec alacritty
 
     # Browsers
-    $mod+$Key_b exec microsoft-edge-dev
-    $mod+$Key_f exec firefox
+    $mod+$Key_b exec brave
+    $mod+Shift+$Key_b exec firefox
 
     # Screenshots
     $mod+$Key_s exec grim - | swappy -f -
