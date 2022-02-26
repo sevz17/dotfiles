@@ -16,7 +16,7 @@ gaps outer -6
 set $volume_step 2
 
 # Terminal emulator
-set $term foot runtmux
+set $term footclient runtmux
 
 # Launcher
 set $menu bemenu-run --ignorecase --no-overlap --list=15 --scrollbar=autohide --prompt="->"
@@ -28,7 +28,10 @@ set $alt Mod1
 
 ### Autostart
 exec redshift -m wayland
-exec gentoo-pipewire-launcher
+exec pidof pipewire 2>&1 > /dev/null || gentoo-pipewire-launcher
+exec fnott
+exec foot --server
+exec swayidle -w
 #exec udiskie -s &
 
 ### Output configuration
@@ -36,22 +39,12 @@ exec gentoo-pipewire-launcher
 set $wallpaper `chbg --print`
 output * bg $wallpaper fill
 
-### Idle configuration
-exec swayidle -w \
-    timeout 600 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"' \
-    timeout 900 'swaylock --daemonize --image "$(chbg --print)" --scaling fill' \
-	timeout 1200 'loginctl suspend-then-hibernate' \
-        resume 'swaymsg "output * dpms on"'
-
-seat * hide_cursor 60000
-
 ### Input configuration
 input "type:keyboard" {
     xkb_layout "latam,latam,us"
     xkb_model "pc105"
     xkb_variant "dvorak,,"
-    xkb_options "grp:win_space_toggle , keypad:pointerkeys , terminate:ctrl_alt_bksp"
+    xkb_options "grp:win_space_toggle,keypad:pointerkeys,terminate:ctrl_alt_bksp"
     xkb_numlock enable
 }
 
