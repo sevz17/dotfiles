@@ -1,0 +1,1 @@
+source <(/usr/bin/starship init zsh --print-full-init)
