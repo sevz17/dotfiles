@@ -1,5 +1,5 @@
 [user]
-	name = Leonardo Hernandez Hernandez
+	name = Leonardo Hernández Hernández
 	email = leohdz172@protonmail.com
 	signingKey = E538897EE11B9624
 [init]
@@ -28,3 +28,5 @@
 	gpgSign = if-asked
 [pull]
 	rebase = true
+[format]
+	signoff = true
