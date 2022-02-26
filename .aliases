@@ -5,9 +5,9 @@ alias src="omz reload"
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
 
-alias ls="exa"
-alias la="exa -la"
-alias tree="exa --tree"
+alias ls="exa --icons"
+alias la="exa --icons -la"
+alias tree="exa --icons --tree"
 alias cat="bat"
 
 alias diff="diff --color=auto"
