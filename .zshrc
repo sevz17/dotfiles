@@ -59,21 +59,6 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 export GPG_TTY=$(tty)
 
-autoload -Uz add-zsh-hook
-
-function xterm_title_precmd () {
-	print -Pn -- '\e]2;%n@%m %~\a'
-}
-
-function xterm_title_preexec () {
-	print -Pn -- '\e]2;%n@%m %~  ' && print -n -- " ${(q)1}\a"
-}
-
-if [[ "${TERM}" == (Eterm*|alacritty*|aterm*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|tmux*|xterm*) ]]; then
-	add-zsh-hook -Uz precmd xterm_title_precmd
-	add-zsh-hook -Uz preexec xterm_title_preexec
-fi
-
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 eval "$(zoxide init zsh)"
