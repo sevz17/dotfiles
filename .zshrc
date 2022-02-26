@@ -35,20 +35,6 @@ if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
 
-function get_resume_offset() {
-  echo $(($(sudo btrfs_map_physical /swapfile | awk '{ if ( NR == 2) { print $9; exit 0 } }')/$(getconf PAGESIZE)))
-}
-
-function ch() {
-  local newroot="${1}"
-
-  [ "${newroot}" = "-" -o "${newroot}" = "--" ] && unset newroot
-  [ "${#}" -gt 1 ] && shift
-
-  local cmd="${@}"
-  sudo chroot "${newroot:=/mnt/arch}" "${cmd:=/bin/zsh}"
-}
-
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
