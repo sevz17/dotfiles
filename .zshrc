@@ -26,8 +26,6 @@ source /etc/profile
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
 
 # Set personal aliases, overriding those provided by oh-my-zsh
 # For a full list of active aliases, run `alias`.
