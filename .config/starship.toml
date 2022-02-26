@@ -3,7 +3,7 @@ add_newline = false
 
 format = "${custom.os}$all"
 right_format = """$status$cmd_duration$time"""
-
+continuation_prompt = "[▶▶ ](green)"
 
 [cmd_duration]
 min_time = 100
