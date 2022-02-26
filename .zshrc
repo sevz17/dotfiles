@@ -1,33 +1,39 @@
-# Path to your oh-my-zsh installation.
-ZSH=/usr/share/zsh/site-contrib/oh-my-zsh/
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+bindkey -e
 
-# Use hyphen-insensitive completion.
-HYPHEN_INSENSITIVE="true"
+ZDOTDIR="${HOME}/.zsh"
+export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache/zsh}"
+ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
 
-# Disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+source "${ZINIT_HOME}/zinit.zsh"
+ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
 
-# Automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+zinit wait lucid pick'zprofile' for \
+	/etc/zsh
 
-# Change the command execution time stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# Or set a custom format using the strftime function format specifications,
-HIST_STAMPS="%d/%m/%Y"
+zinit wait lucid for \
+  OMZP::git \
+  OMZP::sudo \
+  OMZP::tmux \
 
-ZSH_CACHE_DIR=$HOME/.cache/zsh
+zinit wait lucid atload'ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' for \
+    hlissner/zsh-autopair
 
-# Which plugins would you like to load?
-# Add wisely, as too many plugins slow down shell startup.
-plugins=( git sudo tmux zsh-autopair fast-syntax-highlighting )
+zinit wait lucid \
+  multisrc'configs.zsh funcs.zsh zoxide.zsh keybindings.zsh hooks.zsh completions.zsh' \
+  for ${ZDOTDIR}
 
-source /etc/profile
-source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+zinit ice wait lucid reset-prompt atload'!prompt_starship_precmd; prompt_starship_preexec'
+zinit snippet "${ZDOTDIR}"/starship.zsh
 
+zinit wait lucid atinit'!ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' for \
+    z-shell/fast-syntax-highlighting \
+  atload'!_zsh_autosuggest_start' pick'zsh-autosuggestions.zsh' \
+    /usr/share/zsh/site-functions
 
-# Set personal aliases, overriding those provided by oh-my-zsh
+# Set personal aliases
 # For a full list of active aliases, run `alias`.
 if [ -f ~/.aliases ]; then
   source ~/.aliases

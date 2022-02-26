@@ -1,6 +1,6 @@
 alias eemerge="elogind-inhibit sudo emerge"
 
-alias src="omz reload"
+alias src='exec "${SHELL}" -1'
 
 alias shutdown="sudo shutdown"
 alias reboot="sudo reboot"
