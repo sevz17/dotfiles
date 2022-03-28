@@ -2,15 +2,13 @@ HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=10000
 
-ZDOTDIR="${HOME}/.zsh"
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache/zsh}"
 ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
 
 source "${ZINIT_HOME}/zinit.zsh"
 ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
 
-zinit wait lucid pick'zprofile' for \
-	/etc/zsh
+zinit wait lucid pick'zprofile' for /etc/zsh
 
 zinit wait lucid for \
   OMZP::git \
