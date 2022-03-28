@@ -19,7 +19,7 @@ zinit wait lucid for \
   OMZP::dotnet \
   OMZP::rust
 
-zinit wait lucid atload'ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' for \
+zinit wait lucid atload'!ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' for \
     hlissner/zsh-autopair
 
 zinit wait lucid \
