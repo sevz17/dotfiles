@@ -23,7 +23,7 @@ zinit wait lucid atload'ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' for \
     hlissner/zsh-autopair
 
 zinit wait lucid \
-  multisrc'configs.zsh funcs.zsh zoxide.zsh keybindings.zsh hooks.zsh completions.zsh' \
+  multisrc'configs.zsh env.zsh funcs.zsh zoxide.zsh keybindings.zsh hooks.zsh completions.zsh' \
   for ${ZDOTDIR}
 
 zinit ice wait lucid reset-prompt atload'!prompt_starship_precmd; prompt_starship_preexec'
@@ -39,11 +39,3 @@ zinit wait lucid atinit'!ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' for \
 if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
-
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-export GPG_TTY=$(tty)
-
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
