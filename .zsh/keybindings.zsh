@@ -1,3 +1,5 @@
+bindkey -e
+
 typeset -g -A key
 
 key[Shift-Tab]="${terminfo[kcbt]}"

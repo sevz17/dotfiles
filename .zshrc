@@ -1,7 +1,6 @@
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=10000
-bindkey -e
 
 ZDOTDIR="${HOME}/.zsh"
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache/zsh}"
