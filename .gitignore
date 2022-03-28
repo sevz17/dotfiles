@@ -1,12 +1,9 @@
 /*
 
-!.config
-!.vimrc
 !.aliases
-!.gitignore
-!.gitmodules
-!.zshrc
-!.vim
+!.config
 !.gitconfig
+!.gitignore
 !.zsh
+!.zshenv
 !LICENSE
