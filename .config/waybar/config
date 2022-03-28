@@ -40,7 +40,7 @@
     },
 
     "sway/window": {
-	    "tooltip": false,
+	    "tooltip": false
     },
 
     "sway/workspaces": {
@@ -73,7 +73,7 @@
                 "墳",
                 ""
             ]
-        },
+        }
     },
 
     "tray": {
