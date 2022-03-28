@@ -16,6 +16,8 @@ zinit wait lucid for \
   OMZP::git \
   OMZP::sudo \
   OMZP::tmux \
+  OMZP::dotnet \
+  OMZP::rust
 
 zinit wait lucid atload'ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' for \
     hlissner/zsh-autopair
