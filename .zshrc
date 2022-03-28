@@ -34,8 +34,4 @@ zinit wait lucid atinit'!ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' for \
   atload'!_zsh_autosuggest_start' pick'zsh-autosuggestions.zsh' \
     /usr/share/zsh/site-functions
 
-# Set personal aliases
-# For a full list of active aliases, run `alias`.
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
+zinit wait lucid pick'.aliases' for "${HOME}"
