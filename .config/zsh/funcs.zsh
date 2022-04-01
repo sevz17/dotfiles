@@ -11,3 +11,7 @@ function ch() {
   local cmd="${@}"
   sudo chroot "${newroot:=/mnt/arch}" "${cmd:=/bin/zsh}"
 }
+
+git_current_branch() {
+  git branch --show-current
+}
