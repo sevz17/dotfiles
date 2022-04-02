@@ -75,6 +75,14 @@ require('telescope').setup({
         preview_width = 0.6,
       }
     },
+  },
+  pickers = {
+    find_files = {
+      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+    },
+    man_pages = {
+      sections = { "ALL" },
+    }
   }
 })
 
