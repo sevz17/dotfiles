@@ -6,18 +6,21 @@ local cmd = vim.cmd
 vim.g.mapleader = ' ' -- Set <Space> as <Leader>
 
 local options = { noremap = true, silent = true }
+local nosilent = { noremap = true, silent = false }
 
 map('n', '<Leader>s', ':HopChar2<CR>', options)
 map('n', '<Leader>w', ':w<CR>', options) -- save
 map('n', '<Leader>q', ':q<CR>', options) -- quit
 map('n', '<Leader>x', ':x<CR>', options) -- save and quit
-map('n', '<Leader>+', ':tabe', options) -- open a tab
+map('n', '<Leader>+', ':tabe ', nosilent) -- open a tab
 
 map('n', '<Leader>;', '$a;<Esc>', options) -- quick semi
 
-map('n', '<Leader>nt', ':Telescope file_browser<CR>', options)
-map('n', '<Leader>p', ':Telescope find_files<CR>', options)
+map('n', '<Leader>nt', ':Telescope find_files<CR>', options)
 map('n', '<Leader>M', ':Telescope man_pages<CR>', options)
+map('n', '<Leader>z', ':Telescope spell_suggest<CR>', options)
+map('n', '<Leader>b', ':Telescope builtin<CR>', options)
+map('n', '<Leader>t', ':Telescope treesitter<CR>', options)
 
 map('n', '<Leader>kp', ':let @*=expand("%")<CR>', options)
 
