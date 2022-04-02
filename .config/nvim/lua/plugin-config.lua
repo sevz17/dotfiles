@@ -64,7 +64,10 @@ local actions = require('telescope.actions')
 require('telescope').setup({
   defaults = {
     mappings = {
-      i = { ['<ESC>'] = actions.close },
+      i = {
+        ['<ESC>'] = actions.close,
+        ['<C-u>'] = false,
+      },
     },
     layout_config = {
       horizontal = {
