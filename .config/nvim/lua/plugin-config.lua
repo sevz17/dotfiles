@@ -86,6 +86,10 @@ require('telescope').setup({
   }
 })
 
+require('nvim-treesitter.configs').setup {
+  ensure_installed = { "c", "cpp", "c_sharp", "bash", "make" },
+}
+
 require('gitsigns').setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
