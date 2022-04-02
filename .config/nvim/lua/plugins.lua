@@ -11,6 +11,11 @@ return require('packer').startup(function()
 
   use 'gentoo/gentoo-syntax'
 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
   -- IDE
   use 'preservim/nerdcommenter'
   use {
