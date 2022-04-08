@@ -1,0 +1,11 @@
+[options]
+overlay = true
+overlay_font = Caskadia Cove NerdFont:16
+overlay_position_bottom = true
+title_text = "$imv_current_file"
+
+[binds]
+n        = next
+p        = prev
+<Ctrl+o> = overlay toggle
+<Shift+R> = exec mogrify -rotate 90 "$imv_current_file"
