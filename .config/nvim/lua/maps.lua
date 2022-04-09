@@ -13,6 +13,7 @@ map('n', '<Leader>w', ':w<CR>', options) -- save
 map('n', '<Leader>q', ':q<CR>', options) -- quit
 map('n', '<Leader>x', ':x<CR>', options) -- save and quit
 map('n', '<Leader>+', ':tabe ', nosilent) -- open a tab
+map('n', '<Leader>m', ':make<CR>', nosilent)
 
 map('n', '<Leader>;', '$a;<Esc>', options) -- quick semi
 
