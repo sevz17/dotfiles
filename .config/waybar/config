@@ -1,4 +1,4 @@
-// vi: filetype=jsonc
+// -*- mode: jsonc -*-
 
 {
     "layer": "bottom",
@@ -25,14 +25,12 @@
 
     "clock#time": {
         "interval": 1,
-        "format": " {:%T}",
-        "tooltip": false
+        "format": " {:%T}"
     },
 
     "clock#date": {
         "interval": 3600,
-        "format": " {:%a %d/%m/%Y}",
-        "tooltip": false
+        "format": " {:%a %d/%m/%Y}"
     },
 
     "sway/mode": {
@@ -48,7 +46,7 @@
         "format": "{name}",
         "current-only": false,
         "persistent_workspaces": {
-            "1:\uf269": [],
+            "1:\ufa9e": [],
             "2:\uf126": [],
             "3:\ue795": [],
             "4:\ue615": [],
@@ -82,3 +80,5 @@
         "show-passive-items": true
     }
 }
+
+// vi: filetype=jsonc
