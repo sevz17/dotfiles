@@ -37,5 +37,10 @@ zstyle ':completion:*' expand prefix
 zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
 
+compdef eemerge=emerge
+
 # ... unless we really want to.
 zstyle '*' single-ignored show
+
+# automatically load bash completion functions
+autoload -U +X bashcompinit && bashcompinit

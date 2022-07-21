@@ -1,6 +1,6 @@
-HISTFILE="${HOME}/.zsh_history"
-HISTSIZE=50000
-SAVEHIST=10000
+export HISTFILE="${HOME}/.zsh_history"
+export HISTSIZE=50000
+export SAVEHIST=${HISTSIZE}
 
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache/zsh}"
 ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"

@@ -9,3 +9,5 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export CLANGD_FLAGS="--all-scopes-completion -j=5 --clang-tidy --completion-parse=always --include-ineligible-results --malloc-trim --pch-storage=disk --header-insertion=iwyu --header-insertion-decorators --inlay-hints --background-index --completion-style=detailed"
 
 fpath+="${ZDOTDIR}/completions"
+
+export PATH="$HOME/.emacs.d/bin/:$PATH"
