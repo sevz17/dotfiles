@@ -5,7 +5,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = vi
+	editor = emacsclient
 	autocrlf = false
 	# use bat if available, else use less
 	pager = (which bat > /dev/null 2>&1 && bat -l diff || less)
@@ -30,3 +30,5 @@
 	rebase = true
 [format]
 	signoff = true
+[merge]
+	tool = emerge
