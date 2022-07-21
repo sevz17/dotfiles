@@ -1,0 +1,104 @@
+bar:
+  location: bottom
+  layer: bottom
+  background: 111111ff
+  font: "UbuntuMono Nerd Font:size=18:antialias=true:autohint:true"
+  height: 20
+  spacing: 12
+  margin: 6
+
+  border:
+    margin: 6
+    top-margin: 0
+
+  left:
+    - script:
+        path: /usr/bin/playerctl
+        args:
+          - "--follow"
+          - metadata
+          - "-f"
+          - |
+            status|string|{{status}}
+            artist|string|{{artist}}
+            title|string|{{title}}
+        content:
+          map:
+            tag: status
+            values:
+              '': {empty: {}}
+              Paused: {empty: {}}
+              Playing: {string: {text: "  {artist} - {title}"}}
+    - mem:
+        interval: 1000
+        content: {string: {text: "Mem: {used:mb} MB/{total:mb} MB"}}
+    # Load average
+    - script:
+        poll-interval: 1
+        path: /usr/bin/awk
+        args:
+          - '{print "av1|float|"$1"\nav5|float|"$2"\nav15|float|"$3"\n"}'
+          - /proc/loadavg
+        content: {string: {text: "Avg: {av1} {av5} {av15}"}}
+    # Temperature
+    - script:
+        poll-interval: 1
+        path: /usr/bin/awk
+        args:
+          - '{ printf "temp|range:20-105|%i\n\n", int($1/1000) }'
+          - /sys/class/hwmon/hwmon0/temp1_input
+        content:
+          ramp:
+            tag: temp
+            items:
+              - string: {text: " {temp}°C"}
+              - string: {text: " {temp}°C"}
+              - string: {text: " {temp}°C"}
+              - string: {text: " {temp}°C"}
+              - string: {text: " {temp}°C"}
+    - cpu:
+        interval: 1000
+        content: {string: {text: "CPU: {cpu}%"}}
+    - battery:
+        name: BAT0
+        poll-interval: 30
+        content:
+          map:
+            tag: state
+            values:
+              full: {string: {text: " {capacity}%"}}
+              unknown: {string: {text: "BAT: {capacity}%"}}
+              discharging:
+                ramp:
+                  tag: capacity
+                  items:
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+              charging:
+                ramp:
+                  tag: capacity
+                  items:
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - string: {text: " {capacity}% ETA: {estimate}"}
+    - backlight:
+        name: amdgpu_bl0
+        content: {string: {text: "BL: {percent}%"}}
+# Yambar only reports network speed in Mbit/s
+    - script:
+        path: /usr/local/bin/network
+        args: [ -s ]
+        content: {string: {text: "Net: {rx-bitrate} ↓↑ {tx-bitrate}"}}

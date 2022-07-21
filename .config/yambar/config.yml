@@ -1,0 +1,210 @@
+bar:
+  location: top
+  layer: bottom
+  background: 222222ff
+  font: "UbuntuMono Nerd Font:size=18:antialias=true:autohint:true"
+  height: 22
+  spacing: 6
+  right-margin: 6
+  border:
+    margin: 6
+    bottom-margin: 0
+
+  left:
+    - script:
+        path: /usr/local/bin/dwl-tags
+        args: [1]
+        anchors:
+          - occupied: &occupied {foreground: ffffffff}
+          - default: &default {foreground: aaaaaaff}
+          - focused: &focused {deco: { background: {color: 6000ffff}}}
+        content:
+          - map:
+              tag: tag_0_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_0_focused
+                    values:
+                      true: {string: {text: " {tag_0} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_0} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_0_focused
+                    values:
+                      true: {string: {text: " {tag_0} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_0} ", <<: *default}}
+          - map:
+              tag: tag_1_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_1_focused
+                    values:
+                      true: {string: {text: " {tag_1} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_1} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_1_focused
+                    values:
+                      true: {string: {text: " {tag_1} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_1} ", <<: *default}}
+          - map:
+              tag: tag_2_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_2_focused
+                    values:
+                      true: {string: {text: " {tag_2} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_2} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_2_focused
+                    values:
+                      true: {string: {text: " {tag_2} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_2} ", <<: *default}}
+          - map:
+              tag: tag_3_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_3_focused
+                    values:
+                      true: {string: {text: " {tag_3} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_3} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_3_focused
+                    values:
+                      true: {string: {text: " {tag_3} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_3} ", <<: *default}}
+          - map:
+              tag: tag_4_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_4_focused
+                    values:
+                      true: {string: {text: " {tag_4} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_4} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_4_focused
+                    values:
+                      true: {string: {text: " {tag_4} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_4} ", <<: *default}}
+          - map:
+              tag: tag_5_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_5_focused
+                    values:
+                      true: {string: {text: " {tag_5} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_5} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_5_focused
+                    values:
+                      true: {string: {text: " {tag_5} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_5} ", <<: *default}}
+          - map:
+              tag: tag_6_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_6_focused
+                    values:
+                      true: {string: {text: " {tag_6} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_6} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_6_focused
+                    values:
+                      true: {string: {text: " {tag_6} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_6} ", <<: *default}}
+          - map:
+              tag: tag_7_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_7_focused
+                    values:
+                      true: {string: {text: " {tag_7} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_7} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_7_focused
+                    values:
+                      true: {string: {text: " {tag_7} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_7} ", <<: *default}}
+          - map:
+              tag: tag_8_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_8_focused
+                    values:
+                      true: {string: {text: " {tag_8} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_8} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_8_focused
+                    values:
+                      true: {string: {text: " {tag_8} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_8} ", <<: *default}}
+          - map:
+              tag: tag_9_occupied
+              values:
+                true:
+                  map:
+                    tag: tag_9_focused
+                    values:
+                      true: {string: {text: " {tag_9} ", <<: [*focused, *occupied]}}
+                      false: {string: {text: " {tag_9} ", <<: *occupied}}
+                false:
+                  map:
+                    tag: tag_9_focused
+                    values:
+                      true: {string: {text: " {tag_9} ", <<: [*focused, *default]}}
+                      false: {string: {text: " {tag_9} ", <<: *default}}
+          - list:
+              left-margin: 6
+              spacing: 6
+              items:
+                - string: {text: "{layout}"}
+                - string: {text: "{title}", max: 78}
+  right:
+    - pulse:
+        content:
+          map:
+            tag: online
+            values:
+              false: {string: {text: "ﱝ", foreground: 888888ff}}
+              true:
+                map:
+                  on-click:
+                    left: /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+                    wheel-up: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%
+                    wheel-down: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%
+                  tag: sink_muted
+                  values:
+                    true: {string: {text: "婢 {sink_percent}%", foreground: 888888ff}}
+                    false:
+                      ramp:
+                        tag: sink_percent
+                        items:
+                          - string: {text: "奄 {sink_percent}%"}
+                          - string: {text: "奔 {sink_percent}%"}
+                          - string: {text: "墳 {sink_percent}%"}
+                          - string: {text: " {sink_percent}%"}
+    - clock:
+        time-format: "%T"
+        date-format: "%a %d/%m/%Y"
+        content:
+          - list:
+              spacing: 6
+              items:
+                - string: {text: " {time}"}
+                - string: {text: " {date}"}
