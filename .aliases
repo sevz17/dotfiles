@@ -1,9 +1,7 @@
-alias eemerge="elogind-inhibit sudo emerge"
-
 alias src='exec "${SHELL}"'
 
-alias shutdown="sudo shutdown"
-alias reboot="sudo reboot"
+alias shutdown="sudo init 0"
+alias reboot="sudo init 6"
 
 alias ls="exa --icons"
 alias la="exa --icons -la"
