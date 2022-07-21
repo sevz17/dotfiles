@@ -39,7 +39,7 @@ bindcode {
 
     $mod+$Key_i inhibit_idle open
     $mod+Shift+$Key_i inhibit_idle none
-    $mod+Control+$Key_i exec 'swaymsg inhibit_idle $(echo "focus\nfullscreen\nopen\nnone" | bemenu -p "idle inhibitor mode ->")'
+    $mod+Control+$Key_i exec 'swaymsg inhibit_idle $(echo "focus\nfullscreen\nopen\nnone" | fuzzel -d -P "idle inhibitor mode ->")'
 
     $mod+Control+$Key_s split toggle
 
@@ -72,14 +72,18 @@ bindcode {
 
     # Launcher
     $mod+$Key_m exec $menu
+    $mod+Shift+$Key_m exec fuzzel
 
     # Start a terminal
     $mod+$Key_Return exec $term
-    $mod+Shift+$Key_Return exec alacritty
+    $mod+Shift+$Key_Return exec $term runtmux
+    $mod+Control+$Key_Return exec alacritty msg create-window || alacritty
 
     # Browsers
-    $mod+$Key_b exec brave
-    $mod+Shift+$Key_b exec firefox
+    $mod+$Key_b exec firefox
+    $mod+Shift+$Key_b exec chromium
+
+    $mod+$Key_e exec emacsclient -ca=
 
     # Screenshots
     $mod+$Key_s exec grim - | swappy -f -
@@ -98,38 +102,31 @@ bindcode {
 
 
     ### Hardware
-    $mod+$Key_minus exec pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
-    $mod+$Key_equal exec pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
-    $mod+$Key_BackSpace exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
+    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
+    XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+    XF86MonBrightnessDown exec brightnessctl set $volume_step%-
+    XF86MonBrightnessUp exec brightnessctl set +$volume_step%
+
+    ### Music players
+    # Next or previous song
+    XF86AudioPrev exec playerctl -i spotify previous
+    XF86AudioNext exec playerctl -i spotify next
+
+    $mod+XF86AudioPrev exec playerctl -p spotify previous
+    $mod+XF86AudioNext exec playerctl -p spotify next
+
+    # Play or pause
+    XF86AudioPlay exec playerctl -i spotify play-pause
+    $mod+XF86AudioPlay exec playerctl -p spotify play-pause
+
+    # Volume (only for spotify)
+    $alt+XF86AudioLowerVolume exec vol_spotify -$volume_step%
+    $alt+XF86AudioRaiseVolume exec vol_spotify +$volume_step%
+    $alt+XF86AudioMute exec vol_spotify toggle-mute
 
 
-    ## mpd
-    $mod+$Key_n exec foot ncmpcpp
-    $mod+Shift+$Key_n exec cantata
-
-
-    $mod+$alt+$Key_F1 exec mpc prev
-    $mod+$alt+$Key_F2 exec mpc toggle
-    $mod+$alt+$Key_F3 exec mpc next
-    $mod+$alt+$Key_minus exec mpc volume -$volume_step
-    $mod+$alt+$Key_equal exec mpc volume +$volume_step
-    $mod+$alt+$Key_BackSpace exec mpc toggleoutput 1
-
-
-    $alt+$Key_minus exec vol_spotify -$volume_step%
-    $alt+$Key_equal exec vol_spotify +$volume_step%
-    $alt+$Key_BackSpace exec vol_spotify toggle-mute
-
-    #playerctl -p spotify,vlc,%any play-pause
-
-    $alt+$Key_F1 exec playerctl --player=spotify previous
-    $alt+$Key_F2 exec playerctl --player=spotify play-pause
-    $alt+$Key_F3 exec playerctl --player=spotify next
-
-
-    $mod+$Key_F1 exec playerctl --ignore-player=spotify previous
-    $mod+$Key_F2 exec playerctl --ignore-player=spotify play-pause
-    $mod+$Key_F3 exec playerctl --ignore-player=spotify next
 
     # Make the current focus fullscreen
     $mod+Shift+$Key_f fullscreen toggle

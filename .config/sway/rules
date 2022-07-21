@@ -10,6 +10,8 @@ for_window [app_id="firefox"] move container to workspace $ws1
 for_window [app_id="brave-browser"] move container to workspace $ws1
 for_window [class="Brave-browser"] move container to workspace $ws1
 
+for_window [class="Emacs"] move container to workspace $ws2
+
 for_window [app_id="Alacritty"] move container to workspace $ws3
 for_window [app_id="foot"] move container to workspace $ws3
 

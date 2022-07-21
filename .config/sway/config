@@ -16,10 +16,10 @@ gaps outer -6
 set $volume_step 2
 
 # Terminal emulator
-set $term footclient runtmux
+set $term footclient
 
 # Launcher
-set $menu bemenu-run --ignorecase --no-overlap --list=15 --scrollbar=autohide --prompt="->"
+set $menu fuzzel_run
 
 # Modifiers
 set $mod Mod4
@@ -27,8 +27,8 @@ set $alt Mod1
 
 
 ### Autostart
-exec redshift -m wayland
-exec pidof pipewire 2>&1 > /dev/null || gentoo-pipewire-launcher
+exec wlsunset $(tr '\n' ' ' < ~/.config/wlsunset/wlsunset.conf)
+exec pidof wireplumber 2>&1 > /dev/null || gentoo-pipewire-launcher
 exec fnott
 exec foot --server
 exec swayidle -w
@@ -42,7 +42,6 @@ output * bg $wallpaper fill
 ### Input configuration
 input "type:keyboard" {
     xkb_layout "latam,latam,us"
-    xkb_model "pc105"
     xkb_variant "dvorak,,"
     xkb_options "grp:win_space_toggle,keypad:pointerkeys,terminate:ctrl_alt_bksp"
     xkb_numlock enable
