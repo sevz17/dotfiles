@@ -5,6 +5,9 @@ format = "${custom.os}$all"
 right_format = """$status$cmd_duration$time"""
 continuation_prompt = "[▶▶ ](green)"
 
+[c]
+commands = [ ["sh", "-c", "${CC} --version"], ["cc", "--version"], ["gcc", "--version"], ["clang", "--version"] ]
+
 [cmd_duration]
 min_time = 100
 show_milliseconds = true
