@@ -3,6 +3,8 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim' -- Packer can manage itself
 
+  use 'gpanders/editorconfig.nvim'
+
   use 'sheerun/vim-polyglot' -- Syntax
 
   use 'flazz/vim-colorschemes' -- Themes

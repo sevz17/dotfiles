@@ -5,15 +5,19 @@ local cmd = vim.cmd
 
 vim.g.mapleader = ' ' -- Set <Space> as <Leader>
 
+local share_clang = '/usr/lib/llvm/14/share/clang/'
+
 local options = { noremap = true, silent = true }
 local nosilent = { noremap = true, silent = false }
 
-map('n', '<Leader>s', ':HopChar2<CR>', options)
+map('n', '<Leader>s', ':HopChar2<CR>', nosilent)
 map('n', '<Leader>w', ':w<CR>', options) -- save
 map('n', '<Leader>q', ':q<CR>', options) -- quit
 map('n', '<Leader>x', ':x<CR>', options) -- save and quit
 map('n', '<Leader>+', ':tabe ', nosilent) -- open a tab
-map('n', '<Leader>m', ':make<CR>', nosilent)
+map('n', '<Leader>m', ':make<CR>', options)
+map('n', '<Leader>i', ':py3f ' .. share_clang .. 'clang-format.py<CR>', nosilent)
+map('i', '<C-i>', '<C-o>:py3f ' .. share_clang .. 'clang-format.py<CR>', nosilent)
 
 map('n', '<Leader>;', '$a;<Esc>', options) -- quick semi
 
