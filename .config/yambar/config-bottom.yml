@@ -22,6 +22,7 @@ bar:
             status|string|{{status}}
             artist|string|{{artist}}
             title|string|{{title}}
+
         content:
           map:
             tag: status
@@ -30,11 +31,11 @@ bar:
               Paused: {empty: {}}
               Playing: {string: {text: "  {artist} - {title}"}}
     - mem:
-        interval: 1000
+        interval: 5000
         content: {string: {text: "Mem: {used:mb} MB/{total:mb} MB"}}
     # Load average
     - script:
-        poll-interval: 1
+        poll-interval: 5
         path: /usr/bin/awk
         args:
           - '{print "av1|float|"$1"\nav5|float|"$2"\nav15|float|"$3"\n"}'
@@ -42,7 +43,7 @@ bar:
         content: {string: {text: "Avg: {av1} {av5} {av15}"}}
     # Temperature
     - script:
-        poll-interval: 1
+        poll-interval: 5
         path: /usr/bin/awk
         args:
           - '{ printf "temp|range:20-105|%i\n\n", int($1/1000) }'
@@ -57,11 +58,11 @@ bar:
               - string: {text: " {temp}°C"}
               - string: {text: " {temp}°C"}
     - cpu:
-        interval: 1000
+        interval: 5000
         content: {string: {text: "CPU: {cpu}%"}}
     - battery:
         name: BAT0
-        poll-interval: 30
+        poll-interval: 60
         content:
           map:
             tag: state
@@ -98,7 +99,26 @@ bar:
         name: amdgpu_bl0
         content: {string: {text: "BL: {percent}%"}}
 # Yambar only reports network speed in Mbit/s
-    - script:
-        path: /usr/local/bin/network
-        args: [ -s ]
-        content: {string: {text: "Net: {rx-bitrate} ↓↑ {tx-bitrate}"}}
+#    - script:
+#        path: /usr/local/bin/network
+#        args: [ -s ]
+#        content: {string: {text: "Net: {rx-bitrate} ↓↑ {tx-bitrate}"}}
+
+    - network:
+        name: eno1
+        poll-interval: 5
+        content:
+          map:
+            tag: state
+            values:
+              down: {empty: {}}
+              up: {string: {text: "Net({name}): {rx-bitrate}Mb ↓↑ {tx-bitrate}Mb"}}
+    - network:
+        name: wlo1
+        poll-interval: 5
+        content:
+          map:
+            tag: state
+            values:
+              down: {empty: {}}
+              up: {string: {text: "Net({name}) - SSID({ssid}) - signal({signal}): {rx-bitrate}Mb ↓↑ {tx-bitrate}Mb"}}
