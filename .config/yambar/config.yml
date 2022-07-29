@@ -22,232 +22,189 @@ bar:
           - floating: &floating {deco: {underline: {size: 2, color: ffffffff}}}
         content:
           - map:
-              tag: tag_0_occupied
-              values:
-                true:
+              conditions:
+                tag_0_occupied:
                   map:
-                    tag: tag_0_focused
-                    values:
-                      true: {string: {text: " {tag_0} ", <<: [*focused, *occupied]}}
-                      false:
-                        map:
-                          tag: tag_0_urgent
-                          values:
-                            true: {string: {text: " {tag_0} ", <<: *urgent}}
-                            false: {string: {text: " {tag_0} ", <<: *occupied}}
-                false:
+                    conditions:
+                      tag_0_focused: {string: {text: " {tag_0} ", <<: [*focused, *occupied]}}
+                      ~tag_0_focused:
+                          map:
+                            conditions:
+                              tag_0_urgent: {string: {text: " {tag_0} ", <<: *urgent}}
+                              ~tag_0_urgent: {string: {text: " {tag_0} ", <<: *occupied}}
+                ~tag_0_occupied:
                   map:
-                    tag: tag_0_focused
-                    values:
-                      true: {string: {text: " {tag_0} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_0} ", <<: *default}}
+                    conditions:
+                      tag_0_focused: {string: {text: " {tag_0} ", <<: [*focused, *default]}}
+                      ~tag_0_focused: {string: {text: " {tag_0} ", <<: *default}}
           - map:
-              tag: tag_1_occupied
-              values:
-                true:
+              conditions:
+                tag_1_occupied:
                   map:
-                    tag: tag_1_focused
-                    values:
-                      true: {string: {text: " {tag_1} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_1_focused: {string: {text: " {tag_1} ", <<: [*focused, *occupied]}}
+                      ~tag_1_focused:
                         map:
-                          tag: tag_1_urgent
-                          values:
-                            true: {string: {text: " {tag_1} ", <<: *urgent}}
-                            false: {string: {text: " {tag_1} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_1_urgent: {string: {text: " {tag_1} ", <<: *urgent}}
+                            ~tag_1_urgent: {string: {text: " {tag_1} ", <<: *occupied}}
+                ~tag_1_occupied:
                   map:
-                    tag: tag_1_focused
-                    values:
-                      true: {string: {text: " {tag_1} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_1} ", <<: *default}}
+                    conditions:
+                      tag_1_focused: {string: {text: " {tag_1} ", <<: [*focused, *default]}}
+                      ~tag_1_focused: {string: {text: " {tag_1} ", <<: *default}}
           - map:
-              tag: tag_2_occupied
-              values:
-                true:
+              conditions:
+                tag_2_occupied:
                   map:
-                    tag: tag_2_focused
-                    values:
-                      true: {string: {text: " {tag_2} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_2_focused: {string: {text: " {tag_2} ", <<: [*focused, *occupied]}}
+                      ~tag_2_focused:
                         map:
-                          tag: tag_2_urgent
-                          values:
-                            true: {string: {text: " {tag_2} ", <<: *urgent}}
-                            false: {string: {text: " {tag_2} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_2_urgent: {string: {text: " {tag_2} ", <<: *urgent}}
+                            ~tag_2_urgent: {string: {text: " {tag_2} ", <<: *occupied}}
+                ~tag_2_occupied:
                   map:
-                    tag: tag_2_focused
-                    values:
-                      true: {string: {text: " {tag_2} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_2} ", <<: *default}}
+                    conditions:
+                      tag_2_focused: {string: {text: " {tag_2} ", <<: [*focused, *default]}}
+                      ~tag_2_focused: {string: {text: " {tag_2} ", <<: *default}}
           - map:
-              tag: tag_3_occupied
-              values:
-                true:
+              conditions:
+                tag_3_occupied:
                   map:
-                    tag: tag_3_focused
-                    values:
-                      true: {string: {text: " {tag_3} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_3_focused: {string: {text: " {tag_3} ", <<: [*focused, *occupied]}}
+                      ~tag_3_focused:
                         map:
-                          tag: tag_3_urgent
-                          values:
-                            true: {string: {text: " {tag_3} ", <<: *urgent}}
-                            false: {string: {text: " {tag_3} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_3_urgent: {string: {text: " {tag_3} ", <<: *urgent}}
+                            ~tag_3_urgent: {string: {text: " {tag_3} ", <<: *occupied}}
+                ~tag_3_occupied:
                   map:
-                    tag: tag_3_focused
-                    values:
-                      true: {string: {text: " {tag_3} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_3} ", <<: *default}}
+                    conditions:
+                      tag_3_focused: {string: {text: " {tag_3} ", <<: [*focused, *default]}}
+                      ~tag_3_focused: {string: {text: " {tag_3} ", <<: *default}}
           - map:
-              tag: tag_4_occupied
-              values:
-                true:
+              conditions:
+                tag_4_occupied:
                   map:
-                    tag: tag_4_focused
-                    values:
-                      true: {string: {text: " {tag_4} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_4_focused: {string: {text: " {tag_4} ", <<: [*focused, *occupied]}}
+                      ~tag_4_focused:
                         map:
-                          tag: tag_4_urgent
-                          values:
-                            true: {string: {text: " {tag_4} ", <<: *urgent}}
-                            false: {string: {text: " {tag_4} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_4_urgent: {string: {text: " {tag_4} ", <<: *urgent}}
+                            ~tag_4_urgent: {string: {text: " {tag_4} ", <<: *occupied}}
+                ~tag_4_occupied:
                   map:
-                    tag: tag_4_focused
-                    values:
-                      true: {string: {text: " {tag_4} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_4} ", <<: *default}}
+                    conditions:
+                      tag_4_focused: {string: {text: " {tag_4} ", <<: [*focused, *default]}}
+                      ~tag_4_focused: {string: {text: " {tag_4} ", <<: *default}}
           - map:
-              tag: tag_5_occupied
-              values:
-                true:
+              conditions:
+                tag_5_occupied:
                   map:
-                    tag: tag_5_focused
-                    values:
-                      true: {string: {text: " {tag_5} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_5_focused: {string: {text: " {tag_5} ", <<: [*focused, *occupied]}}
+                      ~tag_5_focused:
                         map:
-                          tag: tag_5_urgent
-                          values:
-                            true: {string: {text: " {tag_5} ", <<: *urgent}}
-                            false: {string: {text: " {tag_5} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_5_urgent: {string: {text: " {tag_5} ", <<: *urgent}}
+                            ~tag_5_urgent: {string: {text: " {tag_5} ", <<: *occupied}}
+                ~tag_5_occupied:
                   map:
-                    tag: tag_5_focused
-                    values:
-                      true: {string: {text: " {tag_5} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_5} ", <<: *default}}
+                    conditions:
+                      tag_5_focused: {string: {text: " {tag_5} ", <<: [*focused, *default]}}
+                      ~tag_5_focused: {string: {text: " {tag_5} ", <<: *default}}
           - map:
-              tag: tag_6_occupied
-              values:
-                true:
+              conditions:
+                tag_6_occupied:
                   map:
-                    tag: tag_6_focused
-                    values:
-                      true: {string: {text: " {tag_6} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_6_focused: {string: {text: " {tag_6} ", <<: [*focused, *occupied]}}
+                      ~tag_6_focused:
                         map:
-                          tag: tag_6_urgent
-                          values:
-                            true: {string: {text: " {tag_6} ", <<: *urgent}}
-                            false: {string: {text: " {tag_6} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_6_urgent: {string: {text: " {tag_6} ", <<: *urgent}}
+                            ~tag_6_urgent: {string: {text: " {tag_6} ", <<: *occupied}}
+                ~tag_6_occupied:
                   map:
-                    tag: tag_6_focused
-                    values:
-                      true: {string: {text: " {tag_6} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_6} ", <<: *default}}
+                    conditions:
+                      tag_6_focused: {string: {text: " {tag_6} ", <<: [*focused, *default]}}
+                      ~tag_6_focused: {string: {text: " {tag_6} ", <<: *default}}
           - map:
-              tag: tag_7_occupied
-              values:
-                true:
+              conditions:
+                tag_7_occupied:
                   map:
-                    tag: tag_7_focused
-                    values:
-                      true: {string: {text: " {tag_7} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_7_focused: {string: {text: " {tag_7} ", <<: [*focused, *occupied]}}
+                      ~tag_7_focused:
                         map:
-                          tag: tag_7_urgent
-                          values:
-                            true: {string: {text: " {tag_7} ", <<: *urgent}}
-                            false: {string: {text: " {tag_7} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_7_urgent: {string: {text: " {tag_7} ", <<: *urgent}}
+                            ~tag_7_urgent: {string: {text: " {tag_7} ", <<: *occupied}}
+                ~tag_7_occupied:
                   map:
-                    tag: tag_7_focused
-                    values:
-                      true: {string: {text: " {tag_7} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_7} ", <<: *default}}
+                    conditions:
+                      tag_7_focused: {string: {text: " {tag_7} ", <<: [*focused, *default]}}
+                      ~tag_7_focused: {string: {text: " {tag_7} ", <<: *default}}
           - map:
-              tag: tag_8_occupied
-              values:
-                true:
+              conditions:
+                tag_8_occupied:
                   map:
-                    tag: tag_8_focused
-                    values:
-                      true: {string: {text: " {tag_8} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_8_focused: {string: {text: " {tag_8} ", <<: [*focused, *occupied]}}
+                      ~tag_8_focused:
                         map:
-                          tag: tag_8_urgent
-                          values:
-                            true: {string: {text: " {tag_8} ", <<: *urgent}}
-                            false: {string: {text: " {tag_8} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_8_urgent: {string: {text: " {tag_8} ", <<: *urgent}}
+                            ~tag_8_urgent: {string: {text: " {tag_8} ", <<: *occupied}}
+                ~tag_8_occupied:
                   map:
-                    tag: tag_8_focused
-                    values:
-                      true: {string: {text: " {tag_8} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_8} ", <<: *default}}
+                    conditions:
+                      tag_8_focused: {string: {text: " {tag_8} ", <<: [*focused, *default]}}
+                      ~tag_8_focused: {string: {text: " {tag_8} ", <<: *default}}
           - map:
-              tag: tag_9_occupied
-              values:
-                true:
+              conditions:
+                tag_9_occupied:
                   map:
-                    tag: tag_9_focused
-                    values:
-                      true: {string: {text: " {tag_9} ", <<: [*focused, *occupied]}}
-                      false:
+                    conditions:
+                      tag_9_focused: {string: {text: " {tag_9} ", <<: [*focused, *occupied]}}
+                      ~tag_9_focused:
                         map:
-                          tag: tag_9_urgent
-                          values:
-                            true: {string: {text: " {tag_9} ", <<: *urgent}}
-                            false: {string: {text: " {tag_9} ", <<: *occupied}}
-                false:
+                          conditions:
+                            tag_9_urgent: {string: {text: " {tag_9} ", <<: *urgent}}
+                            ~tag_9_urgent: {string: {text: " {tag_9} ", <<: *occupied}}
+                ~tag_9_occupied:
                   map:
-                    tag: tag_9_focused
-                    values:
-                      true: {string: {text: " {tag_9} ", <<: [*focused, *default]}}
-                      false: {string: {text: " {tag_9} ", <<: *default}}
+                    conditions:
+                      tag_9_focused: {string: {text: " {tag_9} ", <<: [*focused, *default]}}
+                      ~tag_9_focused: {string: {text: " {tag_9} ", <<: *default}}
           - list:
               left-margin: 6
               spacing: 6
               items:
                 - string: {text: "{layout}"}
                 - map:
-                    tag: floating
-                    values:
-                      true: {string: {text: "{title}", max: 78, <<: *floating}}
-                      false: {string: {text: "{title}", max: 78}}
+                    conditions:
+                      floating: {string: {text: "{title}", max: 78, <<: *floating}}
+                      ~floating: {string: {text: "{title}", max: 78}}
   right:
     - pulse:
         content:
           map:
-            tag: online
-            values:
-              false: {string: {text: "ﱝ", foreground: 888888ff}}
-              true:
+            conditions:
+              ~online: {string: {text: "ﱝ", foreground: 888888ff}}
+              online:
                 map:
                   on-click:
                     left: /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
                     wheel-up: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%
                     wheel-down: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%
-                  tag: sink_muted
-                  values:
-                    true: {string: {text: "婢 {sink_percent}%", foreground: 888888ff}}
-                    false:
+                  conditions:
+                    sink_muted: {string: {text: "婢 {sink_percent}%", foreground: 888888ff}}
+                    ~sink_muted:
                       ramp:
                         tag: sink_percent
                         items:

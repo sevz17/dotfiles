@@ -25,11 +25,10 @@ bar:
 
         content:
           map:
-            tag: status
-            values:
-              '': {empty: {}}
-              Paused: {empty: {}}
-              Playing: {string: {text: "  {artist} - {title}"}}
+            conditions:
+              status == "": {empty: {}}
+              status == "Paused": {empty: {}}
+              status == "Playing": {string: {text: "  {artist} - {title}"}}
     - mem:
         interval: 5000
         content: {string: {text: "Mem: {used:mb} MB/{total:mb} MB"}}
@@ -65,11 +64,10 @@ bar:
         poll-interval: 60
         content:
           map:
-            tag: state
-            values:
-              full: {string: {text: " {capacity}%"}}
-              unknown: {string: {text: "BAT: {capacity}%"}}
-              discharging:
+            conditions:
+              state == "full": {string: {text: " {capacity}%"}}
+              state == "unknown": {string: {text: "BAT: {capacity}%"}}
+              state == "discharging":
                 ramp:
                   tag: capacity
                   items:
@@ -84,7 +82,7 @@ bar:
                     - string: {text: " {capacity}% ETA: {estimate}"}
                     - string: {text: " {capacity}% ETA: {estimate}"}
                     - string: {text: " {capacity}% ETA: {estimate}"}
-              charging:
+              state == "charging":
                 ramp:
                   tag: capacity
                   items:
@@ -109,16 +107,14 @@ bar:
         poll-interval: 5
         content:
           map:
-            tag: state
-            values:
-              down: {empty: {}}
-              up: {string: {text: "Net({name}): {rx-bitrate}Mb ↓↑ {tx-bitrate}Mb"}}
+            conditions:
+              state == "down": {empty: {}}
+              state == "up": {string: {text: "Net({name}): {dl-speed:kib} Ki ↓↑ {ul-speed:kib} Ki"}}
     - network:
         name: wlo1
         poll-interval: 5
         content:
           map:
-            tag: state
-            values:
-              down: {empty: {}}
-              up: {string: {text: "Net({name}) - SSID({ssid}) - signal({signal}): {rx-bitrate}Mb ↓↑ {tx-bitrate}Mb"}}
+            conditions:
+              state == "down": {empty: {}}
+              state == "up": {string: {text: "Net({name}) - SSID({ssid}) - signal({signal}): {dl-speed:kib} Ki ↓↑ {ul-speed:kib} Ki"}}
