@@ -12,12 +12,14 @@ bar:
 
   left:
     - script:
-        path: /usr/local/bin/dwl-tags
+        path: /usr/local/bin/dwl-tags.sh
         args: [1]
         anchors:
           - occupied: &occupied {foreground: ffffffff}
           - default: &default {foreground: aaaaaaff}
+          - urgent: &urgent {deco: { background: {color: ff0000ff}}}
           - focused: &focused {deco: { background: {color: 6000ffff}}}
+          - floating: &floating {deco: {underline: {size: 2, color: ffffffff}}}
         content:
           - map:
               tag: tag_0_occupied
@@ -27,7 +29,12 @@ bar:
                     tag: tag_0_focused
                     values:
                       true: {string: {text: " {tag_0} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_0} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_0_urgent
+                          values:
+                            true: {string: {text: " {tag_0} ", <<: *urgent}}
+                            false: {string: {text: " {tag_0} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_0_focused
@@ -42,7 +49,12 @@ bar:
                     tag: tag_1_focused
                     values:
                       true: {string: {text: " {tag_1} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_1} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_1_urgent
+                          values:
+                            true: {string: {text: " {tag_1} ", <<: *urgent}}
+                            false: {string: {text: " {tag_1} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_1_focused
@@ -57,7 +69,12 @@ bar:
                     tag: tag_2_focused
                     values:
                       true: {string: {text: " {tag_2} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_2} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_2_urgent
+                          values:
+                            true: {string: {text: " {tag_2} ", <<: *urgent}}
+                            false: {string: {text: " {tag_2} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_2_focused
@@ -72,7 +89,12 @@ bar:
                     tag: tag_3_focused
                     values:
                       true: {string: {text: " {tag_3} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_3} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_3_urgent
+                          values:
+                            true: {string: {text: " {tag_3} ", <<: *urgent}}
+                            false: {string: {text: " {tag_3} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_3_focused
@@ -87,7 +109,12 @@ bar:
                     tag: tag_4_focused
                     values:
                       true: {string: {text: " {tag_4} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_4} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_4_urgent
+                          values:
+                            true: {string: {text: " {tag_4} ", <<: *urgent}}
+                            false: {string: {text: " {tag_4} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_4_focused
@@ -102,7 +129,12 @@ bar:
                     tag: tag_5_focused
                     values:
                       true: {string: {text: " {tag_5} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_5} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_5_urgent
+                          values:
+                            true: {string: {text: " {tag_5} ", <<: *urgent}}
+                            false: {string: {text: " {tag_5} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_5_focused
@@ -117,7 +149,12 @@ bar:
                     tag: tag_6_focused
                     values:
                       true: {string: {text: " {tag_6} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_6} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_6_urgent
+                          values:
+                            true: {string: {text: " {tag_6} ", <<: *urgent}}
+                            false: {string: {text: " {tag_6} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_6_focused
@@ -132,7 +169,12 @@ bar:
                     tag: tag_7_focused
                     values:
                       true: {string: {text: " {tag_7} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_7} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_7_urgent
+                          values:
+                            true: {string: {text: " {tag_7} ", <<: *urgent}}
+                            false: {string: {text: " {tag_7} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_7_focused
@@ -147,7 +189,12 @@ bar:
                     tag: tag_8_focused
                     values:
                       true: {string: {text: " {tag_8} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_8} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_8_urgent
+                          values:
+                            true: {string: {text: " {tag_8} ", <<: *urgent}}
+                            false: {string: {text: " {tag_8} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_8_focused
@@ -162,7 +209,12 @@ bar:
                     tag: tag_9_focused
                     values:
                       true: {string: {text: " {tag_9} ", <<: [*focused, *occupied]}}
-                      false: {string: {text: " {tag_9} ", <<: *occupied}}
+                      false:
+                        map:
+                          tag: tag_9_urgent
+                          values:
+                            true: {string: {text: " {tag_9} ", <<: *urgent}}
+                            false: {string: {text: " {tag_9} ", <<: *occupied}}
                 false:
                   map:
                     tag: tag_9_focused
@@ -174,7 +226,11 @@ bar:
               spacing: 6
               items:
                 - string: {text: "{layout}"}
-                - string: {text: "{title}", max: 78}
+                - map:
+                    tag: floating
+                    values:
+                      true: {string: {text: "{title}", max: 78, <<: *floating}}
+                      false: {string: {text: "{title}", max: 78}}
   right:
     - pulse:
         content:
