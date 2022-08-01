@@ -26,7 +26,11 @@ bar:
                 tag_0_occupied:
                   map:
                     conditions:
-                      tag_0_focused: {string: {text: " {tag_0} ", <<: [*focused, *occupied]}}
+                      tag_0_focused:
+                          map:
+                            conditions:
+                              tag_0_urgent: {string: {text: " {tag_0} ", <<: [*urgent, *occupied]}}
+                              ~tag_0_urgent: {string: {text: " {tag_0} ", <<: [*focused, *occupied]}}
                       ~tag_0_focused:
                           map:
                             conditions:
@@ -42,7 +46,11 @@ bar:
                 tag_1_occupied:
                   map:
                     conditions:
-                      tag_1_focused: {string: {text: " {tag_1} ", <<: [*focused, *occupied]}}
+                      tag_1_focused:
+                          map:
+                            conditions:
+                              tag_1_urgent: {string: {text: " {tag_1} ", <<: [*urgent, *occupied]}}
+                              ~tag_1_urgent: {string: {text: " {tag_1} ", <<: [*focused, *occupied]}}
                       ~tag_1_focused:
                         map:
                           conditions:
@@ -58,7 +66,11 @@ bar:
                 tag_2_occupied:
                   map:
                     conditions:
-                      tag_2_focused: {string: {text: " {tag_2} ", <<: [*focused, *occupied]}}
+                      tag_2_focused:
+                          map:
+                            conditions:
+                              tag_2_urgent: {string: {text: " {tag_2} ", <<: [*urgent, *occupied]}}
+                              ~tag_2_urgent: {string: {text: " {tag_2} ", <<: [*focused, *occupied]}}
                       ~tag_2_focused:
                         map:
                           conditions:
@@ -74,7 +86,11 @@ bar:
                 tag_3_occupied:
                   map:
                     conditions:
-                      tag_3_focused: {string: {text: " {tag_3} ", <<: [*focused, *occupied]}}
+                      tag_3_focused:
+                          map:
+                            conditions:
+                              tag_3_urgent: {string: {text: " {tag_3} ", <<: [*urgent, *occupied]}}
+                              ~tag_3_urgent: {string: {text: " {tag_3} ", <<: [*focused, *occupied]}}
                       ~tag_3_focused:
                         map:
                           conditions:
@@ -90,7 +106,11 @@ bar:
                 tag_4_occupied:
                   map:
                     conditions:
-                      tag_4_focused: {string: {text: " {tag_4} ", <<: [*focused, *occupied]}}
+                      tag_4_focused:
+                          map:
+                            conditions:
+                              tag_4_urgent: {string: {text: " {tag_4} ", <<: [*urgent, *occupied]}}
+                              ~tag_4_urgent: {string: {text: " {tag_4} ", <<: [*focused, *occupied]}}
                       ~tag_4_focused:
                         map:
                           conditions:
@@ -106,7 +126,11 @@ bar:
                 tag_5_occupied:
                   map:
                     conditions:
-                      tag_5_focused: {string: {text: " {tag_5} ", <<: [*focused, *occupied]}}
+                      tag_5_focused:
+                          map:
+                            conditions:
+                              tag_5_urgent: {string: {text: " {tag_5} ", <<: [*urgent, *occupied]}}
+                              ~tag_5_urgent: {string: {text: " {tag_5} ", <<: [*focused, *occupied]}}
                       ~tag_5_focused:
                         map:
                           conditions:
@@ -122,7 +146,11 @@ bar:
                 tag_6_occupied:
                   map:
                     conditions:
-                      tag_6_focused: {string: {text: " {tag_6} ", <<: [*focused, *occupied]}}
+                      tag_6_focused:
+                          map:
+                            conditions:
+                              tag_6_urgent: {string: {text: " {tag_6} ", <<: [*urgent, *occupied]}}
+                              ~tag_6_urgent: {string: {text: " {tag_6} ", <<: [*focused, *occupied]}}
                       ~tag_6_focused:
                         map:
                           conditions:
@@ -138,7 +166,11 @@ bar:
                 tag_7_occupied:
                   map:
                     conditions:
-                      tag_7_focused: {string: {text: " {tag_7} ", <<: [*focused, *occupied]}}
+                      tag_7_focused:
+                          map:
+                            conditions:
+                              tag_7_urgent: {string: {text: " {tag_7} ", <<: [*urgent, *occupied]}}
+                              ~tag_7_urgent: {string: {text: " {tag_7} ", <<: [*focused, *occupied]}}
                       ~tag_7_focused:
                         map:
                           conditions:
@@ -154,7 +186,11 @@ bar:
                 tag_8_occupied:
                   map:
                     conditions:
-                      tag_8_focused: {string: {text: " {tag_8} ", <<: [*focused, *occupied]}}
+                      tag_8_focused:
+                          map:
+                            conditions:
+                              tag_8_urgent: {string: {text: " {tag_8} ", <<: [*urgent, *occupied]}}
+                              ~tag_8_urgent: {string: {text: " {tag_8} ", <<: [*focused, *occupied]}}
                       ~tag_8_focused:
                         map:
                           conditions:
@@ -170,7 +206,11 @@ bar:
                 tag_9_occupied:
                   map:
                     conditions:
-                      tag_9_focused: {string: {text: " {tag_9} ", <<: [*focused, *occupied]}}
+                      tag_9_focused:
+                          map:
+                            conditions:
+                              tag_9_urgent: {string: {text: " {tag_9} ", <<: [*urgent, *occupied]}}
+                              ~tag_9_urgent: {string: {text: " {tag_9} ", <<: [*focused, *occupied]}}
                       ~tag_9_focused:
                         map:
                           conditions:
