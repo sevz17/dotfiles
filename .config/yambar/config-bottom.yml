@@ -25,9 +25,8 @@ bar:
 
         content:
           map:
+            default: {empty: {}}
             conditions:
-              status == "": {empty: {}}
-              status == "Paused": {empty: {}}
               status == "Playing": {string: {text: "  {artist} - {title}"}}
     - mem:
         interval: 5000
