@@ -30,7 +30,7 @@ bar:
               status == "Playing": {string: {text: "  {artist} - {title}"}}
     - mem:
         interval: 5000
-        content: {string: {text: "Mem: {used:mb} MB/{total:mb} MB"}}
+        content: {string: {text: "Mem: {used:mib} MB/{total:mib} MB"}}
     # Load average
     - script:
         poll-interval: 5
