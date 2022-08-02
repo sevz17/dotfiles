@@ -69,31 +69,39 @@ bar:
               state == "full": {string: {text: " {capacity}%"}}
               state == "unknown": {string: {text: "BAT: {capacity}%"}}
               state == "discharging":
-                ramp:
-                  tag: capacity
+                list:
                   items:
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - ramp:
+                        tag: capacity
+                        items:
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                    - string: {text: " {capacity}%"}
+                    - string: {text: " ETA: {estimate}"}
               state == "charging":
-                ramp:
-                  tag: capacity
+                list:
                   items:
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
-                    - string: {text: " {capacity}% ETA: {estimate}"}
+                    - ramp:
+                        tag: capacity
+                        items:
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                          - string: {text: ""}
+                    - string: {text: " {capacity}%"}
+                    - string: {text: " ETA: {estimate}"}
     - backlight:
         name: amdgpu_bl0
         content: {string: {text: "BL: {percent}%"}}
