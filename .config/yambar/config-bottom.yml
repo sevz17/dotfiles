@@ -44,11 +44,13 @@ bar:
         poll-interval: 5
         path: /usr/bin/awk
         args:
-          - '{ printf "temp|range:20-105|%i\n\n", int($1/1000) }'
-          - /sys/class/hwmon/hwmon0/temp1_input
+          - '{ printf "temp|float|%f\n\n", $1/1000 }'
+          - /sys/class/hwmon/hwmon1/temp1_input
         content:
           ramp:
             tag: temp
+            min: 20
+            max: 105
             items:
               - string: {text: " {temp}°C"}
               - string: {text: " {temp}°C"}
