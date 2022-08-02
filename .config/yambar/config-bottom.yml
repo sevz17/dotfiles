@@ -105,25 +105,55 @@ bar:
     - backlight:
         name: amdgpu_bl0
         content: {string: {text: "BL: {percent}%"}}
-# Yambar only reports network speed in Mbit/s
-#    - script:
-#        path: /usr/local/bin/network
-#        args: [ -s ]
-#        content: {string: {text: "Net: {rx-bitrate} ↓↑ {tx-bitrate}"}}
-
     - network:
         name: eno1
         poll-interval: 5
         content:
           map:
+            default: {empty: {}}
             conditions:
-              state == "down": {empty: {}}
-              state == "up": {string: {text: "Net({name}): {dl-speed:kib} Ki ↓↑ {ul-speed:kib} Ki"}}
+              state == "up":
+                list:
+                  items:
+                    - string: {text: "Net({name}): "}
+                    - map:
+                        default: {string: {text: "{dl-speed}"}}
+                        conditions:
+                          dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
+                          dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
+                          dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
+                    - string: {text: " ↓↑ "}
+                    - map:
+                        default: {string: {text: "{ul-speed}"}}
+                        conditions:
+                          ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
+                          ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
+                          ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
     - network:
         name: wlo1
         poll-interval: 5
         content:
           map:
+            default: {empty: {}}
             conditions:
-              state == "down": {empty: {}}
-              state == "up": {string: {text: "Net({name}) - SSID({ssid}) - signal({signal}): {dl-speed:kib} Ki ↓↑ {ul-speed:kib} Ki"}}
+              state == "up":
+                list:
+                  items:
+                    - string: {text: "Net({name})"}
+                    - string: {text: " - "}
+                    - string: {text: "SSID({ssid})"}
+                    - string: {text: " - "}
+                    - string: {text: "signal({signal}): "}
+                    - map:
+                        default: {string: {text: "{dl-speed}"}}
+                        conditions:
+                          dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
+                          dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
+                          dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
+                    - string: {text: " ↓↑ "}
+                    - map:
+                        default: {string: {text: "{ul-speed}"}}
+                        conditions:
+                          ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
+                          ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
+                          ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
