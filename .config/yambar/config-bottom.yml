@@ -29,11 +29,11 @@ bar:
             conditions:
               status == "Playing": {string: {text: "  {artist} - {title}"}}
     - mem:
-        interval: 5000
+        interval: 1000
         content: {string: {text: "Mem: {used:mib} MB/{total:mib} MB"}}
     # Load average
     - script:
-        poll-interval: 5
+        poll-interval: 1
         path: /usr/bin/awk
         args:
           - '{print "av1|float|"$1"\nav5|float|"$2"\nav15|float|"$3"\n"}'
@@ -41,7 +41,7 @@ bar:
         content: {string: {text: "Avg: {av1} {av5} {av15}"}}
     # Temperature
     - script:
-        poll-interval: 5
+        poll-interval: 1
         path: /usr/bin/awk
         args:
           - '{ printf "temp|float|%f\n\n", $1/1000 }'
@@ -58,11 +58,11 @@ bar:
               - string: {text: " {temp}°C"}
               - string: {text: " {temp}°C"}
     - cpu:
-        interval: 5000
+        interval: 1000
         content: {string: {text: "CPU: {cpu}%"}}
     - battery:
         name: BAT0
-        poll-interval: 60
+        poll-interval: 30
         content:
           map:
             conditions:
@@ -107,7 +107,7 @@ bar:
         content: {string: {text: "BL: {percent}%"}}
     - network:
         name: eno1
-        poll-interval: 5
+        poll-interval: 1
         content:
           map:
             default: {empty: {}}
@@ -131,7 +131,7 @@ bar:
                           ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
     - network:
         name: wlo1
-        poll-interval: 5
+        poll-interval: 1
         content:
           map:
             default: {empty: {}}
