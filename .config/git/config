@@ -32,3 +32,6 @@
 	signoff = true
 [merge]
 	tool = emerge
+[sendemail]
+	sendmail-cmd = "~/hydroxide/hydroxide sendmail leohdz172@protonmail.com --"
+	annotate = true
