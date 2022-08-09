@@ -5,16 +5,16 @@ function reset_broken_terminal () {
 }
 
 function xterm_title_precmd () {
-	print -Pn -- '\e]2;%n@%m %~\a'
+	print -Pn -- '\e]2;%~\a'
 }
 
 function xterm_title_preexec () {
-	print -Pn -- '\e]2;%n@%m %~ ' && print -n -- " ${(q)1}\a"
+	print -Pn -- '\e]2;%~ ' && print -n -- " ${(q)1}\a"
 }
 
 add-zsh-hook -Uz precmd reset_broken_terminal
 
-if [[ "${TERM}" == (Eterm*|alacritty*|aterm*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|tmux*|xterm*) ]]; then
+if [[ "${TERM}" == (Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|tmux*|xterm*) ]]; then
 	add-zsh-hook -Uz precmd xterm_title_precmd
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
