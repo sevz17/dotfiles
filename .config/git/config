@@ -26,6 +26,7 @@
 	autoStash = true
 [push]
 	gpgSign = if-asked
+	default = current
 [pull]
 	rebase = true
 [format]
@@ -33,5 +34,4 @@
 [merge]
 	tool = emerge
 [sendemail]
-	sendmail-cmd = "~/hydroxide/hydroxide sendmail leohdz172@protonmail.com --"
 	annotate = true
