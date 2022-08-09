@@ -7,6 +7,13 @@ function exit_zsh() { exit }
 zle -N exit_zsh
 bindkey '^D' exit_zsh
 
+function clear-screen-and-scrollback {
+    clear && printf '\e[3J'
+    zle && zle .reset-prompt && zle -R
+}
+zle -N clear-screen-and-scrollback
+bindkey "\e[27;5;46~" clear-screen-and-scrollback
+
 bindkey 'TAB' expand-or-complete-prefix
 
 autoload -U up-line-or-beginning-search
