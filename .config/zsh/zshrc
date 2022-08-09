@@ -8,8 +8,6 @@ export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
 
-zinit wait lucid pick'zprofile' for /etc/zsh
-
 zinit wait lucid for \
   OMZP::git \
   OMZP::sudo \
