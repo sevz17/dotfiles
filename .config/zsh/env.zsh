@@ -10,4 +10,4 @@ export CLANGD_FLAGS="--all-scopes-completion -j=5 --clang-tidy --completion-pars
 
 fpath+="${ZDOTDIR}/completions"
 
-export PATH="$HOME/.emacs.d/bin/:$PATH"
+export PATH="${XDG_CONFIG_HOME:-${HOME}/.config}/emacs/bin/:$PATH"
