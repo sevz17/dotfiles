@@ -7,10 +7,14 @@
 # Appearance
 default_border pixel 2
 default_floating_border pixel 2
-smart_borders on
-smart_gaps on
+smart_borders off
+smart_gaps off
 gaps inner 6
-gaps outer -6
+gaps outer 0
+
+### Fonts
+font pango:Caskaydia Cove Nerd Font 14
+client.focused #6000ff #6000ff #ffffff #7e30ff
 
 # Volume
 set $volume_step 2
@@ -34,28 +38,19 @@ exec foot --server
 exec swayidle -w
 #exec udiskie -s &
 
-### Output configuration
-# The path of you wallpapers
-set $wallpaper `chbg --print`
-output * bg $wallpaper fill
+exec_always rwbg
 
 ### Input configuration
 input "type:keyboard" {
-    xkb_layout "latam,latam,us"
-    xkb_variant "dvorak,,"
-    xkb_options "grp:win_space_toggle,keypad:pointerkeys,terminate:ctrl_alt_bksp"
     xkb_numlock enable
 }
 
+seat * xcursor_theme breeze_cursors 24
+
 input "type:pointer" {
     accel_profile flat
-    dwt disabled
     pointer_accel 0.0
 }
-
-### Fonts
-font pango:Caskaydia Cove Nerd Font 14
-client.focused #6000ff #6000ff #ffffff #7e30ff
 
 ### Keys
 include ./define-keys
@@ -79,7 +74,4 @@ bar {
     swaybar_command waybar
 }
 
-bar {
-    id 1
-    swaybar_command waybar-bottom
-}
+exec yambar -c ~/.config/yambar/config-bottom.yml
