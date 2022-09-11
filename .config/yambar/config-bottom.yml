@@ -16,22 +16,22 @@ bar:
     top-margin: 0
 
   left:
-    - script:
-        path: /usr/bin/playerctl
-        args:
-          - "--follow"
-          - metadata
-          - "-f"
-          - |
-            status|string|{{status}}
-            artist|string|{{artist}}
-            title|string|{{title}}
-
-        content:
-          map:
-            default: {empty: {}}
-            conditions:
-              status == "Playing": {string: {text: "  {artist} - {title}"}}
+#    - script:
+#        path: /usr/bin/playerctl
+#        args:
+#          - "--follow"
+#          - metadata
+#          - "-f"
+#          - |
+#            status|string|{{status}}
+#            artist|string|{{artist}}
+#            title|string|{{title}}
+#
+#        content:
+#          map:
+#            default: {empty: {}}
+#            conditions:
+#              status == "Playing": {string: {text: "  {artist} - {title}"}}
     - mem:
         <<: *interval
         content: {string: {text: "Mem: {used:mib} MB/{total:mib} MB"}}
