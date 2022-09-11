@@ -161,3 +161,16 @@ bar:
                           ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
                           ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
                           ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
+    - removables:
+        content:
+          map:
+            conditions:
+              ~mounted:
+                string:
+                  on-click: /usr/bin/udisksctl mount -b {device}
+                  text: "{label}"
+                  foreground: 888888ff
+              mounted:
+                string:
+                    on-click: /usr/bin/udisksctl umount -b {device}
+                    text: "{label}"
