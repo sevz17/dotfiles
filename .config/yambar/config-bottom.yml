@@ -174,3 +174,49 @@ bar:
                 string:
                     on-click: /usr/bin/udisksctl umount -b {device}
                     text: "{label}"
+#    - disk-io:
+#        <<: *interval
+#        content:
+#          map:
+#            conditions:
+#              device == sda:
+#                list:
+#                  items:
+#                    - string: {text: "{device}: "}
+#                    - string: {text: "r "}
+#                    - map:
+#                        default: {string: {text: "{read_speed} B/s"}}
+#                        conditions:
+#                          read_speed > 1073741824: {string: {text: "{read_speed:gib} GB/s"}}
+#                          read_speed > 1048576: {string: {text: "{read_speed:mib} MB/s"}}
+#                          read_speed > 1024: {string: {text: "{read_speed:kib} KB/s"}}
+#                    - string: {text: " | "}
+#                    - string: {text: "w "}
+#                    - map:
+#                        default: {string: {text: "{write_speed} B/s"}}
+#                        conditions:
+#                          write_speed > 1073741824: {string: {text: "{write_speed:gib} GB/s"}}
+#                          write_speed > 1048576: {string: {text: "{write_speed:mib} MB/s"}}
+#                          write_speed > 1024: {string: {text: "{write_speed:kib} KB/s"}}
+#                    - string: {text: "  "}
+#              device == sdb:
+#                list:
+#                  items:
+#                    - string: {text: "{device}: "}
+#                    - string: {text: "r "}
+#                    - map:
+#                        default: {string: {text: "{read_speed} B/s"}}
+#                        conditions:
+#                          read_speed > 1073741824: {string: {text: "{read_speed:gib} GB/s"}}
+#                          read_speed > 1048576: {string: {text: "{read_speed:mib} MB/s"}}
+#                          read_speed > 1024: {string: {text: "{read_speed:kib} KB/s"}}
+#                    - string: {text: " | "}
+#                    - string: {text: "w "}
+#                    - map:
+#                        default: {string: {text: "{write_speed} B/s"}}
+#                        conditions:
+#                          write_speed > 1073741824: {string: {text: "{write_speed:gib} GB/s"}}
+#                          write_speed > 1048576: {string: {text: "{write_speed:mib} MB/s"}}
+#                          write_speed > 1024: {string: {text: "{write_speed:kib} KB/s"}}
+#                    - string: {text: "  "}
+#
