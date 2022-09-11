@@ -2,9 +2,10 @@ bar:
   location: top
   layer: bottom
   background: 222222ff
-  font: "UbuntuMono Nerd Font:size=18:antialias=true:autohint:true"
+  font: "UbuntuMono Nerd Font:size=18:antialias=true:autohint:true,Joypixels"
   height: 22
   spacing: 6
+  monitor: eDP-1
   right-margin: 6
   border:
     margin: 6
@@ -13,7 +14,7 @@ bar:
   left:
     - script:
         path: /usr/local/bin/dwl-tags.sh
-        args: [1]
+        args: [ eDP-1 ]
         anchors:
           - occupied: &occupied {foreground: ffffffff}
           - default: &default {foreground: aaaaaaff}
