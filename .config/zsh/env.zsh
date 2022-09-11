@@ -4,10 +4,4 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 export GPG_TTY=$(tty)
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-export CLANGD_FLAGS="-j=9 --clang-tidy --completion-parse=always --include-ineligible-results --malloc-trim --pch-storage=memory --header-insertion=never --header-insertion-decorators --inlay-hints --background-index --completion-style=detailed"
-
 fpath+="${ZDOTDIR}/completions"
-
-export PATH="${XDG_CONFIG_HOME:-${HOME}/.config}/emacs/bin/:$PATH"
