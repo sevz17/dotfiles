@@ -32,3 +32,13 @@ export CHROMIUM_USER_FLAGS="\
   --smooth-scrolling --force-dark-mode \
   --disk-cache-dir=/tmp/chromium-cache"
 export CHROMIUM_BIN_USER_FLAGS="--user-data-dir=${HOME}/.config/chromium ${CHROMIUM_FLAGS}"
+
+# Don't do this :)
+dbus_session_file="${XDG_RUNTIME_DIR:-/tmp}/dbus-session"
+if [ -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+  if [ ! -f "${dbus_session_file}" ]; then
+    dbus-launch | awk '{print "export "$0}' > "${dbus_session_file}"
+  fi
+  . "${dbus_session_file}"
+fi
+unset dbus_session_file
