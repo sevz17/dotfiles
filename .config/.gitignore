@@ -2,6 +2,7 @@
 
 !.gitignore
 !alacritty
+!fish
 !fnott
 !foot
 !fuzzel

@@ -1,0 +1,56 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export AR:llvm\x2dar
+SETUVAR --export CC:clang
+SETUVAR --export CFLAGS:\x2dg\x1e\x2dggdb3\x1e\x2dgfull\x1e\x2dglldb
+SETUVAR --export CXX:clang\x2b\x2b
+SETUVAR --export LD:ld\x2elld
+SETUVAR --export NM:llvm\x2dnm
+SETUVAR --export RANLIB:llvm\x2dranlib
+SETUVAR --export STRIP:llvm\x2dstrip
+SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_cat:bat
+SETUVAR _fish_abbr_cd:z
+SETUVAR _fish_abbr_ga:git\x20add
+SETUVAR _fish_abbr_gapa:git\x20add\x20\x2dp
+SETUVAR _fish_abbr_gc:git\x20commit
+SETUVAR _fish_abbr_gc_21_:git\x20commit\x20\x2d\x2damend
+SETUVAR _fish_abbr_gco:git\x20checkout
+SETUVAR _fish_abbr_gd:git\x20diff
+SETUVAR _fish_abbr_glo:git\x20log\x20\x2d\x2doneline
+SETUVAR _fish_abbr_gss:git\x20status\x20\x2ds
+SETUVAR _fish_abbr_gsw:git\x20switch
+SETUVAR _fish_abbr_gswC:git\x20switch\x20\x2dC
+SETUVAR _fish_abbr_gswc:git\x20switch\x20\x2dc
+SETUVAR _fish_abbr_la:exa\x20\x2d\x2dicons\x20\x2dlga
+SETUVAR _fish_abbr_ls:exa\x20\x2d\x2dicons
+SETUVAR _fish_abbr_src:exec\x20\x24SHELL\x20\x2dc\x20\x22\x2e\x20\x7e/\x2eprofile\x20\x26\x26\x20\x2e\x20\x7e/\x2edashrc\x22
+SETUVAR _fish_abbr_tree:exa\x20\x2d\x2dicons\x20\x2d\x2dtree
+SETUVAR fish_color_autosuggestion:555\x1ebrblack
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:blue
+SETUVAR fish_color_comment:red
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:green
+SETUVAR fish_color_error:brred
+SETUVAR fish_color_escape:brcyan
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:brcyan
+SETUVAR fish_color_param:cyan
+SETUVAR fish_color_quote:yellow
+SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d111
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
+SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
