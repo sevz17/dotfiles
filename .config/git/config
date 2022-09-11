@@ -8,7 +8,7 @@
 	editor = emacsclient
 	autocrlf = false
 	# use bat if available, else use less
-	pager = (which bat > /dev/null 2>&1 && bat -l diff || less)
+	pager = (command -v bat > /dev/null 2>&1 && bat -pl diff || less)
 	whitespace = blank-at-eol,blank-at-eof,space-before-tab
 [color]
 	ui = auto
