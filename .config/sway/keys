@@ -102,34 +102,34 @@ bindcode {
 
 
     ### Hardware
-    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
-    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
-    XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    $Key_XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
+    $Key_XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
+    $Key_XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-    XF86MonBrightnessDown exec brightnessctl set $volume_step%-
-    XF86MonBrightnessUp exec brightnessctl set +$volume_step%
+    $Key_XF86MonBrightnessDown exec brightnessctl set $volume_step%-
+    $Key_XF86MonBrightnessUp exec brightnessctl set +$volume_step%
 
     ### Music players
     # Next or previous song
-    XF86AudioPrev exec playerctl -i spotify previous
-    XF86AudioNext exec playerctl -i spotify next
+    $Key_XF86AudioPrev exec playerctl -i spotify previous
+    $Key_XF86AudioNext exec playerctl -i spotify next
 
-    $mod+XF86AudioPrev exec playerctl -p spotify previous
-    $mod+XF86AudioNext exec playerctl -p spotify next
+    $mod+$Key_XF86AudioPrev exec playerctl -p spotify previous
+    $mod+$Key_XF86AudioNext exec playerctl -p spotify next
 
     # Play or pause
-    XF86AudioPlay exec playerctl -i spotify play-pause
-    $mod+XF86AudioPlay exec playerctl -p spotify play-pause
+    $Key_XF86AudioPlay exec playerctl -i spotify play-pause
+    $mod+$Key_XF86AudioPlay exec playerctl -p spotify play-pause
 
     # Volume (only for spotify)
-    $alt+XF86AudioLowerVolume exec vol_spotify -$volume_step%
-    $alt+XF86AudioRaiseVolume exec vol_spotify +$volume_step%
-    $alt+XF86AudioMute exec vol_spotify toggle-mute
+    $alt+$Key_XF86AudioLowerVolume exec vol_spotify -$volume_step%
+    $alt+$Key_XF86AudioRaiseVolume exec vol_spotify +$volume_step%
+    $alt+$Key_XF86AudioMute exec vol_spotify toggle-mute
 
 
 
     # Make the current focus fullscreen
     $mod+Shift+$Key_f fullscreen toggle
 }
-
+    tiling_drag enable
     floating_modifier $mod normal
