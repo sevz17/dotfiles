@@ -16,10 +16,12 @@ export ENV="${HOME}/.dashrc"
 
 export TERMINAL=footclient
 
-export CHROMIUM_FLAGS="--enable-features=Vulkan,VaapiVideoDecoder,UseOzonePlatform,WebUIDarkMode \
-  --ozone-platform-hint=auto --enable-gpu-memory-buffer-video-frames \
-  --enable-gpu-compositing --ignore-gpu-blocklist --enable-accelerated-video-decode \
-  --enable-webrtc-pipewire-capturer --ignore-gpu-blocklist --enable-gpu-rasterization \
-  --enable-oop-rasterization --canvas-oop-rasterization --enable-zero-copy \
-  --smooth-scrolling --enable-drdc --enable-raw-draw --force-dark-mode"
-export CHROMIUM_BIN_FLAGS="--user-data-dir=${HOME}/.config/chromium ${CHROMIUM_FLAGS}"
+export CHROMIUM_USER_FLAGS="\
+  --enable-features=ZeroCopy,VaapiVideoEncoder,VaapiVideoDecoder,WebUIDarkMode,WebRTCPipeWireCapturer,CanvasOopRasterization,EnableDrDc,SystemNotifications \
+  --enable-gpu-memory-buffer-video-frames \
+  --enable-gpu-compositing --ignore-gpu-blocklist \
+  --ignore-gpu-blocklist --enable-gpu-rasterization \
+  --enable-oop-rasterization --enable-zero-copy \
+  --smooth-scrolling --force-dark-mode \
+  --disk-cache-dir=/tmp/chromium-cache"
+export CHROMIUM_BIN_USER_FLAGS="--user-data-dir=${HOME}/.config/chromium ${CHROMIUM_FLAGS}"
