@@ -39,7 +39,7 @@ bindcode {
 
     $mod+$Key_i inhibit_idle open
     $mod+Shift+$Key_i inhibit_idle none
-    $mod+Control+$Key_i exec 'swaymsg inhibit_idle $(echo "focus\nfullscreen\nopen\nnone" | fuzzel -d -P "idle inhibitor mode ->")'
+    $mod+Control+$Key_i exec 'swaymsg inhibit_idle $(echo "focus\nfullscreen\nopen\nnone" | fuzzel -d -p "idle inhibitor mode -> ")'
 
     $mod+Control+$Key_s split toggle
 
