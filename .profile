@@ -14,6 +14,8 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}"/pass
 
 export ENV="${HOME}/.dashrc"
 
+export TERMINAL=footclient
+
 export CHROMIUM_FLAGS="--enable-features=Vulkan,VaapiVideoDecoder,UseOzonePlatform,WebUIDarkMode \
   --ozone-platform-hint=auto --enable-gpu-memory-buffer-video-frames \
   --enable-gpu-compositing --ignore-gpu-blocklist --enable-accelerated-video-decode \
