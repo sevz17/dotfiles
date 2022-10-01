@@ -21,15 +21,9 @@ colors:
     background: '#000000'
     foreground: '#dddddd'
 font:
-  size: 10
-  offset:
-    x: 1
-  bold:
-    family: Caskaydia Cove Nerd Font
-  italic:
-    family: Caskaydia Cove Nerd Font
+  size: 9
   normal:
-    family: Caskaydia Cove Nerd Font
+    family: Iosevka Nerd Font
 window:
   opacity: 0.7
   padding:
