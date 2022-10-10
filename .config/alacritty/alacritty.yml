@@ -1,31 +1,49 @@
 colors:
-  bright:
-    black: '#767676'
-    blue: '#1a8fff'
-    cyan: '#14ffff'
-    green: '#23fd00'
-    magenta: '#fd28ff'
-    red: '#f2201f'
-    white: '#ffffff'
-    yellow: '#fffd00'
-  normal:
-    black: '#000000'
-    blue: '#0d73cc'
-    cyan: '#0dcdcd'
-    green: '#19cb00'
-    magenta: '#cb1ed1'
-    red: '#cc0403'
-    white: '#dddddd'
-    yellow: '#cecb00'
   primary:
     background: '#000000'
     foreground: '#dddddd'
+  normal:
+    black:   '#000000'
+    red:     '#cc0403'
+    green:   '#19cb00'
+    yellow:  '#cecb00'
+    blue:    '#0d73cc'
+    magenta: '#cb1ed1'
+    cyan:    '#0dcdcd'
+    white:   '#dddddd'
+  bright:
+    black:   '#767676'
+    red:     '#f2201f'
+    green:   '#23fd00'
+    yellow:  '#fffd00'
+    blue:    '#1a8fff'
+    magenta: '#fd28ff'
+    cyan:    '#14ffff'
+    white:   '#ffffff'
 font:
-  size: 9
+  size: 9.5
   normal:
     family: Iosevka Nerd Font
 window:
   opacity: 0.7
+  decorations: none
   padding:
     x: 0
     y: 0
+shell:
+  program: /bin/fish
+
+key_bindings:
+  - { key: P,      mods: Control|Shift|Alt,                action: ScrollHalfPageUp}
+  - { key: P,      mods: Control|Shift,                    action: ScrollLineUp }
+  - { key: N,      mods: Control|Shift|Alt,                action: ScrollHalfPageDown}
+  - { key: N,      mods: Control|Shift,                    action: ScrollLineDown }
+  - { key: Home,   mods: Shift,                            action: ScrollToTop }
+  - { key: End,    mods: Shift,                            action: ScrollToBottom }
+  - { key: N,      mods: Shift|Alt,                        action: CreateNewWindow }
+  - { key: S,      mods: Control|Shift,     mode: ~Search, action: SearchForward }
+
+  - { key: Return,                          mode: Search,  action: SearchConfirm }
+  - { key: G,      mods: Control,           mode: Search,  action: SearchCancel }
+  - { key: N,      mods: Control,           mode: Search,  action: SearchFocusNext }
+  - { key: P,      mods: Control,           mode: Search,  action: SearchFocusPrevious }
