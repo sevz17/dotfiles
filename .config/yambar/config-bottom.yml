@@ -112,6 +112,21 @@ bar:
     - backlight:
         name: amdgpu_bl0
         content: {string: {text: "BL: {percent}%"}}
+    - removables:
+        content:
+          map:
+            conditions:
+              ~mounted:
+                string:
+                  on-click:
+                    left: /usr/bin/udisksctl mount -b {device}
+                    middle: /usr/bin/udisksctl power-off -b {device}
+                  text: "{label}"
+                  foreground: 888888ff
+              mounted:
+                string:
+                    on-click: /usr/bin/udisksctl unmount -b {device}
+                    text: "{label}"
     - network:
         name: eno1
         <<: *poll-interval
@@ -164,19 +179,6 @@ bar:
                           ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
                           ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
                           ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
-    - removables:
-        content:
-          map:
-            conditions:
-              ~mounted:
-                string:
-                  on-click: /usr/bin/udisksctl mount -b {device}
-                  text: "{label}"
-                  foreground: 888888ff
-              mounted:
-                string:
-                    on-click: /usr/bin/udisksctl umount -b {device}
-                    text: "{label}"
 #    - disk-io:
 #        <<: *interval
 #        content:
