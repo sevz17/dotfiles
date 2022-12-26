@@ -35,13 +35,3 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
   export SSH_AUTH_SOCK
 fi
-
-# Don't do this :)
-dbus_session_file="${XDG_RUNTIME_DIR:-/tmp}/dbus-session"
-if [ -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
-  if [ ! -f "${dbus_session_file}" ]; then
-    dbus-launch | awk '{print "export "$0}' > "${dbus_session_file}"
-  fi
-  . "${dbus_session_file}"
-fi
-unset dbus_session_file
