@@ -254,8 +254,8 @@ bar:
                           - string: {text: "墳 {sink_percent}%"}
                           - string: {text: " {sink_percent}%"}
     - clock:
-        time-format: "%T"
-        date-format: "%a %d/%m/%Y"
+        time-format: "%X"
+        date-format: "%a %x"
         content:
           - list:
               spacing: 6
