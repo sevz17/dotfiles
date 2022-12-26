@@ -1,5 +1,3 @@
-export XCURSOR_THEME=breeze_cursors
-export XCURSOR_SIZE=24
 export XKB_DEFAULT_LAYOUT="latam,latam,us"
 export XKB_DEFAULT_VARIANT="dvorak,,"
 export XKB_DEFAULT_OPTIONS="grp:win_space_toggle,keypad:pointerkeys,terminate:ctrl_alt_bksp"
