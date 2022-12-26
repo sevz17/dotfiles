@@ -1,18 +1,22 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export AR:llvm\x2dar
+SETUVAR --export ASAN_OPTIONS:abort_on_error\x3d1\x3adisable_coredump\x3d0\x3aunmap_shadow_on_exit\x3d1
 SETUVAR --export CC:clang
-SETUVAR --export CFLAGS:\x2dg\x1e\x2dggdb3\x1e\x2dgfull\x1e\x2dglldb
+SETUVAR --export CFLAGS:\x2dg3\x20\x2dgfull\x20\x2dglldb
+SETUVAR --export CMAKE_MAKEFILE_GENERATOR:ninja
 SETUVAR --export CXX:clang\x2b\x2b
 SETUVAR --export LD:ld\x2elld
+SETUVAR --export MAKEFLAGS:\x2dj9
 SETUVAR --export NM:llvm\x2dnm
 SETUVAR --export RANLIB:llvm\x2dranlib
 SETUVAR --export STRIP:llvm\x2dstrip
 SETUVAR __fish_initialized:3400
-SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_cd:z
 SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gapa:git\x20add\x20\x2dp
+SETUVAR _fish_abbr_gbD:git\x20branch\x20\x2dD
+SETUVAR _fish_abbr_gbd:git\x20branch\x20\x2d\x2ddelete
 SETUVAR _fish_abbr_gc:git\x20commit
 SETUVAR _fish_abbr_gc_21_:git\x20commit\x20\x2d\x2damend
 SETUVAR _fish_abbr_gco:git\x20checkout
@@ -22,10 +26,7 @@ SETUVAR _fish_abbr_gss:git\x20status\x20\x2ds
 SETUVAR _fish_abbr_gsw:git\x20switch
 SETUVAR _fish_abbr_gswC:git\x20switch\x20\x2dC
 SETUVAR _fish_abbr_gswc:git\x20switch\x20\x2dc
-SETUVAR _fish_abbr_la:exa\x20\x2d\x2dicons\x20\x2dlga
-SETUVAR _fish_abbr_ls:exa\x20\x2d\x2dicons
 SETUVAR _fish_abbr_src:exec\x20\x24SHELL\x20\x2dc\x20\x22\x2e\x20\x7e/\x2eprofile\x20\x26\x26\x20\x2e\x20\x7e/\x2edashrc\x22
-SETUVAR _fish_abbr_tree:exa\x20\x2d\x2dicons\x20\x2d\x2dtree
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
