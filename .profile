@@ -10,7 +10,7 @@ export CARGO_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"/cargo
 
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}"/pass
 
-export ENV="${HOME}/.dashrc"
+export ENV="${XDG_CONFIG_HOME:-${HOME}/.config}/dash/init.sh"
 
 export TERMINAL=footclient
 
