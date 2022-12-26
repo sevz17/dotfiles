@@ -1,4 +1,5 @@
 script-modules
+script-opts/youtube_search.conf
 scripts
 shaders
 watch_later
