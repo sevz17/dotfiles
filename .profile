@@ -14,7 +14,6 @@ export ENV="${HOME}/.dashrc"
 
 export TERMINAL=footclient
 
-
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export CLANGD_FLAGS="-j=9 --clang-tidy --completion-parse=always --include-ineligible-results --malloc-trim --pch-storage=memory --header-insertion=never --header-insertion-decorators --inlay-hints --background-index --completion-style=detailed"
