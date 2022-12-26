@@ -21,7 +21,7 @@ export CLANGD_FLAGS="-j=9 --clang-tidy --completion-parse=always --include-ineli
 export PATH="${XDG_CONFIG_HOME:-${HOME}/.config}/emacs/bin/:$PATH"
 
 export CHROMIUM_USER_FLAGS="\
-  --enable-features=ZeroCopy,VaapiVideoEncoder,VaapiVideoDecoder,WebUIDarkMode,WebRTCPipeWireCapturer,CanvasOopRasterization,EnableDrDc,SystemNotifications \
+  --enable-features=ZeroCopy,VaapiVideoEncoder,VaapiVideoDecoder,WebUIDarkMode,WebRTCPipeWireCapturer,CanvasOopRasterization,EnableDrDc,SystemNotifications,PlatformHEVCDecoderSupport \
   --enable-gpu-memory-buffer-video-frames \
   --enable-gpu-compositing --ignore-gpu-blocklist \
   --ignore-gpu-blocklist --enable-gpu-rasterization \
