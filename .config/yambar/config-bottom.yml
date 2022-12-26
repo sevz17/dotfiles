@@ -1,7 +1,6 @@
 .:
-  - interval: &interval {interval: 1000}
-  - poll-interval: &poll-interval {poll-interval: 1}
-  - battery-interval: &battery-interval {poll-interval: 30}
+  - poll-interval: &poll-interval {poll-interval: 1000}
+  - battery-interval: &battery-interval {poll-interval: 30000}
 bar:
   location: bottom
   layer: bottom
@@ -33,7 +32,7 @@ bar:
 #            conditions:
 #              status == "Playing": {string: {text: "  {artist} - {title}"}}
     - mem:
-        <<: *interval
+        <<: *poll-interval
         content: {string: {text: "Mem: {used:mib} MB/{total:mib} MB"}}
     # Load average
     - script:
@@ -62,7 +61,7 @@ bar:
               - string: {text: " {temp}°C"}
               - string: {text: " {temp}°C"}
     - cpu:
-        <<: *interval
+        <<: *poll-interval
         content: {string: {text: "CPU: {cpu}%"}}
     - battery:
         name: BAT0
