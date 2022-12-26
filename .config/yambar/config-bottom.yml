@@ -62,7 +62,11 @@ bar:
               - string: {text: " {temp}°C"}
     - cpu:
         <<: *poll-interval
-        content: {string: {text: "CPU: {cpu}%"}}
+        content:
+          map:
+            conditions:
+              id < 0:
+                - string: {text: "CPU: {cpu}%"}
     - battery:
         name: BAT0
         <<: *battery-interval
