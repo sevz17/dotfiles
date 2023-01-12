@@ -1,7 +1,7 @@
 [user]
 	name = Leonardo Hernández Hernández
 	email = leohdz172@proton.me
-	signingKey = E538897EE11B9624
+	signingKey = AEA6A72C3774F1311918CE73E538897EE11B9624
 [init]
 	defaultBranch = main
 [core]
