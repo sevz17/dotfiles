@@ -3,7 +3,7 @@
 SETUVAR --export AR:llvm\x2dar
 SETUVAR --export ASAN_OPTIONS:abort_on_error\x3d1\x3adisable_coredump\x3d0\x3aunmap_shadow_on_exit\x3d1
 SETUVAR --export CC:clang
-SETUVAR --export CFLAGS:\x2dg3\x20\x2dgfull\x20\x2dglldb
+SETUVAR --export CFLAGS:\x2dg3\x20\x2dgfull\x20\x2dglldb\x20\x2dOg
 SETUVAR --export CMAKE_MAKEFILE_GENERATOR:ninja
 SETUVAR --export CXX:clang\x2b\x2b
 SETUVAR --export LD:ld\x2elld
