@@ -18,9 +18,9 @@ bar:
         name-of-tags: [ , , , , , , , , ,  ]
         anchors:
           - occupied: &occupied {foreground: ffffffff}
-          - default: &default {foreground: aaaaaaff}
-          - urgent: &urgent {deco: { background: {color: ff0000ff}}}
-          - focused: &focused {deco: { background: {color: 6000ffff}}}
+          - default:  &default  {foreground: aaaaaaff}
+          - urgent:   &urgent   {deco: {background: {color: ff0000ff}}}
+          - focused:  &focused  {deco: {background: {color: 6000ffff}}}
           - floating: &floating {deco: {stack: [underline: {size: 2, color: ffffffff}, overline: {size: 2, color: ffffffff}]}}
         content:
           list:
