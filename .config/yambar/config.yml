@@ -71,6 +71,28 @@ bar:
                           - string: {text: "奔 {sink_percent}%"}
                           - string: {text: "墳 {sink_percent}%"}
                           - string: {text: " {sink_percent}%"}
+#    - pipewire:
+#        content:
+#          list:
+#            items:
+#              - map:
+#                  conditions:
+#                    type == "sink":
+#                      map:
+#                        on-click:
+#                          left: /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+#                          wheel-up: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%
+#                          wheel-down: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%
+#                        conditions:
+#                          muted: {string: {text: "婢 {cubic_volume}%", foreground: 888888ff}}
+#                          ~muted:
+#                            - ramp:
+#                                tag: cubic_volume
+#                                items:
+#                                  - string: {text: "奄 {cubic_volume}%"}
+#                                  - string: {text: "奔 {cubic_volume}%"}
+#                                  - string: {text: "墳 {cubic_volume}%"}
+#                                  - string: {text: " {cubic_volume}%"}
     - clock:
         time-format: "%X"
         date-format: "%a %x"
