@@ -1,4 +1,4 @@
-timeout 600 "wlr-randr --output eDP-1 --off" resume "wlr-randr --output eDP-1 --on"
+timeout 600 "chayang && wlr-randr --output eDP-1 --off" resume "wlr-randr --output eDP-1 --on"
 timeout 900 "swaylock --daemonize --image $(chbg --print) --scaling fill"
 idlehint 1140
 before-sleep "swaylock --daemonize --image $(chbg --print) --scaling fill"
