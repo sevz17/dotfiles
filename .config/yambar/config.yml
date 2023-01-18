@@ -11,9 +11,11 @@ bar:
     bottom-margin: 0
 
   left:
-    - script:
-        path: /usr/local/bin/dwl-tags.sh
-        args: [ eDP-1 ]
+    - dwl:
+        dwl-info-filename: /run/user/1000/dwl-wayland-0
+        number-of-tags: 10
+        # Requires https://codeberg.org/dnkl/yambar/pulls/256
+        name-of-tags: [ , , , , , , , , ,  ]
         anchors:
           - occupied: &occupied {foreground: ffffffff}
           - default: &default {foreground: aaaaaaff}
@@ -21,215 +23,32 @@ bar:
           - focused: &focused {deco: { background: {color: 6000ffff}}}
           - floating: &floating {deco: {underline: {size: 2, color: ffffffff}}}
         content:
-          - map:
-              conditions:
-                tag_0_occupied:
-                  map:
-                    conditions:
-                      tag_0_focused:
-                          map:
-                            conditions:
-                              tag_0_urgent: {string: {text: " {tag_0} ", <<: [*urgent, *occupied]}}
-                              ~tag_0_urgent: {string: {text: " {tag_0} ", <<: [*focused, *occupied]}}
-                      ~tag_0_focused:
-                          map:
-                            conditions:
-                              tag_0_urgent: {string: {text: " {tag_0} ", <<: *urgent}}
-                              ~tag_0_urgent: {string: {text: " {tag_0} ", <<: *occupied}}
-                ~tag_0_occupied:
-                  map:
-                    conditions:
-                      tag_0_focused: {string: {text: " {tag_0} ", <<: [*focused, *default]}}
-                      ~tag_0_focused: {string: {text: " {tag_0} ", <<: *default}}
-          - map:
-              conditions:
-                tag_1_occupied:
-                  map:
-                    conditions:
-                      tag_1_focused:
-                          map:
-                            conditions:
-                              tag_1_urgent: {string: {text: " {tag_1} ", <<: [*urgent, *occupied]}}
-                              ~tag_1_urgent: {string: {text: " {tag_1} ", <<: [*focused, *occupied]}}
-                      ~tag_1_focused:
-                        map:
-                          conditions:
-                            tag_1_urgent: {string: {text: " {tag_1} ", <<: *urgent}}
-                            ~tag_1_urgent: {string: {text: " {tag_1} ", <<: *occupied}}
-                ~tag_1_occupied:
-                  map:
-                    conditions:
-                      tag_1_focused: {string: {text: " {tag_1} ", <<: [*focused, *default]}}
-                      ~tag_1_focused: {string: {text: " {tag_1} ", <<: *default}}
-          - map:
-              conditions:
-                tag_2_occupied:
-                  map:
-                    conditions:
-                      tag_2_focused:
-                          map:
-                            conditions:
-                              tag_2_urgent: {string: {text: " {tag_2} ", <<: [*urgent, *occupied]}}
-                              ~tag_2_urgent: {string: {text: " {tag_2} ", <<: [*focused, *occupied]}}
-                      ~tag_2_focused:
-                        map:
-                          conditions:
-                            tag_2_urgent: {string: {text: " {tag_2} ", <<: *urgent}}
-                            ~tag_2_urgent: {string: {text: " {tag_2} ", <<: *occupied}}
-                ~tag_2_occupied:
-                  map:
-                    conditions:
-                      tag_2_focused: {string: {text: " {tag_2} ", <<: [*focused, *default]}}
-                      ~tag_2_focused: {string: {text: " {tag_2} ", <<: *default}}
-          - map:
-              conditions:
-                tag_3_occupied:
-                  map:
-                    conditions:
-                      tag_3_focused:
-                          map:
-                            conditions:
-                              tag_3_urgent: {string: {text: " {tag_3} ", <<: [*urgent, *occupied]}}
-                              ~tag_3_urgent: {string: {text: " {tag_3} ", <<: [*focused, *occupied]}}
-                      ~tag_3_focused:
-                        map:
-                          conditions:
-                            tag_3_urgent: {string: {text: " {tag_3} ", <<: *urgent}}
-                            ~tag_3_urgent: {string: {text: " {tag_3} ", <<: *occupied}}
-                ~tag_3_occupied:
-                  map:
-                    conditions:
-                      tag_3_focused: {string: {text: " {tag_3} ", <<: [*focused, *default]}}
-                      ~tag_3_focused: {string: {text: " {tag_3} ", <<: *default}}
-          - map:
-              conditions:
-                tag_4_occupied:
-                  map:
-                    conditions:
-                      tag_4_focused:
-                          map:
-                            conditions:
-                              tag_4_urgent: {string: {text: " {tag_4} ", <<: [*urgent, *occupied]}}
-                              ~tag_4_urgent: {string: {text: " {tag_4} ", <<: [*focused, *occupied]}}
-                      ~tag_4_focused:
-                        map:
-                          conditions:
-                            tag_4_urgent: {string: {text: " {tag_4} ", <<: *urgent}}
-                            ~tag_4_urgent: {string: {text: " {tag_4} ", <<: *occupied}}
-                ~tag_4_occupied:
-                  map:
-                    conditions:
-                      tag_4_focused: {string: {text: " {tag_4} ", <<: [*focused, *default]}}
-                      ~tag_4_focused: {string: {text: " {tag_4} ", <<: *default}}
-          - map:
-              conditions:
-                tag_5_occupied:
-                  map:
-                    conditions:
-                      tag_5_focused:
-                          map:
-                            conditions:
-                              tag_5_urgent: {string: {text: " {tag_5} ", <<: [*urgent, *occupied]}}
-                              ~tag_5_urgent: {string: {text: " {tag_5} ", <<: [*focused, *occupied]}}
-                      ~tag_5_focused:
-                        map:
-                          conditions:
-                            tag_5_urgent: {string: {text: " {tag_5} ", <<: *urgent}}
-                            ~tag_5_urgent: {string: {text: " {tag_5} ", <<: *occupied}}
-                ~tag_5_occupied:
-                  map:
-                    conditions:
-                      tag_5_focused: {string: {text: " {tag_5} ", <<: [*focused, *default]}}
-                      ~tag_5_focused: {string: {text: " {tag_5} ", <<: *default}}
-          - map:
-              conditions:
-                tag_6_occupied:
-                  map:
-                    conditions:
-                      tag_6_focused:
-                          map:
-                            conditions:
-                              tag_6_urgent: {string: {text: " {tag_6} ", <<: [*urgent, *occupied]}}
-                              ~tag_6_urgent: {string: {text: " {tag_6} ", <<: [*focused, *occupied]}}
-                      ~tag_6_focused:
-                        map:
-                          conditions:
-                            tag_6_urgent: {string: {text: " {tag_6} ", <<: *urgent}}
-                            ~tag_6_urgent: {string: {text: " {tag_6} ", <<: *occupied}}
-                ~tag_6_occupied:
-                  map:
-                    conditions:
-                      tag_6_focused: {string: {text: " {tag_6} ", <<: [*focused, *default]}}
-                      ~tag_6_focused: {string: {text: " {tag_6} ", <<: *default}}
-          - map:
-              conditions:
-                tag_7_occupied:
-                  map:
-                    conditions:
-                      tag_7_focused:
-                          map:
-                            conditions:
-                              tag_7_urgent: {string: {text: " {tag_7} ", <<: [*urgent, *occupied]}}
-                              ~tag_7_urgent: {string: {text: " {tag_7} ", <<: [*focused, *occupied]}}
-                      ~tag_7_focused:
-                        map:
-                          conditions:
-                            tag_7_urgent: {string: {text: " {tag_7} ", <<: *urgent}}
-                            ~tag_7_urgent: {string: {text: " {tag_7} ", <<: *occupied}}
-                ~tag_7_occupied:
-                  map:
-                    conditions:
-                      tag_7_focused: {string: {text: " {tag_7} ", <<: [*focused, *default]}}
-                      ~tag_7_focused: {string: {text: " {tag_7} ", <<: *default}}
-          - map:
-              conditions:
-                tag_8_occupied:
-                  map:
-                    conditions:
-                      tag_8_focused:
-                          map:
-                            conditions:
-                              tag_8_urgent: {string: {text: " {tag_8} ", <<: [*urgent, *occupied]}}
-                              ~tag_8_urgent: {string: {text: " {tag_8} ", <<: [*focused, *occupied]}}
-                      ~tag_8_focused:
-                        map:
-                          conditions:
-                            tag_8_urgent: {string: {text: " {tag_8} ", <<: *urgent}}
-                            ~tag_8_urgent: {string: {text: " {tag_8} ", <<: *occupied}}
-                ~tag_8_occupied:
-                  map:
-                    conditions:
-                      tag_8_focused: {string: {text: " {tag_8} ", <<: [*focused, *default]}}
-                      ~tag_8_focused: {string: {text: " {tag_8} ", <<: *default}}
-          - map:
-              conditions:
-                tag_9_occupied:
-                  map:
-                    conditions:
-                      tag_9_focused:
-                          map:
-                            conditions:
-                              tag_9_urgent: {string: {text: " {tag_9} ", <<: [*urgent, *occupied]}}
-                              ~tag_9_urgent: {string: {text: " {tag_9} ", <<: [*focused, *occupied]}}
-                      ~tag_9_focused:
-                        map:
-                          conditions:
-                            tag_9_urgent: {string: {text: " {tag_9} ", <<: *urgent}}
-                            ~tag_9_urgent: {string: {text: " {tag_9} ", <<: *occupied}}
-                ~tag_9_occupied:
-                  map:
-                    conditions:
-                      tag_9_focused: {string: {text: " {tag_9} ", <<: [*focused, *default]}}
-                      ~tag_9_focused: {string: {text: " {tag_9} ", <<: *default}}
-          - list:
-              left-margin: 6
-              spacing: 6
-              items:
-                - string: {text: "{layout}"}
-                - map:
-                    conditions:
-                      floating: {string: {text: "{title}", max: 78, <<: *floating}}
-                      ~floating: {string: {text: "{title}", max: 78}}
+          list:
+            items:
+              - map:
+                  conditions:
+                    id == 0:
+                      - list:
+                          left-margin: 6
+                          spacing: 6
+                          items:
+                            - string: {text: "{layout}"}
+                            - map:
+                                conditions:
+                                  floating: {string: {text: "{title}", max: 99, <<: *floating}}
+                                  ~floating: {string: {text: "{title}", max: 99}}
+                    ~empty && selected && urgent:
+                      string: {text: " {name} ", <<: [*urgent, *occupied]}
+                    ~empty && selected && ~urgent:
+                      string: {text: " {name} ", <<: [*focused, *occupied]}
+                    ~empty && ~selected && urgent:
+                      string: {text: " {name} ", <<: *urgent}
+                    ~empty && ~selected && ~urgent:
+                      string: {text: " {name} ", <<: *occupied}
+                    empty && selected:
+                      string: {text: " {name} ", <<: [*focused, *default]}
+                    empty && ~selected:
+                      string: {text: " {name} ", <<: *default}
   right:
     - pulse:
         content:
