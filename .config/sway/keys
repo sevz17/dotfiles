@@ -1,4 +1,4 @@
-# vi: filetype=swayconfig
+# -*- mode: conf -*-
 
 mode "resize" {
     bindcode {
@@ -91,7 +91,7 @@ bindcode {
     $Key_Print exec grim - | swappy -f -
 
     ## Music players
-    $mod+$Key_p exec spotify
+    $mod+$Key_p exec mpv --no-terminal
 
     # Messengers
     $mod+$Key_t exec telegram-desktop
@@ -133,3 +133,5 @@ bindcode {
 }
     tiling_drag enable
     floating_modifier $mod normal
+
+# vi: filetype=swayconfig
