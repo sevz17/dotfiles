@@ -14,7 +14,6 @@ bar:
     - dwl:
         dwl-info-filename: /run/user/1000/dwl-wayland-0
         number-of-tags: 10
-        # Requires https://codeberg.org/dnkl/yambar/pulls/256
         name-of-tags: [ , , , , , , , , ,  ]
         anchors:
           - occupied: &occupied {foreground: ffffffff}
