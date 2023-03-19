@@ -1,6 +1,6 @@
-timeout 600 "chayang && wlr-randr --output eDP-1 --off" resume "wlr-randr --output eDP-1 --on"
+timeout 600 "chayang -d 5 && for o in $(wlr-randr | grep -e '^[^[:space:]]\+' | cut -d ' ' -f 1); do wlr-randr --output \"\${o}\" --off; done" resume "for o in $(wlr-randr | grep -e '^[^[:space:]]\+' | cut -d ' ' -f 1); do wlr-randr --output \"\${o}\" --on; done"
 timeout 900 "swaylock --daemonize --image $(chbg --print) --scaling fill"
 idlehint 1140
 before-sleep "swaylock --daemonize --image $(chbg --print) --scaling fill"
-after-resume "wlr-randr --output eDP-1 --on"
+after-resume "for o in $(wlr-randr | grep -e '^[^[:space:]]\+' | cut -d ' ' -f 1); do wlr-randr --output \"\${o}\" --on; done"
 lock "swaylock --daemonize --image $(chbg --print) --scaling fill"
