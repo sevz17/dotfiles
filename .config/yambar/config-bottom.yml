@@ -48,7 +48,7 @@ bar:
         path: /usr/bin/awk
         args:
           - '{ printf "temp|float|%f\n\n", $1/1000 }'
-          - /sys/class/hwmon/hwmon1/temp1_input
+          - /sys/class/hwmon/hwmon3/temp1_input
         content:
           ramp:
             tag: temp
