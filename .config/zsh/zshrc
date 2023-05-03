@@ -10,7 +10,7 @@ ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
 
 zinit wait lucid for \
   OMZP::git \
-  OMZP::sudo
+  atload'!bindkey "^[s" sudo-command-line' OMZP::sudo \
   OMZP::rust
 #  OMZP::tmux \
 #  OMZP::dotnet
