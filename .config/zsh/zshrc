@@ -22,8 +22,8 @@ zinit wait lucid \
   multisrc'aliases.zsh configs.zsh funcs.zsh zoxide.zsh keybindings.zsh hooks.zsh completions.zsh' \
   for ${ZDOTDIR}
 
-zinit ice wait lucid reset-prompt atload'!prompt_starship_precmd; prompt_starship_preexec'
-zinit snippet "${ZDOTDIR}"/starship.zsh
+zinit wait'!0' lucid is-snippet for \
+  "${ZDOTDIR}"/starship.zsh
 
 zinit wait lucid atinit'!ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' for \
     z-shell/fast-syntax-highlighting \
