@@ -3,10 +3,6 @@ bindkey -e
 [[ -n "${terminfo[kcbt]}" ]] && \
 	bindkey -- "${terminfo[kcbt]}" reverse-menu-complete
 
-function exit_zsh() { exit }
-zle -N exit_zsh
-bindkey '^D' exit_zsh
-
 function clear-screen-and-scrollback {
     clear && printf '\e[3J'
     zle && zle .reset-prompt && zle -R
