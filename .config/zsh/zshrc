@@ -11,9 +11,9 @@ ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
 zinit wait lucid for \
   OMZP::git \
   OMZP::sudo
+  OMZP::rust
 #  OMZP::tmux \
-#  OMZP::dotnet \
-#  OMZP::rust
+#  OMZP::dotnet
 
 zinit wait lucid atload'!ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(autopair-insert)' for \
     hlissner/zsh-autopair
