@@ -12,12 +12,11 @@ bindkey "\e[27;5;46~" clear-screen-and-scrollback
 
 bindkey 'TAB' expand-or-complete-prefix
 
-autoload -U up-line-or-beginning-search
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
-bindkey '^P' up-line-or-beginning-search
-
-autoload -U down-line-or-beginning-search
 zle -N down-line-or-beginning-search
+
+bindkey '^P' up-line-or-beginning-search
 bindkey '^N' down-line-or-beginning-search
 
 bindkey ' ' magic-space                               # [Space] - don't do history expansion
