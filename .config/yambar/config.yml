@@ -1,7 +1,7 @@
 bar:
   location: top
   layer: bottom
-  background: 222222ff
+  background: 111111ff
   font: "Iosevka Nerd Font:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true,Joypixels"
   height: 22
   spacing: 6
