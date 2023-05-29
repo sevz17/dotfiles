@@ -20,15 +20,15 @@ truncation_length = 0
 disabled = false
 
 [git_status]
-conflicted = "$count✗"
-ahead = "$count⇡"
-behind = "$count⇣"
-diverged = "$ahead_count⇡⇣$behind_count"
-stashed = "$count$"
-modified = "$count "
-staged = "$count+"
-renamed = "$count»"
-deleted = "$count✘"
+conflicted = "$count󰞇 "
+ahead = "$count󱦲 "
+behind = "$count󱦳 "
+diverged = "$ahead_count󱦲󱦳$behind_count "
+stashed = "$count$ "
+modified = "$count "
+staged = "$count󰐕 "
+renamed = "$count󰄾 "
+deleted = "$count "
 style = "bold purple"
 
 [jobs]

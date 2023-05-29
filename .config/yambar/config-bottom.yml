@@ -5,7 +5,7 @@ bar:
   location: bottom
   layer: bottom
   background: 111111ff
-  font: "Iosevka Nerd Font:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true,Joypixels"
+  font: "Iosevka NF:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true,Joypixels"
   height: 20
   spacing: 12
   margin: 6
@@ -52,8 +52,8 @@ bar:
         content:
           ramp:
             tag: temp
-            min: 20
-            max: 105
+            min: 0
+            max: 100
             items:
               - string: {text: " {temp}°C"}
               - string: {text: " {temp}°C"}
@@ -73,7 +73,7 @@ bar:
         content:
           map:
             conditions:
-              state == "full": {string: {text: " {capacity}%"}}
+              state == "full": {string: {text: "󰁹 {capacity}%"}}
               state == "unknown": {string: {text: "BAT: {capacity}%"}}
               state == "discharging":
                 list:
@@ -81,17 +81,17 @@ bar:
                     - ramp:
                         tag: capacity
                         items:
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
+                          - string: {text: "󰂎"}
+                          - string: {text: "󰁺"}
+                          - string: {text: "󰁻"}
+                          - string: {text: "󰁼"}
+                          - string: {text: "󰁽"}
+                          - string: {text: "󰁾"}
+                          - string: {text: "󰁿"}
+                          - string: {text: "󰂀"}
+                          - string: {text: "󰂁"}
+                          - string: {text: "󰂂"}
+                          - string: {text: "󰁹"}
                     - string: {text: " {capacity}%"}
                     - string: {text: " ETA: {estimate}"}
               state == "charging":
@@ -100,13 +100,17 @@ bar:
                     - ramp:
                         tag: capacity
                         items:
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
-                          - string: {text: ""}
+                          - string: {text: "󰢟"}
+                          - string: {text: "󰢜"}
+                          - string: {text: "󰂆"}
+                          - string: {text: "󰂇"}
+                          - string: {text: "󰂈"}
+                          - string: {text: "󰢝"}
+                          - string: {text: "󰂉"}
+                          - string: {text: "󰢞"}
+                          - string: {text: "󰂊"}
+                          - string: {text: "󰂋"}
+                          - string: {text: "󰂅"}
                     - string: {text: " {capacity}%"}
                     - string: {text: " ETA: {estimate}"}
     - backlight:
@@ -144,7 +148,7 @@ bar:
                           dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
                           dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
                           dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
-                    - string: {text: " ↓↑ "}
+                    - string: {text: " 󱦳󱦲 "}
                     - map:
                         default: {string: {text: "{ul-speed}"}}
                         conditions:
@@ -172,7 +176,7 @@ bar:
                           dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
                           dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
                           dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
-                    - string: {text: " ↓↑ "}
+                    - string: {text: " 󱦳󱦲 "}
                     - map:
                         default: {string: {text: "{ul-speed}"}}
                         conditions:

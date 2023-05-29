@@ -2,7 +2,7 @@ bar:
   location: top
   layer: bottom
   background: 111111ff
-  font: "Iosevka Nerd Font:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true,Joypixels"
+  font: "Iosevka NF:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true,Joypixels"
   height: 22
   spacing: 6
   right-margin: 6
@@ -14,7 +14,7 @@ bar:
     - dwl:
         dwl-info-filename: /run/user/1000/dwl-wayland-0
         number-of-tags: 10
-        name-of-tags: [ , , , , , , , , ,  ]
+        name-of-tags: [ 󰈹, , , , 󰈙, 󰈟, 󰈫, 󰈣, ,  ]
         anchors:
           - occupied: &occupied {foreground: ffffffff}
           - default:  &default  {foreground: aaaaaaff}
@@ -53,7 +53,7 @@ bar:
         content:
           map:
             conditions:
-              ~online: {string: {text: "ﱝ", foreground: 888888ff}}
+              ~online: {string: {text: "󰖁", foreground: 888888ff}}
               online:
                 map:
                   on-click:
@@ -61,14 +61,14 @@ bar:
                     wheel-up: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%
                     wheel-down: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%
                   conditions:
-                    sink_muted: {string: {text: "婢 {sink_percent}%", foreground: 888888ff}}
+                    sink_muted: {string: {text: "󰝟 {sink_percent}%", foreground: 888888ff}}
                     ~sink_muted:
                       ramp:
                         tag: sink_percent
                         items:
-                          - string: {text: "奄 {sink_percent}%"}
-                          - string: {text: "奔 {sink_percent}%"}
-                          - string: {text: "墳 {sink_percent}%"}
+                          - string: {text: "󰕿 {sink_percent}%"}
+                          - string: {text: "󰖀 {sink_percent}%"}
+                          - string: {text: "󰕾 {sink_percent}%"}
                           - string: {text: " {sink_percent}%"}
 #    - pipewire:
 #        content:
@@ -83,14 +83,14 @@ bar:
 #                          wheel-up: /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
 #                          wheel-down: /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
 #                        conditions:
-#                          muted: {string: {text: "婢 {cubic_volume}%", foreground: 888888ff}}
+#                          muted: {string: {text: "󰝟 {cubic_volume}%", foreground: 888888ff}}
 #                          ~muted:
 #                            - ramp:
 #                                tag: cubic_volume
 #                                items:
-#                                  - string: {text: "奄 {cubic_volume}%"}
-#                                  - string: {text: "奔 {cubic_volume}%"}
-#                                  - string: {text: "墳 {cubic_volume}%"}
+#                                  - string: {text: "󰕿 {cubic_volume}%"}
+#                                  - string: {text: "󰖀 {cubic_volume}%"}
+#                                  - string: {text: "󰕾 {cubic_volume}%"}
 #                                  - string: {text: " {cubic_volume}%"}
     - clock:
         time-format: "%X"
@@ -99,5 +99,5 @@ bar:
           - list:
               spacing: 6
               items:
-                - string: {text: " {time}"}
-                - string: {text: " {date}"}
+                - string: {text: "󰅐 {time}"}
+                - string: {text: "󰃭 {date}"}

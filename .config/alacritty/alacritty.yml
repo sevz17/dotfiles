@@ -23,7 +23,7 @@ colors:
 font:
   size: 9.5
   normal:
-    family: Iosevka Nerd Font
+    family: Iosevka NFM
 window:
   opacity: 0.95
   decorations: none
