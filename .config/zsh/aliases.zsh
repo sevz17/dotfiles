@@ -1,5 +1,7 @@
 alias src='exec "${SHELL}"'
 
+alias mpv='mpv --terminal=yes'
+
 alias shutdown="sudo init 0"
 alias reboot="sudo init 6"
 
