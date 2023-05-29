@@ -36,3 +36,5 @@
 [sendemail]
 	annotate = true
 	confirm = auto
+[credential]
+	helper = git-credential-libsecret
