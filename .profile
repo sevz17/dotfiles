@@ -34,6 +34,8 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK
 fi
 
+export ZDOTDIR="${XDG_CONFIG_DIR:-${HOME}/.config}/zsh"
+
 export CC=gcc
 export CXX=g++
 export CFLAGS="-march=native -Og -pipe -flto=auto -Werror=odr -Werror=strict-aliasing -Werror=lto-type-mismatch -g3 -ggdb3"
