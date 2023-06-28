@@ -12,8 +12,6 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}"/pass
 
 export TERMINAL=footclient
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 export CLANGD_FLAGS="-j=9 --clang-tidy --completion-parse=always --include-ineligible-results --malloc-trim --pch-storage=memory --header-insertion=never --background-index --completion-style=detailed"
 
 export PATH="${XDG_CONFIG_HOME:-${HOME}/.config}/emacs/bin/:$PATH"
