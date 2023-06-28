@@ -33,3 +33,11 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
   export SSH_AUTH_SOCK
 fi
+
+export CC=gcc
+export CXX=g++
+export CFLAGS="-march=native -Og -pipe -flto=auto -Werror=odr -Werror=strict-aliasing -Werror=lto-type-mismatch -g3 -ggdb3"
+export CXXFLAGS="${CFLAGS}"
+export LDFLAGS="-Wl,-O1 -Wl,--as-needed -Wl,-O2 -fuse-ld=mold -Wl,--threads=$(nproc)"
+export RUSTFLAGS="-C target-cpu=native -C opt-level=3 -C codegen-units=1 -C linker=clang -C link-arg=-fuse-ld=mold -C embed-bitcode=yes -C lto=thin -C linker-plugin-lto -C link-arg=-march=native -C link-arg=-flto=thin -C link-arg=-flto-jobs=8 -C link-arg=-Wl,--threads=8 -C link-arg=-Wl,--as-needed -C link-arg=-Wl,-O2 -C link-arg=-Wl,--icf=safe -C link-arg=-Wl,--lto-O3
+"
