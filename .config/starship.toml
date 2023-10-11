@@ -1,12 +1,18 @@
 # Don't insert a blank line between shell prompts
 add_newline = false
 
-format = "${custom.os}$all"
+format = "$os$all"
 right_format = """$status$cmd_duration$time"""
 continuation_prompt = "[▶▶ ](green)"
 
 [c]
 commands = [ ["sh", "-c", "${CC} --version"], ["cc", "--version"], ["gcc", "--version"], ["clang", "--version"] ]
+
+[os]
+disabled = false
+style = "bold purple"
+[os.symbols]
+Gentoo = "  "
 
 [cmd_duration]
 min_time = 100
@@ -39,46 +45,3 @@ disabled = false
 
 [time]
 disabled = false
-
-[custom.os]
-description = "Show distro icon"
-os          = "linux"
-symbol      = ""
-format      = "$symbol [$output]($style) "
-style       = "bold purple"
-when        = "true"
-command     = '''
-. /etc/os-release
-case "$ID" in
-	arch)
-		echo ""
-	;;
-	centos) 
-		echo ""
-	;;
-	debian)
-		echo ""
-	;;
-	fedora)
-		echo ""
-	;;
-	gentoo)
-		echo ""
-	;;
-	linuxmint)
-		echo ""
-	;;
-	suse|opensuse)
-		echo ""
-	;;
-	ubuntu)
-		echo ""
-	;;
-	elementary)
-		echo ""
-	;;
-	*)
-		echo ""
-	;;
-esac
-'''
