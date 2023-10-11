@@ -1,4 +1,4 @@
-alias src='exec "${SHELL}"'
+alias src='exec "${0}"'
 
 alias mpv='mpv --terminal=yes'
 alias elogind-inhibit='elogind-inhibit --what=shutdown:sleep'
