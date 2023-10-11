@@ -8,18 +8,9 @@ continuation_prompt = "[▶▶ ](green)"
 [c]
 commands = [ ["sh", "-c", "${CC} --version"], ["cc", "--version"], ["gcc", "--version"], ["clang", "--version"] ]
 
-[os]
-disabled = false
-style = "bold purple"
-[os.symbols]
-Gentoo = "  "
-
 [cmd_duration]
 min_time = 100
 show_milliseconds = true
-
-[sudo]
-disabled = false
 
 [directory]
 truncate_to_repo = false
@@ -47,7 +38,16 @@ style = "bold purple"
 [jobs]
 format = "[$number$symbol]($style) "
 
+[os]
+disabled = false
+style = "bold purple"
+[os.symbols]
+Gentoo = "  "
+
 [status]
+disabled = false
+
+[sudo]
 disabled = false
 
 [time]
