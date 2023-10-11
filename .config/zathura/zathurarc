@@ -1,3 +1,4 @@
+# -*- mode: conf -*-
 set window-title-basename
 set statusbar-home-tilde
 set window-title-page
@@ -10,3 +11,5 @@ set selection-clipboard clipboard
 set recolor
 set recolor-reverse-video
 set recolor-lightcolor '#111111'
+
+#set sandbox strict
