@@ -1,7 +1,7 @@
 # Don't insert a blank line between shell prompts
 add_newline = false
 
-format = "$os$all"
+format = "$os${env_var.EPREFIX}$all"
 right_format = """$status$cmd_duration$time"""
 continuation_prompt = "[▶▶ ](green)"
 
@@ -21,6 +21,10 @@ show_milliseconds = true
 [directory]
 truncate_to_repo = false
 truncation_length = 0
+
+[env_var.EPREFIX]
+format = "in [$env_value]($style) "
+style = "purple bold dimmed"
 
 [git_metrics]
 disabled = false
