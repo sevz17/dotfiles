@@ -38,3 +38,6 @@
 	confirm = auto
 [credential]
 	helper = git-credential-libsecret
+[alias]
+	spull = pull --depth=5
+	sfetch = fetch --depth=5
