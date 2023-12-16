@@ -1,7 +1,7 @@
 export TERMINAL=footclient
 export XKB_DEFAULT_LAYOUT="latam,latam,us"
 export XKB_DEFAULT_VARIANT=",dvorak,"
-export XKB_DEFAULT_OPTIONS="grp:win_space_toggle,ctrl:nocaps,grp_led:scroll,keypad:pointerkeys,terminate:ctrl_alt_bksp"
+export XKB_DEFAULT_OPTIONS="grp:win_space_toggle,ctrl:nocaps,grp_led:scroll,keypad:pointerkeys,terminate:ctrl_alt_bksp,compose:ins,compose:prsc"
 
 # Don't clutter $HOME
 export GOPATH="${XDG_DATA_HOME:-${HOME}/.local/share}"/go
