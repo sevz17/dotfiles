@@ -21,9 +21,6 @@ export EZA_ICONS_AUTO=true
 
 if [ -n "${EPREFIX}" ]; then
   export TMPDIR="${EPREFIX}/tmp"
-  XDG_RUNTIME_DIR="${TMPDIR}/xdg-runtime-$(id -u)"
-  export XDG_RUNTIME_DIR
-  mkdir -p "${XDG_RUNTIME_DIR}"
 else
   export CHOST=x86_64-pc-linux-gnu
   export CC="${CHOST}-gcc"
