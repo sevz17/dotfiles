@@ -15,3 +15,15 @@ function ch() {
 git_current_branch() {
   git branch --show-current
 }
+
+function get_potential_stable() {
+  if [ -z "${EMAIL}" ]; then
+    echo "\$EMAIL must be set" 1>&2
+    return 1
+  fi
+  if command -v jq &> /dev/null; then
+    curl -s "https://packages.gentoo.org/maintainer/${EMAIL}/stabilization.json" | jq
+  else
+    curl -s "https://packages.gentoo.org/maintainer/${EMAIL}/stabilization.list"
+  fi
+}
