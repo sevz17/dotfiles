@@ -1,4 +1,3 @@
-setopt DVORAK
 setopt AUTO_CD
 setopt INTERACTIVE_COMMENTS
 setopt COMPLETE_IN_WORD
