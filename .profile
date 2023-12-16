@@ -11,6 +11,10 @@ export ZDOTDIR="${XDG_CONFIG_DIR:-${HOME}/.config}/zsh"
 
 export EMAIL="leohdz172@proton.me"
 
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -c"
+
 export GOPROXY=direct
 export GOSUMDB=off
 
