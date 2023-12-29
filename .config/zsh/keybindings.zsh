@@ -15,11 +15,8 @@ bindkey 'TAB' expand-or-complete-prefix
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-# zsh-autosuggestions break these plugins without this
-zstyle ':zle:up-line-or-beginning-search' leave-cursor false
-zstyle ':zle:down-line-or-beginning-search' leave-cursor false
 
-bindkey '^P' up-line-or-beginning-search
-bindkey '^N' down-line-or-beginning-search
+#bindkey '^P' up-line-or-beginning-search
+#bindkey '^N' down-line-or-beginning-search
 
 bindkey ' ' magic-space                               # [Space] - don't do history expansion
