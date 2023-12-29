@@ -24,17 +24,9 @@ zinit wait lucid \
 zinit wait'!0' lucid is-snippet for \
   "${ZDOTDIR}"/starship.zsh
 
-if command -v emerge >/dev/null 2>&1; then
-  zinit wait lucid atinit'!ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' for \
-        z-shell/fast-syntax-highlighting \
-        atload'!_zsh_autosuggest_start' pick'zsh-autosuggestions.zsh' \
-        /usr/share/zsh/site-functions
-else
-  zinit wait lucid atinit'!ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay' for \
-        z-shell/fast-syntax-highlighting \
-        atload'!_zsh_autosuggest_start' pick'zsh-autosuggestions.zsh' \
-        /usr/share/zsh/plugins/zsh-autosuggestions
-fi
+zinit wait lucid atinit'!ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay' for \
+      z-shell/fast-syntax-highlighting \
+      atload'!_zsh_autosuggest_start' zsh-users/zsh-autosuggestions
 
 GPG_TTY=$(tty)
 export GPG_TTY
