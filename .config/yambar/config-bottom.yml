@@ -6,7 +6,7 @@ bar:
   layer: bottom
   background: 111111ff
   font: "Iosevka NF:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true"
-  height: 20
+  height: 22
   spacing: 12
   margin: 6
 
