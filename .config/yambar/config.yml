@@ -1,11 +1,12 @@
+.:
+  - black_bg: &black_bg {deco: {background: {color: 111111ff}}}
+  - purple_bg: &purple_bg {deco: {background: {color: 6000ffff}}}
 bar:
   location: top
   layer: bottom
-  background: 111111ff
+  background: 6000ffff
   font: "Iosevka NF:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true"
   height: 22
-  spacing: 6
-  right-margin: 6
   border:
     margin: 6
     bottom-margin: 0
@@ -25,17 +26,16 @@ bar:
           list:
             items:
               - map:
+                  <<: *black_bg
                   conditions:
                     id == 0:
-                      - list:
-                          left-margin: 6
-                          spacing: 6
-                          items:
-                            - string: {text: "{layout}"}
-                            - map:
-                                conditions:
-                                  floating: {string: {text: "{title}", max: 99, <<: *floating}}
-                                  ~floating: {string: {text: "{title}", max: 99}}
+                      - string: {text: " {layout}"}
+                      - map:
+                          conditions:
+                            floating:
+                              string: {text: " {title}", max: 99, <<: [*floating, *purple_bg]}
+                            ~floating:
+                              string: {text: " {title}", max: 99, <<: *purple_bg}
                     ~empty && selected && urgent:
                       string: {text: " {name} ", <<: [*urgent, *occupied]}
                     ~empty && selected && ~urgent:
@@ -52,8 +52,9 @@ bar:
     - pulse:
         content:
           map:
+            <<: *black_bg
             conditions:
-              ~online: {string: {text: "󰖁", foreground: 888888ff}}
+              ~online: {string: {text: " 󰖁 ", foreground: 888888ff}}
               online:
                 map:
                   on-click:
@@ -61,15 +62,15 @@ bar:
                     wheel-up: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%
                     wheel-down: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%
                   conditions:
-                    sink_muted: {string: {text: "󰝟 {sink_percent}%", foreground: 888888ff}}
+                    sink_muted: {string: {text: " 󰝟 {sink_percent}% ", foreground: 888888ff}}
                     ~sink_muted:
                       ramp:
                         tag: sink_percent
                         items:
-                          - string: {text: "󰕿 {sink_percent}%"}
-                          - string: {text: "󰖀 {sink_percent}%"}
-                          - string: {text: "󰕾 {sink_percent}%"}
-                          - string: {text: " {sink_percent}%"}
+                          - string: {text: " 󰕿 {sink_percent}% "}
+                          - string: {text: " 󰖀 {sink_percent}% "}
+                          - string: {text: " 󰕾 {sink_percent}% "}
+                          - string: {text: "  {sink_percent}% "}
 #    - pipewire:
 #        content:
 #          list:
@@ -96,8 +97,4 @@ bar:
         time-format: "%X"
         date-format: "%a %x"
         content:
-          - list:
-              spacing: 6
-              items:
-                - string: {text: "󰅐 {time}"}
-                - string: {text: "󰃭 {date}"}
+          string: {text: "󰅐 {time} 󰃭 {date} ", <<: *black_bg}
