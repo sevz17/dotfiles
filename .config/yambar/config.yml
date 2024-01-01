@@ -20,8 +20,8 @@ bar:
           - occupied: &occupied {foreground: ffffffff}
           - default:  &default  {foreground: aaaaaaff}
           - urgent:   &urgent   {deco: {background: {color: ff0000ff}}}
-          - focused:  &focused  {deco: {background: {color: 6000ffff}}}
-          - floating: &floating {deco: {stack: [underline: {size: 2, color: ffffffff}, overline: {size: 2, color: ffffffff}]}}
+          - focused:  &focused  {<<: *purple_bg}
+          - floating: &floating {deco: {stack: [background: {color: 6000ffff}, border: {size: 2, color: ffffffff}]}}
         content:
           list:
             items:
@@ -33,9 +33,9 @@ bar:
                       - map:
                           conditions:
                             floating:
-                              string: {text: " {title}", max: 99, <<: [*floating, *purple_bg]}
+                              string: {text: " {title} ", max: 99, <<: *floating}
                             ~floating:
-                              string: {text: " {title}", max: 99, <<: *purple_bg}
+                              string: {text: " {title} ", max: 99, <<: *purple_bg}
                     ~empty && selected && urgent:
                       string: {text: " {name} ", <<: [*urgent, *occupied]}
                     ~empty && selected && ~urgent:
