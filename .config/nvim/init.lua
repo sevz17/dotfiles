@@ -55,7 +55,7 @@ local function tryload(module)
   return nil
 end
 
-plugins = tryload('plugins')
+local plugins = tryload('plugins')
 tryload('maps')
 tryload('plugin-config')
 tryload('lsp-servers')
@@ -70,7 +70,7 @@ set.laststatus = 2
 
 if plugins then
   local openPop = assert(io.popen('tput colors', 'r'))
-  colors = tonumber(openPop:read('*all'))
+  local colors = tonumber(openPop:read('*all'))
   openPop:close()
 
   if (colors == 256) then
