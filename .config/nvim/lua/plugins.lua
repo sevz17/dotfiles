@@ -1,49 +1,41 @@
 -- vi: expandtab ts=2 sw=2
 
-return require('packer').startup(function()
-  use 'wbthomason/packer.nvim' -- Packer can manage itself
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  use 'gpanders/editorconfig.nvim'
-
-  use 'sheerun/vim-polyglot' -- Syntax
-
-  use 'flazz/vim-colorschemes' -- Themes
-
-  use 'jiangmiao/auto-pairs' -- Typing
-
-  use 'gentoo/gentoo-syntax'
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-
-  -- IDE
-  use 'preservim/nerdcommenter'
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
-
-  use {
-    'phaazon/hop.nvim',
-    as = 'hop'
-  }
-
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' }
-  }
-
-  use 'kyazdani42/nvim-web-devicons'
-
-  use 'lambdalisue/suda.vim' -- If forgot open with permisions
-
-  -- Collection of common configurations for the Nvim LSP client
-  use 'neovim/nvim-lspconfig'
-
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
-end)
+require("lazy").setup({
+    'gpanders/editorconfig.nvim',
+    'sheerun/vim-polyglot', -- Syntax
+    'ellisonleao/gruvbox.nvim',
+    'jiangmiao/auto-pairs', -- Typing
+    'gentoo/gentoo-syntax',
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    -- IDE
+    'preservim/nerdcommenter',
+    { 'nvim-telescope/telescope.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    { 'phaazon/hop.nvim', name = 'hop' },
+    { 'lewis6991/gitsigns.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    'kyazdani42/nvim-web-devicons',
+    'lambdalisue/suda.vim', -- If forgot open with permisions
+    -- Collection of common configurations for the Nvim LSP client
+    'neovim/nvim-lspconfig',
+    'hrsh7th/nvim-cmp', -- Autocompletion plugin
+    'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+    'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
+    'L3MON4D3/LuaSnip', -- Snippets plugin
+})
