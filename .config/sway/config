@@ -68,9 +68,5 @@ include ./rules
 include ./workspaces
 
 ### Bar
-bar {
-    id 0
-    swaybar_command waybar
-}
-
+exec yambar -c ~/.config/yambar/config-sway.yml
 exec yambar -c ~/.config/yambar/config-bottom.yml
