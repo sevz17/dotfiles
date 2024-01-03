@@ -45,17 +45,17 @@
         "all-outputs": true,
         "format": "{name}",
         "current-only": false,
-        "persistent_workspaces": {
-            "1:\ufa9e": [],
-            "2:\uf126": [],
+        "persistent-workspaces": {
+            "1:\udb80\ude39": [],
+            "2:\ue632": [],
             "3:\ue795": [],
             "4:\ue615": [],
-            "5:\uf718": [],
-            "6:\uf1c5": [],
-            "7:\uf03d": [],
-            "8:\uf832": [],
-            "9:\uf869": [],
-            "10:\uf303": []
+            "5:\udb80\ude19": [],
+            "6:\udb80\ude1f": [],
+            "7:\udb80\ude2b": [],
+            "8:\udb80\ude23": [],
+            "9:\ue217": [],
+            "10:\ueb63": []
         }
     },
 
