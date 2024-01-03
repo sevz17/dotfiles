@@ -68,16 +68,9 @@ set.smartcase  = true  -- ... unless they contain at least one capital letter
 
 set.laststatus = 2
 
+set.background = 'dark'
 if plugins then
-  local openPop = assert(io.popen('tput colors', 'r'))
-  local colors = tonumber(openPop:read('*all'))
-  openPop:close()
-
-  if (colors == 256) then
-    cmd('silent! colorscheme Atelier_ForestDark')
-  else
-    cmd('silent! colorscheme solarized8_dark')
-  end
+  cmd('silent! colorscheme gruvbox')
 else
   cmd('colorscheme darkblue')
 end
