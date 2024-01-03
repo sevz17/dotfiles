@@ -1,0 +1,104 @@
+.:
+  - black_bg: &black_bg {deco: {background: {color: 111111ff}}}
+  - purple_bg: &purple_bg {deco: {background: {color: 6000ffff}}}
+bar:
+  location: top
+  layer: bottom
+  background: 6000ffff
+  font: "Iosevka NF:size=16:antialias=true:autohint:true,UbuntuMono Nerd Font:size=18:antialias=true:autohint:true"
+  height: 22
+  border:
+    margin: 6
+    bottom-margin: 0
+
+  left:
+    - i3:
+        sort: native
+        persistent:
+          - 1:󰈹
+          - 2:
+          - 3:
+          - 4:
+          - 5:󰈙
+          - 6:󰈟
+          - 7:󰈫
+          - 8:󰈣
+          - 9:
+          - 10:
+#        strip-workspace-numbers: true
+        anchors:
+          - occupied: &occupied {foreground: ffffffff}
+          - default:  &default  {foreground: aaaaaaff}
+          - urgent:   &urgent   {deco: {background: {color: ff0000ff}}}
+          - focused:  &focused  {<<: *purple_bg}
+          - floating: &floating {deco: {stack: [background: {color: 6000ffff}, border: {size: 2, color: ffffffff}]}}
+        content:
+          "":
+            map:
+              <<: *black_bg
+              conditions:
+                ~empty && focused && urgent:
+                  string: {text: "{name} ", <<: [*urgent, *occupied]}
+                ~empty && focused && ~urgent:
+                  string: {text: "{name} ", <<: [*focused, *occupied]}
+                ~empty && ~focused && urgent:
+                  string: {text: "{name} ", <<: *urgent}
+                ~empty && ~focused && ~urgent:
+                  string: {text: "{name} ", <<: *occupied}
+                empty && focused:
+                  string: {text: "{name} ", <<: [*focused, *default]}
+                empty && ~focused:
+                  string: {text: "{name} ", <<: *default}
+          current:
+            - string: {text: " {mode} ", <<: *black_bg}
+            - string: {text: "{title} ", max: 99, <<: *purple_bg}
+  right:
+    - pulse:
+        content:
+          map:
+            <<: *black_bg
+            conditions:
+              ~online: {string: {text: " 󰖁 ", foreground: 888888ff}}
+              online:
+                map:
+                  on-click:
+                    left: /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+                    wheel-up: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +2%
+                    wheel-down: /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -2%
+                  conditions:
+                    sink_muted: {string: {text: " 󰝟 {sink_percent}% ", foreground: 888888ff}}
+                    ~sink_muted:
+                      ramp:
+                        tag: sink_percent
+                        items:
+                          - string: {text: " 󰕿 {sink_percent}% "}
+                          - string: {text: " 󰖀 {sink_percent}% "}
+                          - string: {text: " 󰕾 {sink_percent}% "}
+                          - string: {text: "  {sink_percent}% "}
+#    - pipewire:
+#        content:
+#          list:
+#            items:
+#              - map:
+#                  conditions:
+#                    type == "sink":
+#                      map:
+#                        on-click:
+#                          left: /usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+#                          wheel-up: /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+#                          wheel-down: /usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+#                        conditions:
+#                          muted: {string: {text: "󰝟 {cubic_volume}%", foreground: 888888ff}}
+#                          ~muted:
+#                            - ramp:
+#                                tag: cubic_volume
+#                                items:
+#                                  - string: {text: "󰕿 {cubic_volume}%"}
+#                                  - string: {text: "󰖀 {cubic_volume}%"}
+#                                  - string: {text: "󰕾 {cubic_volume}%"}
+#                                  - string: {text: " {cubic_volume}%"}
+    - clock:
+        time-format: "%X"
+        date-format: "%a %x"
+        content:
+          string: {text: "󰅐 {time} 󰃭 {date} ", <<: *black_bg}
