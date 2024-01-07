@@ -161,10 +161,15 @@ bar:
             default: {empty: {}}
             conditions:
               state == "up":
-                - string: {text: " Net({name})"}
-                - string: {text: " - "}
-                - string: {text: "SSID({ssid})"}
-                - string: {text: " - "}
+                - ramp:
+                    tag: quality
+                    items:
+                      - string: {text: "󰤯"}
+                      - string: {text: "󰤟"}
+                      - string: {text: "󰤢"}
+                      - string: {text: "󰤥"}
+                      - string: {text: "󰤨"}
+                - string: {text: " {ssid} "}
                 - map:
                     default: {string: {text: "{dl-speed}"}}
                     conditions:
