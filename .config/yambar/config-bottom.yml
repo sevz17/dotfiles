@@ -139,22 +139,20 @@ bar:
             default: {empty: {}}
             conditions:
               state == "up":
-                list:
-                  items:
-                    - string: {text: "Net({name}): "}
-                    - map:
-                        default: {string: {text: "{dl-speed}"}}
-                        conditions:
-                          dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
-                          dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
-                          dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
-                    - string: {text: " 󱦳󱦲 "}
-                    - map:
-                        default: {string: {text: "{ul-speed}"}}
-                        conditions:
-                          ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
-                          ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
-                          ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
+                - string: {text: "Net({name}): "}
+                - map:
+                    default: {string: {text: "{dl-speed}"}}
+                    conditions:
+                      dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
+                      dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
+                      dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
+                - string: {text: " 󱦳󱦲 "}
+                - map:
+                    default: {string: {text: "{ul-speed}"}}
+                    conditions:
+                      ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
+                      ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
+                      ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
     - network:
         name: wlo1
         <<: *poll-interval
@@ -163,26 +161,23 @@ bar:
             default: {empty: {}}
             conditions:
               state == "up":
-                list:
-                  items:
-                    - string: {text: "Net({name})"}
-                    - string: {text: " - "}
-                    - string: {text: "SSID({ssid})"}
-                    - string: {text: " - "}
-                    - string: {text: "signal({signal}): "}
-                    - map:
-                        default: {string: {text: "{dl-speed}"}}
-                        conditions:
-                          dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
-                          dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
-                          dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
-                    - string: {text: " 󱦳󱦲 "}
-                    - map:
-                        default: {string: {text: "{ul-speed}"}}
-                        conditions:
-                          ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
-                          ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
-                          ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
+                - string: {text: " Net({name})"}
+                - string: {text: " - "}
+                - string: {text: "SSID({ssid})"}
+                - string: {text: " - "}
+                - map:
+                    default: {string: {text: "{dl-speed}"}}
+                    conditions:
+                      dl-speed > 1073741824: {string: {text: "{dl-speed:gib} Gi"}}
+                      dl-speed > 1048576: {string: {text: "{dl-speed:mib} Mi"}}
+                      dl-speed > 1024: {string: {text: "{dl-speed:kib} Ki"}}
+                - string: {text: " 󱦳󱦲 "}
+                - map:
+                    default: {string: {text: "{ul-speed}"}}
+                    conditions:
+                      ul-speed > 1073741824: {string: {text: "{ul-speed:gib} Gi"}}
+                      ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
+                      ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
 #    - disk-io:
 #        <<: *interval
 #        content:
