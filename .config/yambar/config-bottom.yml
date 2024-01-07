@@ -139,7 +139,7 @@ bar:
             default: {empty: {}}
             conditions:
               state == "up":
-                - string: {text: "Net({name}): "}
+                - string: {text: "󰈀 "}
                 - map:
                     default: {string: {text: "{dl-speed}"}}
                     conditions:
