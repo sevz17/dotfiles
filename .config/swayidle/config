@@ -1,4 +1,4 @@
-timeout 600 "chayang -d 5 && for o in $(wlr-randr | awk '/^[^[:space:]]+/ {printf $1}'); do wlr-randr --output \"\${o}\" --off; done" resume "for o in $(wlr-randr | awk '/^[^[:space:]]+/ {printf $1}'); do wlr-randr --output \"\${o}\" --on; done"
+timeout 600 "timeout 6 chayang -d 5; for o in $(wlr-randr | awk '/^[^[:space:]]+/ {printf $1}'); do wlr-randr --output \"\${o}\" --off; done" resume "for o in $(wlr-randr | awk '/^[^[:space:]]+/ {printf $1}'); do wlr-randr --output \"\${o}\" --on; done"
 timeout 900 "swaylock --daemonize --image $(chbg --print) --scaling fill"
 idlehint 1140
 before-sleep "swaylock --daemonize --image $(chbg --print) --scaling fill"
