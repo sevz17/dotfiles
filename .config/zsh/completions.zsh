@@ -37,7 +37,9 @@ zstyle ':completion:*' expand prefix
 zstyle ':completion:*:(all-|)files' ignored-patterns '(|*/)CVS'
 zstyle ':completion:*:cd:*' ignored-patterns '(*/)#CVS'
 
-compdef eemerge=emerge
+if command -v eemerge &>/dev/null; then
+   compdef eemerge=emerge
+fi
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
