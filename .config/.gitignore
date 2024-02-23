@@ -2,6 +2,7 @@
 
 !.gitignore
 !alacritty
+!bat
 !dash
 !fnott
 !foot

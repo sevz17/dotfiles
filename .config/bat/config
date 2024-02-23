@@ -1,0 +1,4 @@
+--theme="gruvbox-dark"
+--italic-text=always
+--style=rule,header-filename,snip
+--map-syntax="build.log:Plain Text"
