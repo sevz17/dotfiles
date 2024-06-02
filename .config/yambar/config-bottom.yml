@@ -132,13 +132,12 @@ bar:
                     on-click: /usr/bin/udisksctl unmount -b {device}
                     text: "{label}"
     - network:
-        name: eno1
         <<: *poll-interval
         content:
           map:
             default: {empty: {}}
             conditions:
-              state == "up":
+              state == "up" && name == "eno1":
                 - string: {text: "󰈀 "}
                 - map:
                     default: {string: {text: "{dl-speed}"}}
@@ -154,13 +153,12 @@ bar:
                       ul-speed > 1048576: {string: {text: "{ul-speed:mib} Mi"}}
                       ul-speed > 1024: {string: {text: "{ul-speed:kib} Ki"}}
     - network:
-        name: wlo1
         <<: *poll-interval
         content:
           map:
             default: {empty: {}}
             conditions:
-              state == "up":
+              state == "up" && name == "wlo1":
                 - ramp:
                     tag: quality
                     items:
