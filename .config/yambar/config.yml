@@ -13,7 +13,7 @@ bar:
 
   left:
     - dwl:
-        dwl-info-filename: /run/user/1000/dwl-wayland-0
+        dwl-info-filename: "${XDG_RUNTIME_DIR}/dwl-${WAYLAND_DISPLAY}"
         number-of-tags: 10
         name-of-tags: [ 󰈹, , , , 󰈙, 󰈟, 󰈫, 󰈣, ,  ]
         anchors:
