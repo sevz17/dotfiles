@@ -26,11 +26,17 @@ export EZA_ICONS_AUTO=true
 if [ -n "${EPREFIX}" ]; then
   export TMPDIR="${EPREFIX}/tmp"
 else
-  export CHOST=x86_64-pc-linux-gnu
-  export CC="${CHOST}-gcc"
-  export CXX="${CHOST}-g++"
-  export CFLAGS="-march=native -Og -pipe -flto=auto -Werror=odr -Werror=strict-aliasing -Werror=lto-type-mismatch -g3 -ggdb3"
+  if [ -n "${CHOST}" ]; then
+    CC="${CHOST}-gcc"
+    CXX="${CHOST}-g++"
+  else
+    CC=gcc
+    CXX=g++
+  fi
+  export CC
+  export CXX
+  export CFLAGS="-march=native -Og -pipe -Wa,-O2 -flto=auto -Werror=odr -Werror=strict-aliasing -Werror=lto-type-mismatch"
   export CXXFLAGS="${CFLAGS}"
-  export LDFLAGS="-Wl,--as-needed -Wl,-O2 -fuse-ld=mold -Wl,--threads=$(nproc)"
+  export LDFLAGS="-Wl,--as-needed -Wl,-z,pack-relative-relocs -Wl,-O2 -fuse-ld=mold -Wl,--icf=safe"
   export RUSTFLAGS="-C target-cpu=native -C opt-level=3 -C codegen-units=1 -C embed-bitcode=yes -C lto=thin -C linker-plugin-lto -C linker-flavor=gcc -C linker=rust-linker-wrapper"
 fi
