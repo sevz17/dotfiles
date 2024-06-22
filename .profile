@@ -7,7 +7,8 @@ export XKB_DEFAULT_OPTIONS="grp:win_space_toggle,ctrl:nocaps,grp_led:scroll,keyp
 export GOPATH="${XDG_DATA_HOME:-${HOME}/.local/share}"/go
 export CARGO_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"/cargo
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-${HOME}/.local/share}"/pass
-export ZDOTDIR="${XDG_CONFIG_DIR:-${HOME}/.config}/zsh"
+export ZDOTDIR="${XDG_CONFIG_DIR:-${HOME}/.config}/"zsh
+export PYTHON_HISTORY="${XDG_DATA_HOME:-${HOME}/.local/share}"/python/history
 
 export EMAIL="leohdz172@proton.me"
 
